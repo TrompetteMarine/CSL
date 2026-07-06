@@ -1,0 +1,13 @@
+point,T,P_eff,P_wrong,P_unresolved
+near_zero,200,0.0,0.0,1.0
+near_zero,300,0.0,0.0,1.0
+near_zero,500,0.0,0.0,1.0
+near_zero,1000,0.0,0.0,1.0
+corrective,200,1.0,0.0,0.0
+corrective,300,1.0,0.0,0.0
+corrective,500,1.0,0.0,0.0
+corrective,1000,1.0,0.0,0.0
+distortive,200,0.0,1.0,0.0
+distortive,300,0.0,1.0,0.0
+distortive,500,0.0,1.0,0.0
+distortive,1000,0.0,1.0,0.0

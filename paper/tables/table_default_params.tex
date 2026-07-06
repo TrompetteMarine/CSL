@@ -1,0 +1,20 @@
+% Auto-generated -- default parameters.
+\begin{table}[t]\centering\small
+\caption{Global default parameters (\texttt{code/credibility/config.py}). Confidence map is \texttt{decision} (Eq.~\ref{eq:confidence}); values are projected to $[0,1]$ each trial; reaction times use the inverse-Gaussian approximation.}
+\label{tab:defaults}
+\begin{tabular}{llcl}\toprule
+Symbol & Default & Role & Config key \\ \midrule
+$\beta$ & 6.0 & value sensitivity (drift scaling) & \texttt{beta} \\
+$\sigma$ & 1.0 & internal decision noise & \texttt{sigma} \\
+$a$ & 1.0 & speed--accuracy threshold & \texttt{a\_thr} \\
+$\kappa_1$ & 3.0 & confidence: evidence weight & \texttt{kappa1} \\
+$\kappa_2$ & 1.0 & confidence: decision-time weight & \texttt{kappa2} \\
+$\tau_0$ & 0.5 & reaction-time scale & \texttt{tau0} \\
+$\alpha^{\min}$ & 0.05 & min reward learning rate & \texttt{alpha\_min} \\
+$\alpha^{\max}$ & 0.4 & max reward learning rate & \texttt{alpha\_max} \\
+$\gamma$ & 0.5 & retrospective credit-assignment scale & \texttt{gamma} \\
+$\omega$ & 1.0 & social learning-rate exponent & \texttt{omega} \\
+$\varepsilon$ & 0.001 & $\bar C$ denominator floor & \texttt{eps\_soc} \\
+RT disp. & 0.3 & reaction-time squared CV & \texttt{rt\_dispersion} \\
+\bottomrule\end{tabular}
+\end{table}

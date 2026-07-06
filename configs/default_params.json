@@ -1,0 +1,33 @@
+{
+  "sizes": [
+    200,
+    200
+  ],
+  "T": 300,
+  "mu": [
+    0.6,
+    0.5
+  ],
+  "b_self": 0.85,
+  "B": null,
+  "lam": 0.6,
+  "eta": 0.3,
+  "beta": 6.0,
+  "sigma": 1.0,
+  "a_thr": 1.0,
+  "rt_dispersion": 0.3,
+  "confidence_mode": "decision",
+  "kappa1": 3.0,
+  "kappa2": 1.0,
+  "tau0": 0.5,
+  "private_lr_mode": "confidence",
+  "alpha_min": 0.05,
+  "alpha_max": 0.4,
+  "alpha_const": 0.2,
+  "social_lr_mode": "confidence",
+  "gamma": 0.5,
+  "omega": 1.0,
+  "eps_soc": 0.001,
+  "credibility_weight": true,
+  "q_init": null
+}

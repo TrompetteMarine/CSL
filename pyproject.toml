@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csl-credibility"
+version = "1.0.0"
+description = "Endogenous credibility in social learning — reference implementation (Cognitive Social Learning)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Swann" }]
+keywords = ["social-learning", "drift-diffusion", "reinforcement-learning",
+            "opinion-dynamics", "agent-based-model", "neuroeconomics"]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Repository = "https://github.com/<owner>/CSL"
+
+[tool.setuptools]
+packages = ["credibility"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

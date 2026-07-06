@@ -1,0 +1,27 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# LOCKED runtime environment — exact pins for byte-for-byte reproduction.
+#
+# These are the versions the manuscript figures/tables were generated against
+# and that CI verifies on CPython 3.10 / 3.11 / 3.12 (every wheel below ships
+# for the whole matrix, so all three legs resolve an IDENTICAL environment).
+#
+# Abstract ranges (for `pip install -e .`) live in pyproject.toml; THIS file is
+# the lock. Regenerate after a deliberate bump with:
+#     pip install -U numpy scipy matplotlib pyyaml && pip freeze > /tmp/f
+#     # then copy the resolved ==pins here and re-run `make verify`.
+# ─────────────────────────────────────────────────────────────────────────────
+numpy==2.2.6
+scipy==1.15.3
+matplotlib==3.10.9
+PyYAML==6.0.3
+
+# --- transitive dependencies (pinned so the closure is fully determined) ---
+contourpy==1.3.2
+cycler==0.12.1
+fonttools==4.63.0
+kiwisolver==1.5.0
+packaging==26.2
+pillow==12.2.0
+pyparsing==3.3.2
+python-dateutil==2.9.0.post0
+six==1.17.0

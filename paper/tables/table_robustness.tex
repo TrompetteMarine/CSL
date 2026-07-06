@@ -1,0 +1,15 @@
+% Auto-generated -- robustness summary.
+\begin{table}[t]\centering\small
+\caption{Robustness summary (Appendix~\ref{app:robust}). Entries are the dominant-regime area fractions of the $(\lambda,\Gamma)$ plane, or P(wrong) at the operating point, as indicated. Full tables: \texttt{paper/tables/robustness\_*.csv}.}
+\label{tab:robustness}
+\begin{tabular}{lll}\toprule
+Check & Variation & Result \\ \midrule
+R1 threshold & $0.80/0.90/0.95$ & wrong-area $=0.53/0.53/0.53$ (invariant) \\
+R2 horizon & $T=200\!-\!1000$ & near-zero stays unresolved; corrective/distortive stable \\
+R3 initial lead & $\delta=0\!-\!0.16$ & P(wrong) $=0.12\!\to\!1.00$ (small lead suffices) \\
+R4 reward gap & $|\Delta\mu|=0.02\!-\!0.20$ & P(wrong) $=1.00\!-\!1.00$ (persists) \\
+R5 random graphs & balanced/SBM/noisy & distortive P(wrong) $=1.00/1.00/1.00$ \\
+R6 grid resolution & $7^2/9^2/13^2$ & wrong-area $=0.49/0.53/0.51$ \\
+R7 RT approximation & inverse-Gaussian vs.\ mean & wrong-area $=0.49$ vs.\ $0.49$ \\
+\bottomrule\end{tabular}
+\end{table}

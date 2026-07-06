@@ -1,0 +1,26 @@
+{
+  "preview": {
+    "N_per": 80,
+    "N_phase": 50,
+    "reps_traj": 120,
+    "reps_phase": 60,
+    "grid": 9,
+    "reps_quotient": 100
+  },
+  "standard": {
+    "N_per": 200,
+    "N_phase": 80,
+    "reps_traj": 300,
+    "reps_phase": 120,
+    "grid": 13,
+    "reps_quotient": 200
+  },
+  "publication": {
+    "N_per": 500,
+    "N_phase": 250,
+    "reps_traj": 1000,
+    "reps_phase": 600,
+    "grid": 21,
+    "reps_quotient": 800
+  }
+}

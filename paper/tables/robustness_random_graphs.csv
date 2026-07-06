@@ -1,0 +1,7 @@
+point,graph,P_eff,P_wrong,P_pol
+corrective,balanced,1.0,0.0,0.0
+corrective,weighted_sbm,1.0,0.0,0.0
+corrective,noisy_W,1.0,0.0,0.0
+distortive,balanced,0.0,1.0,0.0
+distortive,weighted_sbm,0.0,1.0,0.0
+distortive,noisy_W,0.0,1.0,0.0

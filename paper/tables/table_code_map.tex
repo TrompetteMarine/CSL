@@ -1,0 +1,19 @@
+% Auto-generated -- code map.
+\begin{table}[t]\centering\small
+\caption{Equation-to-code-to-test map. Code paths are under \texttt{code/credibility/}; tests under \texttt{code/tests/test\_credibility.py}.}
+\label{tab:codemap}
+\begin{tabular}{llll}\toprule
+Model element & Equation & Code & Test \\ \midrule
+Anticipatory signal & Eq.~\ref{eq:Si} & \texttt{model.py: anticipatory\_field\_block} & \texttt{test\_quotient\_field\_exact} \\
+Augmented value & Eq.~\ref{eq:V} & \texttt{model.py: simulate\_blocks} & \texttt{test\_block\_dense\_*} \\
+DDM choice & Eq.~\ref{eq:choiceprob} & \texttt{ddm.py: choice\_prob\_up} & \texttt{test\_ddm\_choice\_*} \\
+Reaction time & \S\ref{sec:model} & \texttt{ddm.py: sample\_decision\_time} & \texttt{test\_ddm\_mean\_fpt\_*} \\
+Confidence & Eq.~\ref{eq:confidence} & \texttt{confidence.py} & \texttt{test\_confidence\_bounded} \\
+Private learning & Eq.~\ref{eq:privatelr} & \texttt{model.py: \_private\_lr} & \texttt{test\_simultaneous\_*} \\
+Retrospective learning & Eq.~\ref{eq:socpe} & \texttt{model.py: value\_update\_*} & \texttt{test\_self\_weighting\_*} \\
+Bounded values & Eq.~\ref{eq:update} & \texttt{model.py: np.clip} & \texttt{test\_values\_bounded} \\
+Regime classification & \S\ref{sec:design} & \texttt{metrics.py: classify\_regime} & \texttt{test\_regime\_classification} \\
+Quotient (meso) & Eq.~\ref{eq:quotientfield} & \texttt{model.py: simulate\_meso} & \texttt{test\_meso\_*} \\
+Uncertainty & \S\ref{sec:identification} & \texttt{uncertainty.py} & \texttt{---} \\
+\bottomrule\end{tabular}
+\end{table}

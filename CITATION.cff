@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the article and the software."
+title: "CSL — Cognitive Social Learning"
+abstract: >-
+  Reference implementation and replication package for "Endogenous Credibility
+  in Social Learning": a community-structured model in which drift–diffusion
+  decision confidence is generated endogenously and acts as a credibility weight
+  in social transmission, making connectivity corrective or distortive.
+type: software
+version: "1.0.0"
+date-released: "2026-07-03"
+license: MIT
+repository-code: "https://github.com/<owner>/CSL"
+keywords:
+  - social learning
+  - drift-diffusion model
+  - reinforcement learning
+  - opinion dynamics
+  - agent-based model
+  - neuroeconomics
+authors:
+  - given-names: Swann
+    family-names: "<surname>"    # TODO: complete before public release
+preferred-citation:
+  type: article
+  title: "Endogenous Credibility in Social Learning"
+  year: 2026
+  authors:
+    - given-names: Swann
+      family-names: "<surname>"  # TODO
