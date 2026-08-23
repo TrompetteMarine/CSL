@@ -53,6 +53,9 @@ class Params:
 
     # --- transmission switch ----------------------------------------------
     credibility_weight: bool = True           # weight transmitted actions by C
+    selectivity_chi: float | None = None       # optional matched-mass social selectivity
+    permute_social_confidence: bool = False    # optional within-community placebo
+    confidence_scale: float = 1.0              # rank-preserving logit calibration
 
     # --- initial values ----------------------------------------------------
     # q_init[c] = (Q_c0(arm1), Q_c0(arm2)).  If None, all arms start at 0.5.

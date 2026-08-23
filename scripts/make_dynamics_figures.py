@@ -7,6 +7,8 @@
 All quantities are computed from credibility.meanfield (no Monte Carlo); they
 are the analytic companion to the stochastic phase diagram.
 """
+import csv
+import os
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
@@ -40,29 +42,59 @@ def fig_bifurcation():
     p = _base()
     lstar, C0 = mf.lambda_star(p)
     lams = np.linspace(0.0, 1.5, 76)
-    zst = mf.amplification_branch(p, lams, z0=1e-3)      # stable |z*|
-    fig, ax = plt.subplots(figsize=(6.2, 3.5))
+    rows = []
+    for lam in lams:
+        for fp in mf.amplification_fixed_points(p, float(lam)):
+            eig = fp["eigenvalues"]
+            rows.append(dict(lambda_=float(lam), z1=fp["z"][0], z2=fp["z"][1],
+                             eig1_real=eig[0].real, eig1_imag=eig[0].imag,
+                             eig2_real=eig[1].real, eig2_imag=eig[1].imag,
+                             spectral_radius=max(abs(eig)), stable=fp["stable"]))
+    path = os.path.join(common.RESULTS, "amplification_bifurcation_fixed_points.csv")
+    with open(path, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=rows[0]); w.writeheader(); w.writerows(rows)
+    fig, ax = plt.subplots(figsize=(7.0, 4.2))
     # shaded regime backdrop
     ax.axvspan(0, lstar, color=GREEN, alpha=0.05)
     ax.axvspan(lstar, 1.5, color=RED, alpha=0.05)
-    # z=0 branch: stable below lstar (solid), unstable above (dashed)
-    ax.plot(lams[lams < lstar], np.zeros((lams < lstar).sum()), color=PALETTE_INK, lw=1.8)
-    ax.plot(lams[lams >= lstar], np.zeros((lams >= lstar).sum()), color=PALETTE_INK, lw=1.2, ls=(0, (4, 3)))
-    # amplified pair +/- z*
-    on = zst > 1e-4
-    ax.plot(lams[on], zst[on], color=GREEN, lw=2.6, label=r"corrective consensus $+z^\star$", solid_capstyle="butt")
-    ax.plot(lams[on], -zst[on], color=RED, lw=2.6, label=r"distortive consensus $-z^\star$", solid_capstyle="butt")
-    ax.scatter([lams[on][0]], [zst[on][0]], s=14, color=GREEN, zorder=5)
-    ax.scatter([lams[on][0]], [-zst[on][0]], s=14, color=RED, zorder=5)
-    ax.axvline(lstar, color=BLUE, ls=":", lw=1.5, label=r"threshold $\lambda^\star=\sigma^2/(\beta a C_0\bar b)$")
+    common_rows = [r for r in rows if abs(r["z1"] - r["z2"]) < 1e-5]
+    neutral = [r for r in common_rows if abs(r["z1"]) < 1e-5]
+    for stable, ls, lab in [(True, "-", "neutral branch (stable)"),
+                            (False, (0, (4, 3)), "neutral branch (unstable)")]:
+        rr = [r for r in neutral if r["stable"] is stable]
+        ax.plot([r["lambda_"] for r in rr], [0] * len(rr), color=PALETTE_INK,
+                lw=1.6, ls=ls, label=lab)
+    for sign, color, label in [(1, GREEN, "corrective branch (stable)"),
+                               (-1, RED, "distortive branch (stable)")]:
+        rr = sorted((r for r in common_rows if r["stable"] and sign * r["z1"] > 1e-5),
+                    key=lambda r: r["lambda_"])
+        ax.plot([r["lambda_"] for r in rr], [r["z1"] for r in rr], color=color,
+                lw=2.3, label=label)
+    for sign in (-1, 1):
+        rr = sorted((r for r in common_rows if not r["stable"] and
+                     np.sign(r["z1"]) == sign and abs(r["z1"]) > 1e-5),
+                    key=lambda r: r["lambda_"])
+        ax.plot([r["lambda_"] for r in rr], [r["z1"] for r in rr], color=GREY,
+                lw=1.4, ls=(0, (3, 2)), label="separatrix (unstable)" if sign == 1 else None)
+    ax.axvline(lstar, color=BLUE, ls=":", lw=1.5,
+               label=r"common threshold $\lambda^\star=\sigma^2/(\beta a C_0)$")
     ax.axhline(0, color=PALETTE_INK, lw=0.5, alpha=0.3)
     ax.set_xlabel(r"anticipatory weight $\lambda$")
     ax.set_ylabel(r"early-lead order parameter $z^\star$")
     ax.set_xlim(0, 1.5); ax.set_ylim(-0.66, 0.72)
     ax.set_xticks([0.0, 0.5, lstar, 1.0, 1.5])
     ax.set_xticklabels(["0.0", "0.5", r"$\lambda^\star$", "1.0", "1.5"])
-    ax.set_title(r"Amplification bifurcation of the early-lead order parameter")
-    ax.legend(loc="upper left", fontsize=8, ncol=1)
+    nonzero_stable = [r for r in common_rows if r["stable"] and abs(r["z1"]) > 1e-5]
+    lsn = min(r["lambda_"] for r in nonzero_stable)
+    ax.axvline(lsn, color=GREY, ls=(0, (2, 2)), lw=1.0)
+    ax.text(lsn - .012, -.63, "saddle-node onset", color=GREY, fontsize=7,
+            rotation=90, va="bottom", ha="right")
+    ax.text(.04, .64, "neutral state locally stable", color=GREEN, fontsize=7.5)
+    ax.text(lstar + .035, .64, "neutral state locally unstable", color=RED, fontsize=7.5)
+    ax.set_title("Stable outcomes and unstable basin boundary", fontsize=10.5, pad=8)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.18), fontsize=7.2,
+              ncol=3, frameon=False)
+    fig.subplots_adjust(bottom=.28, top=.89)
     for ext in ("pdf", "png"):
         fig.savefig(f"{common.FIGDIR}/fig12_bifurcation.{ext}")
     plt.close(fig)
@@ -71,22 +103,7 @@ def fig_bifurcation():
 
 # ==========================================================================
 def _fixed_points(p, lam):
-    """Iterate the lead map from a spread of seeds; return unique fixed points."""
-    B = p.coupling(); seeds = []
-    for z1 in (-0.4, 0.0, 0.4):
-        for z2 in (-0.4, 0.0, 0.4):
-            z = np.array([z1, z2])
-            for _ in range(600):
-                zn = mf._amp_step(z, p, lam, B)
-                if np.max(np.abs(zn - z)) < 1e-11:
-                    break
-                z = zn
-            seeds.append(z)
-    fps = []
-    for z in seeds:
-        if not any(np.allclose(z, f, atol=1e-3) for f in fps):
-            fps.append(z)
-    return fps
+    return [x["z"] for x in mf.amplification_fixed_points(p, lam)]
 
 
 def fig_flowfield():
@@ -97,9 +114,26 @@ def fig_flowfield():
     lstar, _ = mf.lambda_star(p)
     gv = np.linspace(-0.52, 0.52, 25)
     Z1, Z2 = np.meshgrid(gv, gv)
-    fig, axes = plt.subplots(1, 2, figsize=(8.6, 4.3))
-    for ax, lam, tag in [(axes[0], 0.20, r"$\lambda\ll\lambda^\star$: neutral state stable"),
-                         (axes[1], 1.15, r"$\lambda>\lambda^\star$: any lead is amplified")]:
+    modes0 = mf.two_community_modes(p)
+    candidates = [0.20, 0.90, 1.35]
+    modes = [mf.two_community_modes(p, x) for x in candidates]
+    if len({m["classification"] for m in modes}) < 3:
+        candidates = [0.5 * modes0["lambda_star"],
+                      0.5 * (modes0["lambda_star"] + modes0["lambda_relative_star"]),
+                      1.15 * modes0["lambda_relative_star"]]
+        modes = [mf.two_community_modes(p, x) for x in candidates]
+    with open(os.path.join(common.RESULTS, "flowfield_modes.csv"), "w", newline="") as f:
+        fields = ["lambda", "Gamma", "lambda_star", "lambda_relative_star",
+                  "rho_plus", "rho_minus", "classification"]
+        w = csv.DictWriter(f, fieldnames=fields); w.writeheader()
+        for lam, mode in zip(candidates, modes):
+            w.writerow({"lambda": lam, **{k: mode[k] for k in fields[1:]}})
+    fig, axes = plt.subplots(1, 3, figsize=(11.6, 4.1))
+    reader_titles = ["Weak influence: both kinds of lead fade",
+                     "Intermediate: communities converge, shared lead grows",
+                     "Strong influence: both kinds of lead grow"]
+    for k, (ax, lam, mode, reader_title) in enumerate(zip(axes, candidates, modes, reader_titles)):
+        tag = rf"({chr(97+k)}) {reader_title}" + "\n" + rf"$\lambda={lam:.2f}$"
         dZ1, dZ2 = mf.amplification_field(Z1, Z2, p, lam)
         speed = np.hypot(dZ1, dZ2)
         strm = ax.streamplot(gv, gv, dZ1, dZ2, color=speed, cmap="viridis",
@@ -117,20 +151,24 @@ def fig_flowfield():
         ax.axhline(0, color=PALETTE_INK, lw=0.5, alpha=0.28)
         ax.axvline(0, color=PALETTE_INK, lw=0.5, alpha=0.28)
         ax.set_xlabel(r"community 1 early lead $z_1$")
-        ax.set_ylabel(r"community 2 early lead $z_2$")
-        ax.set_title(tag, fontsize=9.5)
+        if k == 0:
+            ax.set_ylabel(r"community 2 early lead $z_2$")
+        else:
+            ax.set_yticklabels([])
+        ax.set_title(tag, fontsize=7.2, pad=7)
         ax.set_xlim(-0.58, 0.58); ax.set_ylim(-0.58, 0.58)
         ax.set_xticks([-0.5, -0.25, 0, 0.25, 0.5]); ax.set_yticks([-0.5, -0.25, 0, 0.25, 0.5])
         ax.grid(False); ax.set_aspect("equal")
-    handles = [Line2D([0], [0], marker="o", ls="", mfc=PALETTE_INK, mec="white", ms=8, label="neutral"),
-               Line2D([0], [0], marker="o", ls="", mfc=GREEN, mec="white", ms=8, label="corrective"),
-               Line2D([0], [0], marker="o", ls="", mfc=RED, mec="white", ms=8, label="distortive"),
-               Line2D([0], [0], marker="o", ls="", mfc=PURPLE, mec="white", ms=8, label="polarised")]
+    handles = [Line2D([0], [0], marker="o", ls="", mfc=PALETTE_INK, mec="white", ms=8, label="no lead"),
+               Line2D([0], [0], marker="o", ls="", mfc=GREEN, mec="white", ms=8, label="correct choice"),
+               Line2D([0], [0], marker="o", ls="", mfc=RED, mec="white", ms=8, label="wrong choice"),
+               Line2D([0], [0], marker="o", ls="", mfc=PURPLE, mec="white", ms=8, label="communities disagree")]
     fig.legend(handles=handles, loc="lower center", ncol=4, fontsize=8.5,
                frameon=False, bbox_to_anchor=(0.5, -0.03))
     cbar = fig.colorbar(strm.lines, ax=axes, fraction=0.038, pad=0.02)
-    cbar.set_label("flow speed", fontsize=8.5)
-    fig.suptitle(r"Early-lead flow field (fixed points) below and above $\lambda^\star$", y=1.0)
+    cbar.set_label("speed of change", fontsize=8.5)
+    fig.suptitle(r"How early leads evolve as social influence strengthens",
+                 y=.99, fontsize=10.5)
     for ext in ("pdf", "png"):
         fig.savefig(f"{common.FIGDIR}/fig13_flowfield.{ext}")
     plt.close(fig)
@@ -156,9 +194,7 @@ def fig_vectorfield():
     Q1, Q2 = np.meshgrid(gq, gq)
     basin_cmap = ListedColormap(["#f2f2f2", _tint(GREEN), _tint(RED), _tint(PURPLE)])
     norm = BoundaryNorm([-0.5, 0.5, 1.5, 2.5, 3.5], basin_cmap.N)
-    lams = [(0.20, r"$\lambda=0.2\ll\lambda^\star$"),
-            (0.90, r"$\lambda=0.9>\lambda^\star$"),
-            (1.35, r"$\lambda=1.35\gg\lambda^\star$")]
+    lams = [(x, mf.two_community_modes(p, x)["classification"]) for x in (0.20, 0.90, 1.35)]
     fig, axes = plt.subplots(1, 3, figsize=(10.8, 4.6))
     for k, (ax, (lam, tag)) in enumerate(zip(axes, lams)):
         code = mf.basin_map(p, lam, gb)
@@ -195,7 +231,7 @@ def fig_vectorfield():
                frameon=False, bbox_to_anchor=(0.5, 0.03))
     fig.suptitle(r"Early-lead phase portrait across the amplification threshold $\lambda^\star$", y=0.96)
     for ext in ("pdf", "png"):
-        fig.savefig(f"{common.FIGDIR}/fig13_vectorfield.{ext}")
+        fig.savefig(f"{common.FIGDIR}/detailed_basin_portrait.{ext}")
     plt.close(fig)
     print("wrote fig13_vectorfield")
 

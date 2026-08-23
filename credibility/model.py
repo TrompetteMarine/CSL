@@ -67,11 +67,54 @@ def anticipatory_field_dense(cw, W):
     return np.einsum("ij,rjk->rik", W, cw)
 
 
+def matched_mass_field_dense(A, C, W, chi):
+    """Matched-mass field: confidence changes sender shares, not total mass."""
+    C = np.asarray(C, float)
+    mass = np.einsum("ij,rj->ri", W, C)
+    weights = np.power(np.clip(C, 0.0, 1.0), chi)
+    denom = np.einsum("ij,rj->ri", W, weights)
+    out = np.empty((*A.shape, 2), float)
+    for k in (0, 1):
+        num = np.einsum("ij,rj->ri", W, weights * (A == k))
+        out[:, :, k] = mass * num / np.maximum(denom, np.finfo(float).tiny)
+    return out
+
+
+def matched_mass_field_block(A, C, B, g, Csel, sizes, chi):
+    """Exact balanced-block quotient of :func:`matched_mass_field_dense`."""
+    cmean = community_means(C, Csel, sizes)
+    mass = (B @ cmean.T).T[:, g]
+    weights = np.power(np.clip(C, 0.0, 1.0), chi)
+    wmean = community_means(weights, Csel, sizes)
+    denom = (B @ wmean.T).T[:, g]
+    out = np.empty((*A.shape, 2), float)
+    for k in (0, 1):
+        wk = community_means(weights * (A == k), Csel, sizes)
+        num = (B @ wk.T).T[:, g]
+        out[:, :, k] = mass * num / np.maximum(denom, np.finfo(float).tiny)
+    return out
+
+
+def permute_confidence_within_communities(C, g, rng):
+    """Permute only the socially transmitted sender-confidence identities."""
+    out = np.array(C, copy=True)
+    for r in range(C.shape[0]):
+        for c in np.unique(g):
+            idx = np.flatnonzero(g == c)
+            out[r, idx] = C[r, idx[rng.permutation(len(idx))]]
+    return out
+
+
 def _confidence_from_decision(p, params, v_abs, tau):
     if params.confidence_mode == "balance":
-        return confidence.confidence_balance(p)
-    return confidence.confidence_decision(v_abs, tau, params.a_thr,
-                                          params.kappa1, params.kappa2, params.tau0)
+        C = confidence.confidence_balance(p)
+    else:
+        C = confidence.confidence_decision(v_abs, tau, params.a_thr,
+                                           params.kappa1, params.kappa2, params.tau0)
+    if params.confidence_scale != 1.0:
+        logit = np.log(C) - np.log1p(-C)
+        C = 1.0 / (1.0 + np.exp(-params.confidence_scale * logit))
+    return C
 
 
 def _private_lr(params, C, delta):
@@ -89,7 +132,8 @@ def _social_lr(params, Cbar):
     return params.gamma * np.power(np.clip(Cbar, 0.0, 1.0), params.omega)
 
 
-def value_update_block(Q, A, Rdraw, C, m_now, rbar_now, phi_now, B, g, bc_over_Nc, params):
+def value_update_block(Q, A, Rdraw, C, m_now, rbar_now, phi_now, B, g, bc_over_Nc, params,
+                       C_social=None):
     """Simultaneous private + retrospective-social value update (block form).
 
     All prediction errors are formed from the *pre-update* ``Q`` and applied
@@ -98,6 +142,7 @@ def value_update_block(Q, A, Rdraw, C, m_now, rbar_now, phi_now, B, g, bc_over_N
     reward mass and confidence mass.
     """
     p = params
+    C_social = C if C_social is None else C_social
     R, N, _ = Q.shape
     arms = (0, 1)
     Q_chosen = np.take_along_axis(Q, A[:, :, None], axis=2)[:, :, 0]
@@ -112,16 +157,17 @@ def value_update_block(Q, A, Rdraw, C, m_now, rbar_now, phi_now, B, g, bc_over_N
         inc[:, :, k] += self_ind * alpha * delta                       # private
         weight_k = Sf[:, :, k] - bc_over_Nc * self_ind                 # exclude self
         rmass_k = Rf[:, :, k] - bc_over_Nc * self_ind * Rdraw
-        cmass_k = Cf[:, :, k] - bc_over_Nc * self_ind * C
+        cmass_k = Cf[:, :, k] - bc_over_Nc * self_ind * C_social
         delta_soc = rmass_k - weight_k * Q[:, :, k]
         Cbar_k = cmass_k / (weight_k + p.eps_soc)
         inc[:, :, k] += p.eta * _social_lr(p, Cbar_k) * delta_soc      # social
     return np.clip(Q + inc, 0.0, 1.0)
 
 
-def value_update_dense(Q, A, Rdraw, C, W, params):
+def value_update_dense(Q, A, Rdraw, C, W, params, C_social=None):
     """Simultaneous private + retrospective-social value update (dense form)."""
     p = params
+    C_social = C if C_social is None else C_social
     R, N, _ = Q.shape
     arms = (0, 1)
     Wns = np.array(W, dtype=float, copy=True)
@@ -135,7 +181,7 @@ def value_update_dense(Q, A, Rdraw, C, W, params):
         inc[:, :, k] += Ind[:, :, k] * alpha * delta
         weight_k = np.einsum("ij,rj->ri", Wns, Ind[:, :, k])
         rmass_k = np.einsum("ij,rj->ri", Wns, Ind[:, :, k] * Rdraw)
-        cmass_k = np.einsum("ij,rj->ri", Wns, Ind[:, :, k] * C)
+        cmass_k = np.einsum("ij,rj->ri", Wns, Ind[:, :, k] * C_social)
         delta_soc = rmass_k - weight_k * Q[:, :, k]
         Cbar_k = cmass_k / (weight_k + p.eps_soc)
         inc[:, :, k] += p.eta * _social_lr(p, Cbar_k) * delta_soc
@@ -154,6 +200,7 @@ def simulate_blocks(params: Params, n_reps: int, seed: int,
     records are added when requested.
     """
     rng = np.random.default_rng(seed)
+    social_rng = np.random.default_rng(np.random.SeedSequence([seed, 0xC0DE]))
     p = params
     sizes = np.asarray(p.sizes, dtype=int)
     M, N = p.M, p.N
@@ -191,12 +238,16 @@ def simulate_blocks(params: Params, n_reps: int, seed: int,
         if t == 0:
             S = np.zeros((R, N, 2))
         else:
-            cw_prev = np.stack(
-                [(A_prev == k).astype(float) * (C_prev if p.credibility_weight else 1.0)
-                 for k in arms], axis=-1)                       # (R, N, 2)
-            phi_prev = np.stack([community_means(cw_prev[:, :, k], Csel, sizes)
-                                 for k in arms], axis=-1)        # (R, M, 2)
-            S = anticipatory_field_block(phi_prev, B, g)         # (R, N, 2)
+            if p.selectivity_chi is not None:
+                S = matched_mass_field_block(A_prev, C_prev, B, g, Csel, sizes,
+                                             p.selectivity_chi)
+            else:
+                cw_prev = np.stack(
+                    [(A_prev == k).astype(float) * (C_prev if p.credibility_weight else 1.0)
+                     for k in arms], axis=-1)
+                phi_prev = np.stack([community_means(cw_prev[:, :, k], Csel, sizes)
+                                     for k in arms], axis=-1)
+                S = anticipatory_field_block(phi_prev, B, g)
 
         # 2-3. augmented values, contrast, drift -----------------------------
         V = Q + lam * S
@@ -211,6 +262,8 @@ def simulate_blocks(params: Params, n_reps: int, seed: int,
         else:
             tau = ddm.sample_decision_time(v, p.a_thr, p.sigma, rng, p.rt_dispersion)
         C = _confidence_from_decision(p_chosen, p, np.abs(v), tau)
+        C_social = (permute_confidence_within_communities(C, g, social_rng)
+                    if p.permute_social_confidence else C)
 
         # 5. rewards ---------------------------------------------------------
         mu_A = mu[A]
@@ -220,11 +273,11 @@ def simulate_blocks(params: Params, n_reps: int, seed: int,
         Ind = np.stack([(A == k).astype(float) for k in arms], axis=-1)   # (R,N,2)
         m_now = np.stack([community_means(Ind[:, :, k], Csel, sizes) for k in arms], axis=-1)
         rbar_now = np.stack([community_means(Ind[:, :, k] * Rdraw, Csel, sizes) for k in arms], axis=-1)
-        phi_now = np.stack([community_means(Ind[:, :, k] * C, Csel, sizes) for k in arms], axis=-1)
+        phi_now = np.stack([community_means(Ind[:, :, k] * C_social, Csel, sizes) for k in arms], axis=-1)
 
         # 6-8. simultaneous private + retrospective-social value update ------
         Q = value_update_block(Q, A, Rdraw, C, m_now, rbar_now, phi_now,
-                               B, g, bc_over_Nc, p)
+                               B, g, bc_over_Nc, p, C_social=C_social)
 
         # 9. bookkeeping ------------------------------------------------------
         regret += (mu_star - mu[A]).sum(axis=1)
@@ -240,7 +293,7 @@ def simulate_blocks(params: Params, n_reps: int, seed: int,
             conf_correct.append(correct.ravel())
             conf_phase.append(phase.ravel())
 
-        A_prev, C_prev = A, C
+        A_prev, C_prev = A, C_social
 
     term_m = m_now                                  # (R, M, 2) terminal frequencies
     out = dict(term_m=term_m, regret=regret, a_star=a_star, mu_star=mu_star)
@@ -262,6 +315,7 @@ def simulate_blocks(params: Params, n_reps: int, seed: int,
 def simulate_dense(W, params: Params, n_reps: int, seed: int, record_traj: bool = False):
     """Same model on an explicit row-stochastic matrix ``W`` (O(R N^2))."""
     rng = np.random.default_rng(seed)
+    social_rng = np.random.default_rng(np.random.SeedSequence([seed, 0xC0DE]))
     p = params
     sizes = np.asarray(p.sizes, dtype=int)
     M, N = p.M, p.N
@@ -285,24 +339,29 @@ def simulate_dense(W, params: Params, n_reps: int, seed: int, record_traj: bool 
         if t == 0:
             S = np.zeros((R, N, 2))
         else:
-            cw_prev = np.stack(
-                [(A_prev == k).astype(float) * (C_prev if p.credibility_weight else 1.0)
-                 for k in arms], axis=-1)
-            S = anticipatory_field_dense(cw_prev, W)
+            if p.selectivity_chi is not None:
+                S = matched_mass_field_dense(A_prev, C_prev, W, p.selectivity_chi)
+            else:
+                cw_prev = np.stack(
+                    [(A_prev == k).astype(float) * (C_prev if p.credibility_weight else 1.0)
+                     for k in arms], axis=-1)
+                S = anticipatory_field_dense(cw_prev, W)
         V = Q + p.lam * S
         v = p.beta * (V[:, :, 0] - V[:, :, 1])
         A, p_chosen, _ = ddm.simulate_choice(v, p.a_thr, p.sigma, rng)
         A = np.where(A == 1, 0, 1)
         tau = ddm.sample_decision_time(v, p.a_thr, p.sigma, rng, p.rt_dispersion)
         C = _confidence_from_decision(p_chosen, p, np.abs(v), tau)
+        C_social = (permute_confidence_within_communities(C, g, social_rng)
+                    if p.permute_social_confidence else C)
         Rdraw = (rng.random((R, N)) < mu[A]).astype(float)
         Ind = np.stack([(A == k).astype(float) for k in arms], axis=-1)
-        Q = value_update_dense(Q, A, Rdraw, C, W, p)
+        Q = value_update_dense(Q, A, Rdraw, C, W, p, C_social=C_social)
         regret += (mu_star - mu[A]).sum(axis=1)
         if record_traj:
             traj_m[:, t + 1] = np.stack(
                 [community_means(Ind[:, :, k], Csel, sizes) for k in arms], axis=-1)
-        A_prev, C_prev = A, C
+        A_prev, C_prev = A, C_social
     m_now = np.stack([community_means(Ind[:, :, k], Csel, sizes) for k in arms], axis=-1)
     out = dict(term_m=m_now, regret=regret, a_star=a_star, mu_star=mu_star)
     if record_traj:

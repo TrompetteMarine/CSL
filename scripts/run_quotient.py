@@ -54,8 +54,12 @@ def grid(scale):
     if os.path.exists(path):
         d = np.load(path)
         disc = d["disc"].copy(); agree = d["agree"].copy(); done = d["done"].copy()
+        micro_dom = d["micro_dom"].copy() if "micro_dom" in d else np.full((ng, nl), -1, int)
+        meso_dom = d["meso_dom"].copy() if "meso_dom" in d else np.full((ng, nl), -1, int)
+        done[:] = done & np.all(micro_dom >= 0, axis=1)
     else:
         disc = np.full((ng, nl), np.nan); agree = np.full((ng, nl), np.nan)
+        micro_dom = np.full((ng, nl), -1, int); meso_dom = np.full((ng, nl), -1, int)
         done = np.zeros(ng, dtype=bool)
     t0 = time.time()
     for gi in range(ng):
@@ -72,9 +76,11 @@ def grid(scale):
             micro_reg = np.bincount(metrics.classify_regime(micro["term_m"], a),
                                     minlength=4).argmax()
             meso_reg = metrics.classify_regime(meso["term_m"][None], a)[0]
+            micro_dom[gi, li] = micro_reg; meso_dom[gi, li] = meso_reg
             agree[gi, li] = float(micro_reg == meso_reg)
         done[gi] = True
-        np.savez_compressed(path, disc=disc, agree=agree, done=done,
+        np.savez_compressed(path, disc=disc, agree=agree, micro_dom=micro_dom,
+                            meso_dom=meso_dom, done=done,
                             lams=lams, gammas=gammas)
         print(f"grid row {gi+1}/{ng} done  (mean disc so far={np.nanmean(disc):.3f})")
         if time.time() - t0 > BUDGET and not done.all():

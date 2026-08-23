@@ -125,7 +125,7 @@ def fig8_decision_confidence():
 
 # ==========================================================================
 def fig9_confidence_plasticity():
-    fig, (a1, a2, a3) = plt.subplots(1, 3, figsize=(9.8, 3.0))
+    fig, (a1, a2, a3) = plt.subplots(1, 3, figsize=(9.8, 3.45))
     C = np.linspace(0, 1, 200)
     span = P.alpha_max - P.alpha_min
 
@@ -134,38 +134,48 @@ def fig9_confidence_plasticity():
     a_neg = P.alpha_min + span * C          # bad news  (delta<0)
     a1.plot(C, a_pos, color=GREEN, label=r"positive PE ($\delta\geq0$)")
     a1.plot(C, a_neg, color=RED, label=r"negative PE ($\delta<0$)")
-    a1.fill_between(C, a_pos, a_neg, color="k", alpha=0.05)
+    low, high = C <= .5, C >= .5
+    a1.fill_between(C, a_pos, a_neg, where=low, color=GREEN, alpha=0.10,
+                    hatch="///", edgecolor=GREEN, linewidth=0,
+                    label="optimistic region")
+    a1.fill_between(C, a_pos, a_neg, where=high, color=RED, alpha=0.10,
+                    hatch="\\\\", edgecolor=RED, linewidth=0,
+                    label="revision region")
     a1.set_xlabel(r"decision confidence $C$")
     a1.set_ylabel(r"private learning rate $\alpha$")
-    a1.set_title("(a) confidence-gated plasticity")
-    a1.legend(loc="upper center", fontsize=6.6, frameon=True, framealpha=0.93,
-              edgecolor="0.8")
+    a1.set_title("(a) Confidence reverses learning priorities")
+    a1.legend(loc="upper center", bbox_to_anchor=(.5, -.18), fontsize=5.8,
+              frameon=False, ncol=2)
 
     # ---- (b) valence-asymmetry index ------------------------------------
     asym = a_neg - a_pos                      # >0 => bad news weighted more
     a2.axhline(0, color="k", lw=0.6, alpha=0.5)
     a2.plot(C, asym, color=BLUE)
-    a2.fill_between(C, 0, asym, where=asym >= 0, color=BLUE, alpha=0.12)
-    a2.fill_between(C, 0, asym, where=asym < 0, color=ORANGE, alpha=0.12)
+    a2.fill_between(C, 0, asym, where=asym >= 0, color=BLUE, alpha=0.14,
+                    hatch="///", edgecolor=BLUE, linewidth=0)
+    a2.fill_between(C, 0, asym, where=asym < 0, color=ORANGE, alpha=0.14,
+                    hatch="\\\\", edgecolor=ORANGE, linewidth=0)
+    a2.annotate("good news\nweighted more", (.05, .16), fontsize=6.2,
+                color=ORANGE, linespacing=.9)
+    a2.annotate("bad news\nweighted more", (.68, -.10), fontsize=6.2,
+                color=BLUE, linespacing=.9)
     a2.set_xlabel(r"decision confidence $C$")
-    a2.set_ylabel(r"asymmetry $\alpha^--\alpha^+$")
-    a2.set_title("(b) optimism $\\leftrightarrow$ revision")
+    a2.set_ylabel("learning-rate difference\n(negative PE minus positive PE)")
+    a2.set_title("(b) What feedback is learned faster?")
 
-    # ---- (c) social credibility weight + social LR ----------------------
-    # credibility weight of a neighbour with confidence C among peers ~U(0,1)
-    peer_mean = 0.5
-    w_rel = C / (C + peer_mean + P.eps_soc)      # relative pull vs an average peer
-    a3.plot(C, w_rel, color=BLUE, label=r"credibility weight $C/(C+\bar C)$")
+    # ---- (c) effective exposure W_ij C_j + social LR --------------------
+    Wij = 0.30
+    a3.plot(C, Wij * C, color=BLUE, label=r"exposure $W_{ij}C_j$ (example $W_{ij}=0.3$)")
     for om, ls in [(1.0, "-"), (2.0, "--")]:
         a3.plot(C, P.gamma * C**om, color=ORANGE, ls=ls,
                 label=fr"social LR $\gamma C^{{{om:.0f}}}$")
     a3.set_xlabel(r"sender confidence $C$")
     a3.set_ylabel("social transmission")
-    a3.set_title("(c) credibility as network weight")
-    a3.legend(loc="lower right", fontsize=6.6, frameon=True, framealpha=0.93,
-              edgecolor="0.8")
+    a3.set_title("(c) Confidence strengthens social influence")
+    a3.legend(loc="upper center", bbox_to_anchor=(.5, -.18), fontsize=5.7,
+              frameon=False, ncol=1)
 
-    fig.tight_layout()
+    fig.tight_layout(rect=(0, .10, 1, 1))
     for ext in ("pdf", "png"):
         fig.savefig(f"{common.FIGDIR}/fig9_confidence_plasticity.{ext}", dpi=300)
     plt.close(fig)
@@ -191,10 +201,9 @@ def fig_plasticity_quant():
     a1.set_title("(a) confidence-gated learning rate")
     a1.legend(loc="center right", fontsize=8, frameon=True, framealpha=0.93, edgecolor="0.8")
 
-    # (b) credibility weight + social learning rate
-    peer_mean = 0.5
-    w_rel = C / (C + peer_mean + P.eps_soc)
-    a2.plot(C, w_rel, color=BLUE, label=r"credibility weight $C/(C+\bar C)$")
+    # (b) effective exposure + social learning rate
+    Wij = 0.5
+    a2.plot(C, Wij * C, color=BLUE, label=r"effective exposure $W_{ij}C_j$")
     for om, ls in [(1.0, "-"), (2.0, "--")]:
         a2.plot(C, P.gamma * C**om, color=ORANGE, ls=ls, label=fr"social LR $\gamma C^{{{om:.0f}}}$")
     a2.set_xlabel(r"sender confidence $C$")

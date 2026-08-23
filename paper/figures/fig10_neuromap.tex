@@ -43,9 +43,9 @@
 \node[mq] (m5) at (0,\yE) {$\alpha(C)$ \scriptsize(valence-gated)};
 \node[cp] (c5) at (4.7,\yE){confidence-modulated\\plasticity / gain};
 \node[ns] (n5) at (9.6,\yE){cholinergic\,/\,noradrenergic\\[-2pt]\scriptsize neuromodulation};
-% row 6 -- social credibility
-\node[mq] (m6) at (0,\yF) {$w_i=C_i/\textstyle\sum_j C_j$};
-\node[cp] (c6) at (4.7,\yF){credibility-weighted\\\emph{social} prediction error};
+% row 6 -- social credibility (confidence enters exposure and gain, not delta_soc)
+\node[mq] (m6) at (0,\yF) {$W_{ij}C_{j,t}$; $g(\bar C_{i,t}(a))$};
+\node[cp] (c6) at (4.7,\yF){social prediction error\\$\delta^{\rm soc}$, then confidence-modulated gain};
 \node[ns] (n6) at (9.6,\yF){dmPFC, TPJ, pACC\\[-2pt]\scriptsize (other-referenced signals)};
 
 \foreach \i in {1,...,6}{\draw[ar] (m\i) -- (c\i); \draw[ar] (c\i) -- (n\i);}

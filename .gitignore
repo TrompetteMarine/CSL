@@ -35,3 +35,11 @@ results/
 # OS
 .DS_Store
 Thumbs.db
+
+# paper 
+paper/endogeenous_credibility.bib
+paper/endogeenous_credibility.pdf
+paper/endogeenous_credibility.tex
+
+# reports
+reports/ 

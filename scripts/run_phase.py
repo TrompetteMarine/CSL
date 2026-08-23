@@ -14,8 +14,14 @@ import numpy as np
 import common
 from credibility import scenarios, metrics
 from credibility.model import simulate_blocks
+from credibility.uncertainty import wilson_interval
 
 BUDGET = float(os.environ.get("ECSL_BUDGET", "1e9"))   # per-invocation wall budget
+
+
+def cell_seed(gi, li):
+    """Stable historical mapping; independent of resume order."""
+    return 700 + int(gi) * 100 + int(li)
 
 
 def main():
@@ -34,8 +40,14 @@ def main():
         cell_done = np.zeros((ng, nl), dtype=bool)
 
     def _save():
+        counts = np.rint(P * reps)
+        CI = np.full((*P.shape, 2), np.nan)
+        for idx in np.ndindex(P.shape):
+            if np.isfinite(counts[idx]):
+                CI[idx] = wilson_interval(counts[idx], reps)
         np.savez_compressed(path, P=P, done=done, cell_done=cell_done,
-                            lams=lams, gammas=gammas, reps=reps, scale=scale)
+                            counts=counts, wilson=CI, lams=lams, gammas=gammas,
+                            reps=reps, scale=scale)
 
     t0 = time.time()
     for gi in range(ng):
@@ -45,7 +57,7 @@ def main():
             if cell_done[gi, li]:
                 continue
             p = base.replace(lam=float(lams[li]), b_self=float(1 - gammas[gi]))
-            out = simulate_blocks(p, n_reps=reps, seed=700 + gi * 100 + li)
+            out = simulate_blocks(p, n_reps=reps, seed=cell_seed(gi, li))
             fr = metrics.regime_frequencies(out["term_m"], out["a_star"])
             P[gi, li] = [fr["efficient"], fr["wrong"], fr["polarised"], fr["unresolved"]]
             cell_done[gi, li] = True
@@ -59,6 +71,7 @@ def main():
         _save()
         print(f"phase row {gi+1}/{ng} (Gamma={gammas[gi]:.3f}) done; "
               f"{int(done.sum())}/{ng} rows complete")
+    _save()
     print(f"ALL DONE: phase_{scale}.npz  ({ng}x{nl} grid, {reps} reps/cell)")
 
 

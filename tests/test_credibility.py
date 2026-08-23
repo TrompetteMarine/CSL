@@ -26,7 +26,9 @@ from credibility.model import (
     value_update_block, value_update_dense,
     anticipatory_field_block, anticipatory_field_dense,
     community_onehot, community_means,
+    matched_mass_field_dense, permute_confidence_within_communities,
 )
+from credibility import meanfield
 from credibility.network import balanced_block_W, make_membership, two_community_B
 
 
@@ -313,3 +315,43 @@ def test_meanfield_basin_probabilities():
     assert np.allclose(pr.sum(axis=1), 1.0)
     assert pr[0, 0] > 0.9            # corrective below threshold
     assert pr[1, 2] > 0.5            # distortive dominates above threshold
+
+
+def test_matched_mass_selectivity_identities():
+    rng = np.random.default_rng(41)
+    W, _ = balanced_block_W((4, 5), two_community_B(0.8))
+    A = rng.integers(0, 2, (3, 9)); C = rng.uniform(1e-14, 1, (3, 9))
+    baseline = anticipatory_field_dense(
+        np.stack([(A == k) * C for k in (0, 1)], axis=-1), W)
+    assert np.allclose(matched_mass_field_dense(A, C, W, 1.0), baseline)
+    mass = np.einsum("ij,rj->ri", W, C)
+    for chi in (0, .25, 1, 2):
+        S = matched_mass_field_dense(A, C, W, chi)
+        assert np.allclose(S.sum(axis=2), mass)
+    S0 = matched_mass_field_dense(A, C, W, 0)
+    action_share = np.stack([np.einsum("ij,rj->ri", W, A == k) for k in (0, 1)], -1)
+    assert np.allclose(S0 / mass[:, :, None], action_share)
+
+
+def test_social_confidence_permutation_is_seeded_and_preserves_marginals():
+    C = np.arange(24, dtype=float).reshape(2, 12) / 24
+    g = np.repeat([0, 1], 6)
+    a = permute_confidence_within_communities(C, g, np.random.default_rng(8))
+    b = permute_confidence_within_communities(C, g, np.random.default_rng(8))
+    assert np.array_equal(a, b) and not np.array_equal(a, C)
+    for r in range(2):
+        for c in (0, 1):
+            assert np.array_equal(np.sort(a[r, g == c]), np.sort(C[r, g == c]))
+
+
+def test_two_community_mode_theory():
+    p = Params(sizes=(4, 4), b_self=.85)
+    assert np.allclose(np.linalg.eigvals(p.coupling()), [1, .7])
+    m = meanfield.two_community_modes(p)
+    vals = [.5 * m["lambda_star"],
+            .5 * (m["lambda_star"] + m["lambda_relative_star"]),
+            1.1 * m["lambda_relative_star"]]
+    labels = [meanfield.two_community_modes(p, x)["classification"] for x in vals]
+    assert labels == ["both modes damped",
+                      "common amplified; relative mode damped",
+                      "common and relative modes amplified"]

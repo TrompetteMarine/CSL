@@ -110,16 +110,68 @@ def _ic(p, kind):
 
 
 def lambda_star(p):
-    """Symmetric-mode amplification threshold sigma^2 / (beta a C0 b_bar).
-
-    The coupling B is row-stochastic, so for a *common* early lead the effective
-    neighbour weight is the row sum b_bar = 1 (as in Proposition 3); permeability
-    Gamma enters only the anti-symmetric/polarised modes.
-    """
+    """Common-mode threshold ``sigma^2 / (beta * a * C0)``."""
     tau0 = ddm.mean_fpt(np.array(0.0), p.a_thr, p.sigma)
     C0 = float(expit(p.kappa1 * 0.0 / p.a_thr - p.kappa2 * np.log1p(float(tau0) / p.tau0)))
-    b_bar = 1.0
-    return p.sigma ** 2 / (p.beta * p.a_thr * C0 * b_bar), C0
+    return p.sigma ** 2 / (p.beta * p.a_thr * C0), C0
+
+
+def two_community_modes(p, lam=None, tol=1e-12):
+    """Thresholds and local multipliers for symmetric two-community ``B``."""
+    B = p.coupling()
+    if B.shape != (2, 2) or not np.allclose(B, B.T) or not np.allclose(B.sum(1), 1):
+        raise ValueError("two_community_modes requires symmetric row-stochastic 2x2 B")
+    lstar, C0 = lambda_star(p)
+    gamma = float(B[0, 1])
+    xi_minus = 1.0 - 2.0 * gamma
+    lrel = np.inf if abs(xi_minus) <= tol else lstar / abs(xi_minus)
+    lam = p.lam if lam is None else float(lam)
+    rho_plus = lam / lstar
+    rho_minus = rho_plus * xi_minus
+    if rho_plus < 1 and abs(rho_minus) < 1:
+        classification = "both modes damped"
+    elif rho_plus > 1 and abs(rho_minus) < 1:
+        classification = "common amplified; relative mode damped"
+    elif rho_plus > 1 and abs(rho_minus) > 1:
+        classification = "common and relative modes amplified"
+    else:
+        classification = "on a local threshold"
+    return dict(C0=C0, Gamma=gamma, lambda_star=lstar,
+                lambda_relative_star=lrel, rho_plus=rho_plus,
+                rho_minus=rho_minus, classification=classification)
+
+
+def amplification_jacobian(z, p, lam, h=1e-6):
+    """Finite-difference Jacobian of the frozen-value lead map at ``z``."""
+    z = np.asarray(z, float)
+    B = p.coupling()
+    J = np.empty((z.size, z.size))
+    for j in range(z.size):
+        dz = np.zeros_like(z); dz[j] = h
+        J[:, j] = (_amp_step(z + dz, p, lam, B) -
+                   _amp_step(z - dz, p, lam, B)) / (2 * h)
+    return J
+
+
+def amplification_fixed_points(p, lam, seeds=None):
+    """Solve and classify all fixed points reached from a compact seed grid."""
+    from scipy.optimize import root
+    if seeds is None:
+        grid = np.linspace(-0.49, 0.49, 7)
+        seeds = np.array(np.meshgrid(*([grid] * p.M))).reshape(p.M, -1).T
+    B = p.coupling()
+    points = []
+    for seed in seeds:
+        sol = root(lambda z: _amp_step(z, p, lam, B) - z, seed)
+        if not sol.success or np.max(np.abs(sol.fun)) > 1e-8:
+            continue
+        z = np.clip(sol.x, -0.5, 0.5)
+        if any(np.allclose(z, old["z"], atol=1e-6) for old in points):
+            continue
+        eig = np.linalg.eigvals(amplification_jacobian(z, p, lam))
+        points.append(dict(z=z, eigenvalues=eig,
+                           stable=bool(np.max(np.abs(eig)) < 1.0)))
+    return sorted(points, key=lambda x: tuple(x["z"]))
 
 
 def infection_terminal(p, lams, z_seed=-0.05):

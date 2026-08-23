@@ -1,7 +1,7 @@
 # CSL — Cognitive Social Learning
 
 Reference implementation and replication package for
-**"Endogenous Credibility in Social Learning."**
+**"Decision-Generated Credibility in Social Learning."**
 
 Confidence is generated endogenously by a drift–diffusion decision process and
 then acts as a *credibility* weight in social transmission. Because confidence
@@ -122,10 +122,11 @@ the drift magnitude and decision time give an endogenous confidence
 `C = σ(κ₁|v|/a − κ₂ log(1+τ/τ₀))`. Confidence gates plasticity two ways: it sets
 a valence-asymmetric private learning rate (optimistic when low, revision-driven
 when high), and it weights social transmission through an anticipatory field and
-a retrospective social prediction error, with credibility weight
-`wᵢ = Cᵢ / Σⱼ Cⱼ`. On balanced community blocks the dynamics admit an exact
+a retrospective social prediction error. Effective anticipatory exposure from
+sender `j` to receiver `i` is `Wᵢⱼ Cⱼ`. On balanced community blocks the dynamics admit an exact
 low-dimensional quotient; the local amplification threshold
-`λ⋆ = σ²/(βa C₀ b̄)` marks where an early confident lead locks in. See the
+`λ⋆ = σ²/(βa C₀)` marks where the common network mode becomes locally
+amplified; relative modes depend on coupling-matrix eigenvalues. See the
 manuscript for definitions, propositions (proofs in Appendix A), the
 identification strategy, and the neuroeconomic reading.
 
