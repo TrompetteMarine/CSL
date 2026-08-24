@@ -178,33 +178,35 @@ def fig5_confidence():
 def fig6_quotient():
     from collections import deque
     dg = _load("quotient_grid")
-    fig, axes = plt.subplots(2, 2, figsize=(8.2, 6.1))
-    from matplotlib.colors import ListedColormap
-    regime_names = ["efficient", "wrong", "polarised", "unresolved"]
-    regime_cmap = ListedColormap([REG_COLOR[n] for n in regime_names])
+    dt = _load("quotient_traj")
+    fig, axes = plt.subplots(1, 3, figsize=(10.2, 3.35))
     lams, gammas = dg["lams"], dg["gammas"]
     ext = [lams.min(), lams.max(), gammas.min(), gammas.max()]
-    mismatch = dg["micro_dom"] != dg["meso_dom"]
 
-    # (a,b) Direct visual comparison of benchmark and quotient regime maps.
-    for ax, arr, title in [
-        (axes[0, 0], dg["micro_dom"], "(a) Agent simulations define the benchmark"),
-        (axes[0, 1], dg["meso_dom"],
-         f"(b) The quotient differs in {mismatch.sum()} of {mismatch.size} cells"),
-    ]:
-        ax.imshow(arr, origin="lower", extent=ext, aspect="auto",
-                  cmap=regime_cmap, vmin=0, vmax=3, interpolation="nearest")
-        ax.set_xlabel(r"social influence $\lambda$"); ax.grid(False)
-        ax.set_title(title, fontsize=8.5)
-    axes[0, 0].set_ylabel(r"permeability $\Gamma$")
-    gi, li = np.where(mismatch)
-    axes[0, 1].scatter(lams[li], gammas[gi], marker="x", s=18, color="black",
-                       linewidth=.75, label="different regime", zorder=3)
-    axes[0, 1].legend(loc="upper right", fontsize=5.8, frameon=True,
-                      facecolor="white", edgecolor=".8")
+    # (a) Region of validity: continuous error, not another phase classification.
+    ax = axes[0]
+    error_pp = 100 * dg["disc"]
+    base_cmap = matplotlib.colormaps["cividis"]
+    soft_cividis = matplotlib.colors.LinearSegmentedColormap.from_list(
+        "soft_cividis", base_cmap(np.linspace(.14, .86, 256)))
+    im = ax.imshow(error_pp, origin="lower", extent=ext, aspect="auto",
+                   cmap=soft_cividis, interpolation="bilinear")
+    contour_colors = ["#f7f7f2", "#4aa3a2", "#c7923e"]
+    cs = ax.contour(lams, gammas, error_pp, levels=[1, 5, 10],
+                    colors=contour_colors, linewidths=1.05)
+    from matplotlib.lines import Line2D
+    ax.legend(handles=[Line2D([0], [0], color=c, lw=1.3, label=f"{v} pp contour")
+                       for v, c in zip([1, 5, 10], contour_colors)],
+              loc="upper right", frameon=True, facecolor="white", edgecolor=".78",
+              fontsize=5.7)
+    ax.set_xlabel(r"social influence $\lambda$")
+    ax.set_ylabel(r"permeability $\Gamma$")
+    ax.set_title("(a) Where is the quotient accurate?", fontsize=8.5)
+    ax.grid(False)
+    cb = fig.colorbar(im, ax=ax, fraction=.046, pad=.035)
+    cb.set_label("endpoint error (pp)", fontsize=7)
 
-    # (c) Quantify reliability by distance from a micro-model regime boundary.
-    ax = axes[1, 0]
+    # Distance from an agent-model regime boundary, used to stratify the skill curve.
     regime = dg["micro_dom"]
     dist = np.full(regime.shape, -1, int); queue = deque()
     for i, j in np.ndindex(regime.shape):
@@ -218,37 +220,45 @@ def fig6_quotient():
             ii, jj = i + di, j + dj
             if 0 <= ii < dist.shape[0] and 0 <= jj < dist.shape[1] and dist[ii, jj] < 0:
                 dist[ii, jj] = dist[i, j] + 1; queue.append((ii, jj))
-    masks = [dist <= 1, dist == 2, dist >= 3]
-    labels = ["boundary or adjacent", "interior", "deep interior"]
-    agreement = 100 * np.array([np.mean(dg["agree"][m]) for m in masks])
-    counts = [int(m.sum()) for m in masks]
-    colors = [plotstyle.PALETTE["orange"], REG_COLOR["efficient"], REG_COLOR["efficient"]]
-    y = np.arange(3)
-    for yi, value, col in zip(y, agreement, colors):
-        ax.hlines(yi, 0, value, color=".72", lw=1.1, zorder=1)
-        ax.plot(value, yi, "o", color=col, ms=7, mec="white", mew=.7, zorder=2)
-    for yi, value, n in zip(y, agreement, counts):
-        ax.text(min(value + 2, 102), yi, f"{value:.0f}%", color=".15",
-                fontsize=7.2, weight="bold", ha="left", va="center")
-        ax.text(2, yi + .17, f"N = {n} cells", fontsize=5.8, color=".4", va="bottom")
-    ax.set_yticks(y); ax.set_yticklabels(labels); ax.invert_yaxis()
-    ax.set_ylim(2.4, -.4)
-    ax.set_xlim(0, 105); ax.set_xlabel("same predicted regime (%)")
-    ax.set_title("(c) Agreement rises from 71% to 100% inside regimes", fontsize=8.1)
+    # (b) Empirical skill curves answer how often a claimed tolerance is met.
+    ax = axes[1]
+    masks = [dist <= 1, dist >= 2]
+    labels = ["boundary / adjacent", "interior (at least 2 grid steps)"]
+    colors = ["#b2182b", "#2a7a36"]
+    xmax = min(30, np.ceil(np.percentile(error_pp, 90) / 5) * 5)
+    tolerances = np.linspace(0, xmax, 301)
+    for mask, label, color in zip(masks, labels, colors):
+        values = error_pp[mask]
+        share = 100 * np.array([(values <= x).mean() for x in tolerances])
+        ax.step(tolerances, share, where="post", color=color, lw=1.7,
+                label=f"{label} ($N={values.size}$)")
+    ax.axvline(5, color=".35", lw=.8, ls=":")
+    ax.text(5.4, 5, "5 pp tolerance", fontsize=6.2, color=".35", rotation=90,
+            va="bottom")
+    ax.set(xlabel="tolerated endpoint error (pp)", ylabel="grid cells within tolerance (%)",
+           xlim=(0, xmax), ylim=(0, 101))
+    ax.set_title("(b) How often is that accuracy achieved?", fontsize=8.5)
+    ax.legend(loc="lower right", frameon=False, fontsize=6.1)
 
-    # (d) Locate the endpoint error and the agent-model regime transitions.
-    axd = axes[1, 1]
-    disc = dg["disc"]
-    im = axd.imshow(100 * disc, origin="lower", extent=ext, aspect="auto", cmap="magma")
-    axd.set_title("(d) Endpoint errors peak along the transition region", fontsize=8.3)
-    axd.set_xlabel(r"social influence $\lambda$"); axd.set_ylabel(r"permeability $\Gamma$"); axd.grid(False)
-    cb = fig.colorbar(im, ax=axd, fraction=0.046, pad=0.04)
-    cb.set_label("endpoint error (percentage points)", fontsize=7.2)
-    fig.suptitle("The community model is reliable away from regime boundaries", fontsize=10.5)
-    fig.legend(handles=[Patch(facecolor=REG_COLOR[n], label=n) for n in regime_names],
-               loc="lower center", bbox_to_anchor=(.5, .005), ncol=4,
-               frameon=False, fontsize=6.3)
-    fig.tight_layout(rect=(0, .055, 1, .97))
+    # (c) Dynamic error supplies the temporal information absent from phase maps.
+    ax = axes[2]
+    series = []
+    for name, label, color in [("efficient", "efficient consensus", "#2a7a36"),
+                               ("wrong", "wrong consensus", "#b2182b")]:
+        err = 100 * np.mean(np.abs(dt[f"{name}_micro_mean"] - dt[f"{name}_meso"]), axis=1)
+        series.append((err, label, color))
+    series.append((100 * np.mean(np.abs(dt["many_micro_mean"] - dt["many_meso"]), axis=1),
+                   "four-community stress test", plotstyle.PALETTE["purple"]))
+    for err, label, color in series:
+        ax.plot(np.arange(err.size), np.maximum(err, .01), color=color, lw=1.55, label=label)
+    ax.axhline(5, color=".25", lw=.85, ls=":", label="5 pp tolerance")
+    ax.set_yscale("log")
+    ax.set(xlabel="trial $t$", ylabel="mean absolute error (pp)", ylim=(.01, 30))
+    ax.set_title("(c) How does approximation error evolve?", fontsize=8.5)
+    ax.legend(loc="upper right", frameon=False, fontsize=5.9)
+
+    fig.suptitle("Validation of the community-level approximation", fontsize=10.5)
+    fig.tight_layout(rect=(0, 0, 1, .94))
     _save(fig, "fig6_quotient")
 
 
