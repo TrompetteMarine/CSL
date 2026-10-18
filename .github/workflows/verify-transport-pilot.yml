@@ -1,0 +1,30 @@
+name: Verify replication transport pilot
+on:
+  push:
+    branches: [replication-release-20261018]
+    paths: [replication_pilot_manifest.json]
+permissions:
+  contents: read
+jobs:
+  verify:
+    if: github.repository == 'TrompetteMarine/CSL' && github.ref == 'refs/heads/replication-release-20261018'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Retrieve and verify one unreferenced data blob
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import base64, hashlib, json, os, urllib.request
+          sha = '5366a5bcc58b142118e75939ab40a44d5d115c67'
+          req = urllib.request.Request('https://api.github.com/repos/TrompetteMarine/CSL/git/blobs/' + sha, headers={'Authorization':'Bearer ' + os.environ['GH_TOKEN'], 'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'})
+          with urllib.request.urlopen(req, timeout=90) as response:
+              value = json.load(response)
+          assert value['encoding'] == 'base64' and value['sha'] == sha
+          data = base64.b64decode(value['content'])
+          assert len(data) == 600000
+          assert hashlib.sha256(data).hexdigest() == '7969dcc8596d37e14d8e7ce563035cd9e8f55844d4d668d4cc1903a849703932'
+          assert hashlib.sha1(b'blob 600000\x00' + data).hexdigest() == sha
+          print('Verified 600000-byte unreferenced Git blob. Transport pilot passed.')
+          PY
