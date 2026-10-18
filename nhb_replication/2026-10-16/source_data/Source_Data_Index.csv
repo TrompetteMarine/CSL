@@ -1,0 +1,15 @@
+figure,figure_file,workbook,sheets,rows,source_files
+F3,main02_two_communities.pdf,outputs/nhb_20261016/Fig_3_Source_Data.xlsx,10,63409,8
+F4,main03_size_geometry.pdf,outputs/nhb_20261016/Fig_4_Source_Data.xlsx,5,2077,3
+F5,main04_private_withdrawal.pdf,outputs/nhb_20261016/Fig_5_Source_Data.xlsx,11,126229,9
+F6,main05_many_communities.pdf,outputs/nhb_20261016/Fig_6_Source_Data.xlsx,5,355,3
+S1,supp06_two_initialisations.pdf,outputs/nhb_20261016/Supplementary_Fig_1_Source_Data.xlsx,5,586,3
+S2,supp01_graph_diagnostics.pdf,outputs/nhb_20261016/Supplementary_Fig_2_Source_Data.xlsx,4,376,2
+S3,supp03_expanded_geometry.pdf,outputs/nhb_20261016/Supplementary_Fig_3_Source_Data.xlsx,5,811,3
+S4,supp04_choice_degree.pdf,outputs/nhb_20261016/Supplementary_Fig_4_Source_Data.xlsx,5,754,3
+S5,supp05_scaling.pdf,outputs/nhb_20261016/Supplementary_Fig_5_Source_Data.xlsx,5,586,3
+S6,supp02_controls.pdf,outputs/nhb_20261016/Supplementary_Fig_6_Source_Data.xlsx,5,586,3
+S7,supp07_many_detail.pdf,outputs/nhb_20261016/Supplementary_Fig_7_Source_Data.xlsx,5,1132,3
+S8,supp08_score_response.pdf,outputs/nhb_20261016/Supplementary_Fig_8_Source_Data.xlsx,5,2284,3
+S10,supp10_noise_propagation.pdf,outputs/nhb_20261016/Supplementary_Fig_10_Source_Data.xlsx,8,21738,6
+Statistical tables,,outputs/nhb_20261016/Statistical_Comparisons_Source_Data.xlsx,9,4470,7

@@ -1,0 +1,54 @@
+[
+  {
+    "figure": "main02_two_communities",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "main03_size_geometry",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "main04_private_withdrawal",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "main05_many_communities",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "supp01_graph_diagnostics",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "supp02_controls",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "supp03_expanded_geometry",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "supp04_choice_degree",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "supp05_scaling",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "supp06_two_initialisations",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "supp07_many_detail",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "supp08_score_response",
+    "text_collision_candidates": []
+  },
+  {
+    "figure": "supp10_noise_panels",
+    "text_collision_candidates": []
+  }
+]

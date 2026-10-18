@@ -1,0 +1,10 @@
+{
+  "all_passed": true,
+  "raw_array_main_table_max_error": 5.684341886080802e-14,
+  "exact_four_agent_enumeration_covariance_max_error": 2.7755575615628914e-17,
+  "endpoint_rows": 1328,
+  "paired_rows": 42,
+  "pointwise_curve_rows": 9000,
+  "original_arrays_changed": false,
+  "main_table_comparison": "Independent reconstruction directly from raw paths and terminal scores, without using audit CSV values."
+}

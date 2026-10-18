@@ -1,0 +1,29 @@
+⚠ [2079/2231] Replayed RepairTasks.Analysis
+warning: RepairTasks/Analysis.lean:30:12: This simp argument is unused:
+  sigmoid
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵s̵i̵g̵m̵o̵i̵d̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RepairTasks/Analysis.lean:29:70: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: RepairTasks/Analysis.lean:30:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: RepairTasks/Analysis.lean:32:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: RepairTasks/Analysis.lean:59:15: unused variable `hLU`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RepairTasks/Analysis.lean:102:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: RepairTasks/Analysis.lean:109:29: unused variable `hr`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [2745/2747] Built RepairSupplement.PeerRegularity (9.2s)
+✔ [2746/2747] Built RepairSupplement (2.1s)
+Build completed successfully (2747 jobs).

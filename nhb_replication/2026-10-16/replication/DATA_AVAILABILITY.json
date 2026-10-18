@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "repository": "TrompetteMarine/CSL",
+  "snapshot": "2026.10.16",
+  "publication_date": "2026-10-18",
+  "code_status": "All executable simulation, analysis, figure-builder, workbook-builder, Lean and audit source files are included in Git.",
+  "figures_status": "All final main and supplementary figure assets and standalone TikZ sources are included in Git.",
+  "workbooks_status": "12 of 14 frozen workbooks are included in Git; Fig_3 and Fig_5 workbooks remain in the complete prepared package.",
+  "raw_archives_status": "Four separate replication archives have been prepared but no GitHub data release is claimed.",
+  "deferred_source_files": [
+    {
+      "path": "audit/f0008_precision_replay.npz",
+      "bytes": 738118,
+      "sha256": "ac8d45f374ee8a88f403a39bb6bd608d4acdd4bd3bcbdc84ebcc45dfdea249d3",
+      "git_sha1": "e9e0d253ee7c6cf3884449a40bd70bf8be099a53",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "figures/source_exports/main02_two_communities_trajectory_intervals.csv",
+      "bytes": 620955,
+      "sha256": "a8b6530e035e56ec4fd08cce74d359eddc7cdb01dabd2121492109c744d88792",
+      "git_sha1": "3d0df7c759fca2b7eec140a78abdfbab22af43ac",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "figures/source_exports/main02_two_communities_trajectory_population_values.csv",
+      "bytes": 2472915,
+      "sha256": "a8c557af091b4665d617441cc893d6a0a200c9134e000c770fa3d7d7247f2d8f",
+      "git_sha1": "b33fc099d647fefb164dfc1e83d2a939ad465024",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "figures/source_exports/main04_private_withdrawal_trajectory_batch_means.csv",
+      "bytes": 1405829,
+      "sha256": "de8c3a85165d67119194dfbbe60eaee00b53e848651be165bd88f7cd71007e47",
+      "git_sha1": "218d16578694e44b539cf5eaa6d7b13dc2622930",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "figures/source_exports/main04_private_withdrawal_trajectory_intervals.csv",
+      "bytes": 1270442,
+      "sha256": "5d8c32bab3a01a7693312fa86094fd45da31016712f13d0eea8272efbaa07d51",
+      "git_sha1": "951860362fc72d6d03d752d5e1a91baf836d5a8f",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "figures/source_exports/main04_private_withdrawal_trajectory_population_values.csv",
+      "bytes": 5712862,
+      "sha256": "bae74f36f53a228c9726b61e0aaa95a320208c4f5ef459c737f844f624077f28",
+      "git_sha1": "595d46c34d47b1fac2cced09a37775804a5d1114",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "source_data/outputs/nhb_20261016/Fig_3_Source_Data.xlsx",
+      "bytes": 2000115,
+      "sha256": "9d342a3f835adc444f490b1969e66b3cbbbac43b52970ba21b4a68b6006b8b26",
+      "git_sha1": "7e246995d0b055aecf0ee683db8f75cb1c02a997",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "source_data/outputs/nhb_20261016/Fig_5_Source_Data.xlsx",
+      "bytes": 4068859,
+      "sha256": "05dc004675f2fb0159195c240b22c9041831838769e93294427f085c31f979ae",
+      "git_sha1": "283dda64ce9c19295f246596e631ee5c562e433f",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "source_data/raw_csv/figures/source_exports/main02_two_communities_trajectory_intervals.csv",
+      "bytes": 620955,
+      "sha256": "a8b6530e035e56ec4fd08cce74d359eddc7cdb01dabd2121492109c744d88792",
+      "git_sha1": "3d0df7c759fca2b7eec140a78abdfbab22af43ac",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "source_data/raw_csv/figures/source_exports/main02_two_communities_trajectory_population_values.csv",
+      "bytes": 2472915,
+      "sha256": "a8c557af091b4665d617441cc893d6a0a200c9134e000c770fa3d7d7247f2d8f",
+      "git_sha1": "b33fc099d647fefb164dfc1e83d2a939ad465024",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "source_data/raw_csv/figures/source_exports/main04_private_withdrawal_trajectory_batch_means.csv",
+      "bytes": 1405829,
+      "sha256": "de8c3a85165d67119194dfbbe60eaee00b53e848651be165bd88f7cd71007e47",
+      "git_sha1": "218d16578694e44b539cf5eaa6d7b13dc2622930",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "source_data/raw_csv/figures/source_exports/main04_private_withdrawal_trajectory_intervals.csv",
+      "bytes": 1270442,
+      "sha256": "5d8c32bab3a01a7693312fa86094fd45da31016712f13d0eea8272efbaa07d51",
+      "git_sha1": "951860362fc72d6d03d752d5e1a91baf836d5a8f",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "source_data/raw_csv/figures/source_exports/main04_private_withdrawal_trajectory_population_values.csv",
+      "bytes": 5712862,
+      "sha256": "bae74f36f53a228c9726b61e0aaa95a320208c4f5ef459c737f844f624077f28",
+      "git_sha1": "595d46c34d47b1fac2cced09a37775804a5d1114",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "source_data/workbook_inputs.json",
+      "bytes": 16626141,
+      "sha256": "a625171618c0034aacb52f41a04e1b6de5df04d938f7374966da4deaf4f4971a",
+      "git_sha1": "90f683c0d356ec5b02dccd45e1db05ee03837ab0",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "statistics/trajectory_batch_means.csv",
+      "bytes": 2002494,
+      "sha256": "6acb582820e343c7408ffc89b717040dc86afe8e6e0b7885d38c445bbf0d1dcc",
+      "git_sha1": "1311831ea2fccbb9b4945dbae9adfa5a4a0eec7c",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "statistics/trajectory_intervals.csv",
+      "bytes": 1925631,
+      "sha256": "40c4e61d299596fe8e53387a920bf3032f97b9d2f6cfaf5ded0c6d0eb75e67b3",
+      "git_sha1": "843d0a083e95ce10442100f706559f71e2dff5a3",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    },
+    {
+      "path": "statistics/trajectory_population_values.csv",
+      "bytes": 8192042,
+      "sha256": "f407d911816a88c7559b91f978c14ccf02bb360ee8412f28ac08d5999ce21a03",
+      "git_sha1": "c9a70768f9b9be9986637afb19c2d430daf8bb51",
+      "github_status": "pending_large_derived_data_upload",
+      "complete_prepared_package": "included"
+    }
+  ],
+  "complete_snapshot_manifest": "source_manifest.json",
+  "git_subset_manifest": "git_source_manifest.json",
+  "restoration": "Copy deferred files from the complete author-supplied CSL replication ZIP into these exact paths. Use --full-source to verify the complete source snapshot, in addition to restoring raw archives separately."
+}

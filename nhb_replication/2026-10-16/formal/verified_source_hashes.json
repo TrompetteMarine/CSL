@@ -1,0 +1,20 @@
+{
+  "project/CoreAxioms.lean": "19a7f5a0ef56328eba177632b95b3aabfec19549cd238387401a553d471e1e87",
+  "project/ReviewAllTypes.lean": "e06714fb2865d69da5c72345d885a4afe6e2916917a28821d9b380ee447c4f89",
+  "project/RepairTasks.lean": "aa98c546baae7003b11d7e412890ef363e020a4bdf3873745a82c3529fce8226",
+  "project/RepairSupplement.lean": "25a6b3773322273ec4c1901b3faef64d7353785dd82c2ec5a70705e74959847e",
+  "project/ReviewAllAxioms.lean": "770d625a8f54c386fcdbd71e382066079e93ef921da5b98148968dfe3e568659",
+  "project/TaskAxioms.lean": "b1749af75a8be3323b04c9f8ff7603b688c83638c4472e44c8f5a09daee4c6cf",
+  "project/RepairProb.lean": "73dbc3f0f40ea54e3775fe23a8e7b379523a4eb79f3093660cabeb412676edf4",
+  "project/RepairCore.lean": "6049fed66e45595767b4134dad5cb2fcff5933e896d438d08a694457a6ff900d",
+  "project/ProbAxioms.lean": "968157c0b8b22e9c7d42380211282e587ef8bf5a33b123090b7b957d6c4f3fee",
+  "project/RepairCore/Algebra.lean": "09b9a3a99297b3dd7fad2e302a8441259e2a1b9c0c8d8b11262b1a3d5b759cb6",
+  "project/RepairProb/P2.lean": "d910d6f589ff1e51dba0220f5a5305aa25cce201a0581b1a1e28c1317eab5243",
+  "project/RepairProb/Supplement.lean": "fda3c6153f98f972e0273235defb1596252278abaad2fc56e9b5bb0f734cdc9e",
+  "project/RepairProb/P3.lean": "a29649a9f61c1188ff06890202980653a556f9647ea0debccc1a2577e67a0a06",
+  "project/RepairProb/P1.lean": "caf3bce3488983a95656d786c5475014d157fab43ee1606bd05af8bcc905b9cd",
+  "project/RepairSupplement/LimitsAux.lean": "aeb96e043e0b33562f0a1ab50eb6d81c8bc986b4531fd9e2025fd7c369f2b99c",
+  "project/RepairSupplement/Finite.lean": "1004734542bf09a75b54eb32da3f1fd3f471c77916a6e4b16094a4019ce58845",
+  "project/RepairSupplement/PeerRegularity.lean": "c7a944cd2ec295592ff4de55d960cbfefe09ad47d1a789d0f787355f25315622",
+  "project/RepairTasks/Analysis.lean": "c3da9a219ed6102fbe03ab0a30dbd1d71443ff0db6913a3fceabd6bf4579b352"
+}

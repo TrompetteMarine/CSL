@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "scope": "Original twenty proof signatures, model definitions, import/namespace preambles and exact git pins. Token-level source comparison is conservative and is not a complete semantic equivalence checker. Additional modules require separate review.",
+  "lean_toolchain": "leanprover/lean4:v4.28.0",
+  "git_dependency_revisions": {
+    "mathlib": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+    "plausible": "55c8532eb21ec9f6d565d51d96b8ca50bd1fbef3",
+    "LeanSearchClient": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+    "importGraph": "85b59af46828c029a9168f2f9c35119bd0721e6e",
+    "proofwidgets": "be3b2e63b1bbf496c478cef98b86972a37c1417d",
+    "aesop": "f642a64c76df8ba9cb53dba3b919425a0c2aeaf1",
+    "Qq": "b8f98e9087e02c8553945a2c5abf07cec8e798c3",
+    "batteries": "495c008c3e3f4fb4256ff5582ddb3abf3198026f",
+    "Cli": "4f10f47646cb7d5748d6f423f4a07f98f7bbcc9e"
+  },
+  "protected_sources": {
+    "RepairCore/Algebra.lean": {
+      "preamble_sha256": "730c1c26e95aca4fc20b4a5440d51a87d7233c14ae0860ef0672533c5c1be26f",
+      "declarations": {
+        "act": {
+          "kind": "definition",
+          "definition_sha256": "731b5164f1d91728e6cc2b0c0fe82bc5e80d157c53d51e5afa7962fd28fc0f6b"
+        },
+        "RowStochastic": {
+          "kind": "definition",
+          "definition_sha256": "5daf3ee75ae9a04da74fa4c9aa3166b516b19ae8cd103d9caee39b1c6912a1a3"
+        },
+        "macroMix": {
+          "kind": "definition",
+          "definition_sha256": "8c13c7c8fb103ed6e0436661ae6382b11f4001508ea200331bfdf13e8f4dae27"
+        },
+        "block_aggregate": {
+          "kind": "theorem",
+          "signature_sha256": "e5d1d08ef20c87d139bae7d609ae8ffb993609e821500bc5358e16a7a9eddc14"
+        },
+        "self_exclusion": {
+          "kind": "theorem",
+          "signature_sha256": "33eba20e1d5d1a1400fb05ef66432edef173357dda854b79b2251d07266f56d1"
+        },
+        "convex_update_bounds": {
+          "kind": "theorem",
+          "signature_sha256": "00cfbf014bee48c805ae4454cea5d572193c09df4cd522861a0997e4b4c50910"
+        },
+        "peer_gain_bounds": {
+          "kind": "theorem",
+          "signature_sha256": "b0c05c66291c97fda44af4e64a10014b667b85e3a180c84902833f410e3761e2"
+        },
+        "gain_budget": {
+          "kind": "theorem",
+          "signature_sha256": "8ead7b0cf6d893132cbf87c93e35663c12e04080b9c3f34ebb566f2da812e159"
+        },
+        "alphaPlus": {
+          "kind": "definition",
+          "definition_sha256": "336260a68cc83964a18abed8eaa653d72d6606de276c7a03d66ff6cab397a68b"
+        },
+        "alphaMinus": {
+          "kind": "definition",
+          "definition_sha256": "4e5a3c62e6e994b004e55c859a8cfa5e8fd1be9afe6e4dcbb03addd8155023c8"
+        },
+        "privateDrift": {
+          "kind": "definition",
+          "definition_sha256": "d0aeac46aecb2937c75b3d11217428a1b923662f4ce685dfa6b5228667415b4f"
+        },
+        "realised_sign_counterexample": {
+          "kind": "theorem",
+          "signature_sha256": "dc995cabe09404c1619934efcc1a4fa1d040820f4bc45b83164b8f960c0c6ac6"
+        },
+        "common_field": {
+          "kind": "theorem",
+          "signature_sha256": "10383f3d7b655ba24a7e0edf5263ef54941ee548d0454e293add6fd4c23c080d"
+        },
+        "common_linear_multiplier": {
+          "kind": "theorem",
+          "signature_sha256": "c44cf0a08e01dc2087e5bd1d4621d95e2462aa755b8a6830d953f3d78c911bda"
+        },
+        "macro_stochastic": {
+          "kind": "theorem",
+          "signature_sha256": "4185d608c0a9898882a549b5115a5f1eafa17db57415a085144b7b9e13013e27"
+        },
+        "macro_action": {
+          "kind": "theorem",
+          "signature_sha256": "bb6425a4aa71e0add4828a0591d8f80cf26c7abc9596e5b92409c10581147e1e"
+        },
+        "macro_pairwise_difference": {
+          "kind": "theorem",
+          "signature_sha256": "97d69441eaa0703347e1c01cc1666c5f498fe4ed4d731d9e19c3512070066497"
+        },
+        "macro_row_distance": {
+          "kind": "theorem",
+          "signature_sha256": "467881348be1ba06a52f1cee9ee9c1407a9850d079b81e9c64c65fe10ef97559"
+        },
+        "field_sup_bound": {
+          "kind": "theorem",
+          "signature_sha256": "9b2f24b00f49681bf4f258fde5eba6c56e67ebe2139e71c6da25322a8e9b4e0a"
+        },
+        "additive_common_field": {
+          "kind": "theorem",
+          "signature_sha256": "22662a0f43e88988ca473b98027f77ee246bfc25172849b191748395bb69754b"
+        }
+      }
+    },
+    "RepairTasks/Analysis.lean": {
+      "preamble_sha256": "8d95002441fe39363ea1f2c708853813b9c679bb5aa93af3e2c06804494a4e40",
+      "declarations": {
+        "sigmoid": {
+          "kind": "definition",
+          "definition_sha256": "97b335915e61a79130945215dd38706330e056f880cbc67b740923b1f7268863"
+        },
+        "weightedReadout": {
+          "kind": "definition",
+          "definition_sha256": "746f158a3b7bd90f70868ef9e2ab7a01b01fc7beb4a6637bffe4b70b444ce954"
+        },
+        "readout_derivative": {
+          "kind": "theorem",
+          "signature_sha256": "81e6864c9e6c4bc879361833848ca8261e27a0404f4385ded4c5e7cb971b15c3"
+        },
+        "zero_floor_derivative": {
+          "kind": "theorem",
+          "signature_sha256": "88b850a52668e46a6b43caa81afea6b82c15e2c205c56c97cbaedc0813b8493f"
+        },
+        "pairwise_oscillation_bound": {
+          "kind": "theorem",
+          "signature_sha256": "1201254c314d27506d46ad033005a0542a9ef0e42fdf5903d2bc7a250b30c33f"
+        },
+        "self_exclusion_ratio_bound": {
+          "kind": "theorem",
+          "signature_sha256": "a32d190439fec7fff856fe85ddb7a131b3242bb0df46b5fc8b962d601544e781"
+        },
+        "field_deviation_bound": {
+          "kind": "theorem",
+          "signature_sha256": "d4ac1e6717de68f48871c31fc74349183a4d93da830cf15aef5b2132e2c92f17"
+        },
+        "stationary_macro_coordinate": {
+          "kind": "theorem",
+          "signature_sha256": "95bf038524cefdac9f9198b63679a386fbdf87d0d425703f597a6eb2b52ca061"
+        }
+      }
+    }
+  },
+  "theorems": [
+    "CSLRepair.block_aggregate",
+    "CSLRepair.self_exclusion",
+    "CSLRepair.convex_update_bounds",
+    "CSLRepair.peer_gain_bounds",
+    "CSLRepair.gain_budget",
+    "CSLRepair.realised_sign_counterexample",
+    "CSLRepair.common_field",
+    "CSLRepair.common_linear_multiplier",
+    "CSLRepair.macro_stochastic",
+    "CSLRepair.macro_action",
+    "CSLRepair.macro_pairwise_difference",
+    "CSLRepair.macro_row_distance",
+    "CSLRepair.field_sup_bound",
+    "CSLRepair.additive_common_field",
+    "CSLRepair.readout_derivative",
+    "CSLRepair.zero_floor_derivative",
+    "CSLRepair.pairwise_oscillation_bound",
+    "CSLRepair.self_exclusion_ratio_bound",
+    "CSLRepair.field_deviation_bound",
+    "CSLRepair.stationary_macro_coordinate"
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

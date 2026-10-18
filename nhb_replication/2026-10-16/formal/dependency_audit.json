@@ -1,0 +1,47 @@
+{
+  "mathlib": {
+    "expected": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+    "actual": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+    "tracked_sources_clean": true
+  },
+  "plausible": {
+    "expected": "55c8532eb21ec9f6d565d51d96b8ca50bd1fbef3",
+    "actual": "55c8532eb21ec9f6d565d51d96b8ca50bd1fbef3",
+    "tracked_sources_clean": true
+  },
+  "LeanSearchClient": {
+    "expected": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+    "actual": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+    "tracked_sources_clean": true
+  },
+  "importGraph": {
+    "expected": "85b59af46828c029a9168f2f9c35119bd0721e6e",
+    "actual": "85b59af46828c029a9168f2f9c35119bd0721e6e",
+    "tracked_sources_clean": true
+  },
+  "proofwidgets": {
+    "expected": "be3b2e63b1bbf496c478cef98b86972a37c1417d",
+    "actual": "be3b2e63b1bbf496c478cef98b86972a37c1417d",
+    "tracked_sources_clean": true
+  },
+  "aesop": {
+    "expected": "f642a64c76df8ba9cb53dba3b919425a0c2aeaf1",
+    "actual": "f642a64c76df8ba9cb53dba3b919425a0c2aeaf1",
+    "tracked_sources_clean": true
+  },
+  "Qq": {
+    "expected": "b8f98e9087e02c8553945a2c5abf07cec8e798c3",
+    "actual": "b8f98e9087e02c8553945a2c5abf07cec8e798c3",
+    "tracked_sources_clean": true
+  },
+  "batteries": {
+    "expected": "495c008c3e3f4fb4256ff5582ddb3abf3198026f",
+    "actual": "495c008c3e3f4fb4256ff5582ddb3abf3198026f",
+    "tracked_sources_clean": true
+  },
+  "Cli": {
+    "expected": "4f10f47646cb7d5748d6f423f4a07f98f7bbcc9e",
+    "actual": "4f10f47646cb7d5748d6f423f4a07f98f7bbcc9e",
+    "tracked_sources_clean": true
+  }
+}

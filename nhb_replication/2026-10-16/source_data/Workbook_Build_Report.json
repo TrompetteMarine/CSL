@@ -1,0 +1,86 @@
+[
+  {
+    "id": "F3",
+    "file": "Fig_3_Source_Data.xlsx",
+    "sheets": 10,
+    "rows": 63409
+  },
+  {
+    "id": "F4",
+    "file": "Fig_4_Source_Data.xlsx",
+    "sheets": 5,
+    "rows": 2077
+  },
+  {
+    "id": "F6",
+    "file": "Fig_6_Source_Data.xlsx",
+    "sheets": 5,
+    "rows": 355
+  },
+  {
+    "id": "S1",
+    "file": "Supplementary_Fig_1_Source_Data.xlsx",
+    "sheets": 5,
+    "rows": 586
+  },
+  {
+    "id": "S2",
+    "file": "Supplementary_Fig_2_Source_Data.xlsx",
+    "sheets": 4,
+    "rows": 376
+  },
+  {
+    "id": "S3",
+    "file": "Supplementary_Fig_3_Source_Data.xlsx",
+    "sheets": 5,
+    "rows": 811
+  },
+  {
+    "id": "S4",
+    "file": "Supplementary_Fig_4_Source_Data.xlsx",
+    "sheets": 5,
+    "rows": 754
+  },
+  {
+    "id": "S5",
+    "file": "Supplementary_Fig_5_Source_Data.xlsx",
+    "sheets": 5,
+    "rows": 586
+  },
+  {
+    "id": "S6",
+    "file": "Supplementary_Fig_6_Source_Data.xlsx",
+    "sheets": 5,
+    "rows": 586
+  },
+  {
+    "id": "S7",
+    "file": "Supplementary_Fig_7_Source_Data.xlsx",
+    "sheets": 5,
+    "rows": 1132
+  },
+  {
+    "id": "Tables",
+    "file": "Statistical_Comparisons_Source_Data.xlsx",
+    "sheets": 9,
+    "rows": 4470
+  },
+  {
+    "id": "S8",
+    "file": "Supplementary_Fig_8_Source_Data.xlsx",
+    "sheets": 5,
+    "rows": 2284
+  },
+  {
+    "id": "F5",
+    "file": "Fig_5_Source_Data.xlsx",
+    "sheets": 11,
+    "rows": 126229
+  },
+  {
+    "id": "S10",
+    "file": "Supplementary_Fig_10_Source_Data.xlsx",
+    "sheets": 8,
+    "rows": 21738
+  }
+]

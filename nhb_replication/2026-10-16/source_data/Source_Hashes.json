@@ -1,0 +1,266 @@
+{
+  "F3": [
+    {
+      "path": "figures/source_exports/main02_two_communities_analytic_multipliers.csv",
+      "sha256": "5acd5430528ec90409cbefd37a58f5f5696be4179651969bae8f5db227f6eede"
+    },
+    {
+      "path": "figures/source_exports/main02_two_communities_annotated_multiplier.csv",
+      "sha256": "25e957acdcd15b828ef584526e15ce53f2533a5f0324771f9e405d33aee30bce"
+    },
+    {
+      "path": "figures/source_exports/main02_two_communities_batch_means.csv",
+      "sha256": "44a383cd047472026f4b8aa84a3932387a1575e7d2f45a611159e7f57e20e06d"
+    },
+    {
+      "path": "figures/source_exports/main02_two_communities_plotted_intervals.csv",
+      "sha256": "c3f0620d6934b67fa7a570792d9f13041cb2d82848141c4bf20e2854e803d4b5"
+    },
+    {
+      "path": "figures/source_exports/main02_two_communities_population_values.csv",
+      "sha256": "8ab6122d3842872dba896460c4fe29d683e1d755ab59c7f6e6e6bc51c5970528"
+    },
+    {
+      "path": "figures/source_exports/main02_two_communities_trajectory_batch_means.csv",
+      "sha256": "dcf43a4d6b90a021d25d890e31833128035d6c3d1a4d84a357063b7e7c1eeef3"
+    },
+    {
+      "path": "figures/source_exports/main02_two_communities_trajectory_intervals.csv",
+      "sha256": "a8b6530e035e56ec4fd08cce74d359eddc7cdb01dabd2121492109c744d88792"
+    },
+    {
+      "path": "figures/source_exports/main02_two_communities_trajectory_population_values.csv",
+      "sha256": "a8c557af091b4665d617441cc893d6a0a200c9134e000c770fa3d7d7247f2d8f"
+    }
+  ],
+  "F4": [
+    {
+      "path": "figures/source_exports/main03_size_geometry_batch_means.csv",
+      "sha256": "f372755323619c1381ab0e30955b74748beaa9ec360f39e7a037bc88de50b952"
+    },
+    {
+      "path": "figures/source_exports/main03_size_geometry_plotted_intervals.csv",
+      "sha256": "b66dbd618a3bb6283f17eba641ff19a77c3a724d0755d0350f9582079624ab10"
+    },
+    {
+      "path": "figures/source_exports/main03_size_geometry_population_values.csv",
+      "sha256": "af583c7ed2102d85cab87c71749b3c41ecf851bbc2294a767b1569c77ef9378d"
+    }
+  ],
+  "F5": [
+    {
+      "path": "figures/source_exports/main04_private_withdrawal_paired_withdrawal_populations.csv",
+      "sha256": "b726d260b972d2dc393a8c1925eaa2ee1d766a71a84e076feec8b77b025efdf5"
+    },
+    {
+      "path": "figures/source_exports/main04_private_withdrawal_trajectory_batch_means.csv",
+      "sha256": "de8c3a85165d67119194dfbbe60eaee00b53e848651be165bd88f7cd71007e47"
+    },
+    {
+      "path": "figures/source_exports/main04_private_withdrawal_trajectory_intervals.csv",
+      "sha256": "5d8c32bab3a01a7693312fa86094fd45da31016712f13d0eea8272efbaa07d51"
+    },
+    {
+      "path": "figures/source_exports/main04_private_withdrawal_trajectory_population_values.csv",
+      "sha256": "bae74f36f53a228c9726b61e0aaa95a320208c4f5ef459c737f844f624077f28"
+    },
+    {
+      "path": "figures/source_exports/main04_private_withdrawal_withdrawal_batch_means.csv",
+      "sha256": "bd51297309fdc1efce9339f9133f0816ec637b085f02980f603783a2faa14413"
+    },
+    {
+      "path": "figures/source_exports/main04_private_withdrawal_withdrawal_intervals.csv",
+      "sha256": "b930ac914d4cbf3397200901a4dfa9d927ea2d400bb347fafae26a32fbb0b95c"
+    },
+    {
+      "path": "statistics/paired_contrast_batches.csv",
+      "sha256": "58bbbcbeb16be95f9d7b8019240cbb78e3961624f9aa548ffd0d9f56600e498b"
+    },
+    {
+      "path": "statistics/paired_contrast_populations.csv",
+      "sha256": "6f74f738b60e0ebeb313450fd1cd59e1062727c68cb95fb7bcd259074d6be249"
+    },
+    {
+      "path": "statistics/paired_contrasts.csv",
+      "sha256": "e4c4ca58f4cdf01e75aac87f9873664763992de4dec15a0a54172f74ef7d5d32"
+    }
+  ],
+  "F6": [
+    {
+      "path": "figures/source_exports/main05_many_communities_batch_means.csv",
+      "sha256": "fccdbf20ba34308b5dc8e41d7544dd7e05afc4a700d0ee0b3ab242def01b46ec"
+    },
+    {
+      "path": "figures/source_exports/main05_many_communities_plotted_intervals.csv",
+      "sha256": "5a3c1935e2b277c5a532229a92929696a65fb372b60554b149fdc592c179dbc4"
+    },
+    {
+      "path": "figures/source_exports/main05_many_communities_population_values.csv",
+      "sha256": "1a2ce95763f455dfaf7c29614a093eafcae97da7bbd4af19011b10cba65e97b0"
+    }
+  ],
+  "S2": [
+    {
+      "path": "figures/source_exports/supp01_graph_diagnostics_batch_means.csv",
+      "sha256": "400c993b55b914c424627dabea0059f788b8456ce1fa39da7977855968b796f1"
+    },
+    {
+      "path": "figures/source_exports/supp01_graph_diagnostics_population_values.csv",
+      "sha256": "13156d6decc0d7838b9a3919a44722ad09caa0c56c2440b91e1fbcc315c55d1a"
+    }
+  ],
+  "S6": [
+    {
+      "path": "figures/source_exports/supp02_controls_batch_means.csv",
+      "sha256": "e7c1dace1031339b8fbcbfe55e1e38bf5f0e16d3d9477d16482ff4069ee28bf4"
+    },
+    {
+      "path": "figures/source_exports/supp02_controls_plotted_intervals.csv",
+      "sha256": "66fb8303a630cd0f99bbd9b49c7f249ade04ca9b61eebb2fb8cd91e82fa6e844"
+    },
+    {
+      "path": "figures/source_exports/supp02_controls_population_values.csv",
+      "sha256": "7f0e302292cdb251bcc892c1436a43bbc3ce0f59faf2e380dabb7637b3a5b65f"
+    }
+  ],
+  "S3": [
+    {
+      "path": "figures/source_exports/supp03_expanded_geometry_batch_means.csv",
+      "sha256": "02bd850fe4ee1ed4ed05988fffbb78dde22d3970b32d08b399e84a23cfd6b2fd"
+    },
+    {
+      "path": "figures/source_exports/supp03_expanded_geometry_plotted_intervals.csv",
+      "sha256": "33bc520276da4a792b2cfd94ee6d4732439e25aa2dd457ce93a3e0d482893c8b"
+    },
+    {
+      "path": "figures/source_exports/supp03_expanded_geometry_population_values.csv",
+      "sha256": "2dabe59d14825a66452c4d28f2436add3fc535f0de8c238cf7bc09a99af74aa4"
+    }
+  ],
+  "S4": [
+    {
+      "path": "figures/source_exports/supp04_choice_degree_batch_means.csv",
+      "sha256": "ee8f7d5bf1aa4f681452c51d302ff00f4bd95112b0ba0a7bdd59497ad3fec28f"
+    },
+    {
+      "path": "figures/source_exports/supp04_choice_degree_plotted_intervals.csv",
+      "sha256": "d990e52d16b8f72f168eff0c115ce516ac599d349abef2eb487a5f912ece708f"
+    },
+    {
+      "path": "figures/source_exports/supp04_choice_degree_population_values.csv",
+      "sha256": "7321ea63f5fe8e85f6fd21bf25d6df5ce50379312a074ef11296923fc6f79a16"
+    }
+  ],
+  "S5": [
+    {
+      "path": "figures/source_exports/supp05_scaling_batch_means.csv",
+      "sha256": "41d26c70f811343d12ca049703ee9831eec21c643545679c84fdbe9a2d142f21"
+    },
+    {
+      "path": "figures/source_exports/supp05_scaling_plotted_intervals.csv",
+      "sha256": "9ffb05d96a3dadd3faf67e936d9737143f8572de397197e08be811ca5ada30c0"
+    },
+    {
+      "path": "figures/source_exports/supp05_scaling_population_values.csv",
+      "sha256": "aa7dc278099fad4c8a475a2fbfcacc94407d3f6f2635d9fdc7a4f2506e02ec0c"
+    }
+  ],
+  "S1": [
+    {
+      "path": "figures/source_exports/supp06_two_initialisations_batch_means.csv",
+      "sha256": "092b2fc7fb5f0149149c35e6cb6b0348f594bbcd59047a6ef7aa7c31cf4d2891"
+    },
+    {
+      "path": "figures/source_exports/supp06_two_initialisations_plotted_intervals.csv",
+      "sha256": "61e1894635872c8cbdd17799a3bfb78e869f53cce9a5c7859ba503daea533717"
+    },
+    {
+      "path": "figures/source_exports/supp06_two_initialisations_population_values.csv",
+      "sha256": "881b300e7d0e9f197d5383e6cb79ee25e7d2898ca33199ee0df02eb48a25849d"
+    }
+  ],
+  "S7": [
+    {
+      "path": "figures/source_exports/supp07_many_detail_batch_histograms.csv",
+      "sha256": "9285d90d08e0c326a39767ab41d2ba5d61c94cac4ce5cbc726064145dec6f616"
+    },
+    {
+      "path": "figures/source_exports/supp07_many_detail_plotted_mean_histograms.csv",
+      "sha256": "4328f7c9ee3e696b68f839d573d59a9abe7a3075a06009a9e55743936a974be7"
+    },
+    {
+      "path": "figures/source_exports/supp07_many_detail_population_bin_counts.csv",
+      "sha256": "992d753732864c54c69cf0960651c71b0d7b3a59c999f76738e73e684b96b80a"
+    }
+  ],
+  "S8": [
+    {
+      "path": "figures/source_exports/supp08_score_response_gain_grid.csv",
+      "sha256": "a8463b76aac4aef6fa281a5a7d41274b287734b59ac44a329017a89599e0ee26"
+    },
+    {
+      "path": "figures/source_exports/supp08_score_response_response_grid.csv",
+      "sha256": "c753a36244afad3bef7f5a3320eb500696bfa46fca76cd71127a130c414ed381"
+    },
+    {
+      "path": "figures/source_exports/supp08_score_response_score_grid.csv",
+      "sha256": "5a292b8f96ae8c6bd31c92ab8b86b3dd508bb902c573a79d73e67d0d6e9ec719"
+    }
+  ],
+  "S10": [
+    {
+      "path": "figures/source_exports/supp10_noise_propagation_conditional_noise_batch.csv",
+      "sha256": "cc7be8b742dfa07b43496e9ce717374b40f5ed6bba461231968fe83a9b1087e5"
+    },
+    {
+      "path": "figures/source_exports/supp10_noise_propagation_conditional_noise_ensemble_summary.csv",
+      "sha256": "7316bbc98021c5389904955dec0986cd88aee742773ffb971d77b00ff242a104"
+    },
+    {
+      "path": "figures/source_exports/supp10_noise_propagation_conditional_noise_population.csv",
+      "sha256": "eabc0d06f92570cff8355b4294b584d4947662159d4a5f05c87a80efc7a2815f"
+    },
+    {
+      "path": "figures/source_exports/supp10_noise_propagation_plotted_mean_correlations.csv",
+      "sha256": "6586d3bc5b30998175fb0e4734e46858b1c2ccb7ce6e255109e32de698162e47"
+    },
+    {
+      "path": "statistics/conditional_noise_community.csv",
+      "sha256": "1040fcf4698857935be9e171c2040bd11ad16e2dd6fa12d9b82851884dafdc98"
+    },
+    {
+      "path": "statistics/withdrawal_functional_sensitivity.csv",
+      "sha256": "50237edd76ab383ac2ade36a572fea6fccc33698de092f7a348da063a8a60d69"
+    }
+  ],
+  "Tables": [
+    {
+      "path": "statistics/endpoint_intervals.csv",
+      "sha256": "f51eaa28415d31f71bb019692c123aabf4ab6d5c983e47db2a0aee8bba55d8c1"
+    },
+    {
+      "path": "statistics/paired_contrasts.csv",
+      "sha256": "e4c4ca58f4cdf01e75aac87f9873664763992de4dec15a0a54172f74ef7d5d32"
+    },
+    {
+      "path": "statistics/paired_contrast_batches.csv",
+      "sha256": "58bbbcbeb16be95f9d7b8019240cbb78e3961624f9aa548ffd0d9f56600e498b"
+    },
+    {
+      "path": "statistics/paired_contrast_populations.csv",
+      "sha256": "6f74f738b60e0ebeb313450fd1cd59e1062727c68cb95fb7bcd259074d6be249"
+    },
+    {
+      "path": "statistics/Table_1_Source_Data.csv",
+      "sha256": "c85ac6977f5750f5a1371c54cf7fc810d47aa40c7cc8fea2e68ce27aece90596"
+    },
+    {
+      "path": "statistics/Table_2_Source_Data.csv",
+      "sha256": "c7a7b46f102060bcefb3bb8f35971bd3ec119e9f1103585ae11b05b0b42d30e2"
+    },
+    {
+      "path": "statistics/Supplement_Table_Geometry.csv",
+      "sha256": "79da739fb4ec54a3c53d563e8db95287580878fddd61599e73641ad80c0e8462"
+    }
+  ]
+}

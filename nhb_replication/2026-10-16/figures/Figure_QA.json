@@ -1,0 +1,641 @@
+{
+  "published_figures": [
+    {
+      "file": "main01_concept.pdf",
+      "pages": 1,
+      "width_mm": 180.00027482774522,
+      "height_mm": 111.87852851019966,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 6.973800182342529,
+      "maximum_glyph_font_pt": 9.962599754333496,
+      "minimum_body_text_pt": 6.4756999015808105,
+      "fonts": [
+        {
+          "name": "HTXXKH+LMSans10-Bold",
+          "type": "Type1",
+          "embedded_bytes": 24531
+        },
+        {
+          "name": "PPYXED+LMSans8-Regular",
+          "type": "Type1",
+          "embedded_bytes": 18312
+        },
+        {
+          "name": "IKIFFG+LMMathItalic7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 6925
+        },
+        {
+          "name": "ZKMZEX+LMMathItalic5-Regular",
+          "type": "Type1",
+          "embedded_bytes": 4030
+        },
+        {
+          "name": "EFWLBI+LMRoman7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 23931
+        },
+        {
+          "name": "SXWTYK+LMMathSymbols7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 3370
+        },
+        {
+          "name": "NASIOM+LMMathSymbols5-Regular",
+          "type": "Type1",
+          "embedded_bytes": 3694
+        },
+        {
+          "name": "WAAYLZ+LMMathExtension10-Regular",
+          "type": "Type1",
+          "embedded_bytes": 3435
+        },
+        {
+          "name": "DMILDU+LMRoman5-Regular",
+          "type": "Type1",
+          "embedded_bytes": 18498
+        },
+        {
+          "name": "MMSBPQ+LMRoman7-Bold",
+          "type": "Type1",
+          "embedded_bytes": 14970
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": false,
+      "sha256": "b261a44cf143ad9232270e931c6f9e4739c4c128ef208b2ec224384d9b22ce67"
+    },
+    {
+      "file": "main06_population_limits.pdf",
+      "pages": 1,
+      "width_mm": 179.9999195522732,
+      "height_mm": 119.99983512030708,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 6.973800182342529,
+      "maximum_glyph_font_pt": 9.962599754333496,
+      "minimum_body_text_pt": 6.973800182342529,
+      "fonts": [
+        {
+          "name": "ZLSIWD+LMSans10-Bold",
+          "type": "Type1",
+          "embedded_bytes": 25270
+        },
+        {
+          "name": "BWQNQB+LMRoman7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 19690
+        },
+        {
+          "name": "BHRDTL+LMMathItalic7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 5570
+        },
+        {
+          "name": "OADHIP+LMSans8-Regular",
+          "type": "Type1",
+          "embedded_bytes": 18952
+        },
+        {
+          "name": "ZKGYQU+LMRoman5-Regular",
+          "type": "Type1",
+          "embedded_bytes": 21031
+        },
+        {
+          "name": "WAAYLZ+LMMathExtension10-Regular",
+          "type": "Type1",
+          "embedded_bytes": 3435
+        },
+        {
+          "name": "QEXBXO+LMMathSymbols7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 3699
+        },
+        {
+          "name": "BPYCRQ+LMMathItalic5-Regular",
+          "type": "Type1",
+          "embedded_bytes": 3816
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": false,
+      "sha256": "34068550758f24d418380196c64c948f9daa578820a7bb0e1b40dcad7038d184"
+    },
+    {
+      "file": "main02_two_communities.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 71.12000215318467,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 4796
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 13228
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "0d671ec19a338c99a842861cf9b8b5d800b8f07bbd5d0a255e8e4ceb5f6bfa22"
+    },
+    {
+      "file": "main03_size_geometry.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 144.77999784681532,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 4960
+        },
+        {
+          "name": "GCWXDV+DejaVuSans-Oblique",
+          "type": "Type0",
+          "embedded_bytes": 3600
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 14780
+        }
+      ],
+      "raster_elements": [
+        {
+          "width_px": 52,
+          "height_px": 1037,
+          "dpi_x": 600.0009390038733,
+          "dpi_y": 599.999988228514
+        }
+      ],
+      "svg_editable_text": true,
+      "sha256": "e0478258aa84a24365a2cdb382ad329ba2de26db27ab0cf9ecf8d8e34f88e557"
+    },
+    {
+      "file": "main04_private_withdrawal.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 138.4299978468153,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 5872
+        },
+        {
+          "name": "GCWXDV+DejaVuSans-Oblique",
+          "type": "Type0",
+          "embedded_bytes": 3860
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 14784
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "b37721094da4a08f8225437a0326eb3c3a6f480b23ee648779534052240da8d7"
+    },
+    {
+      "file": "main05_many_communities.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 137.15999569363063,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 4960
+        },
+        {
+          "name": "GCWXDV+DejaVuSans-Oblique",
+          "type": "Type0",
+          "embedded_bytes": 3888
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 14592
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "8814e18f276c833a04a7c94d779b1ddc32b68569c81323eda9a0375d5164df72"
+    },
+    {
+      "file": "supp06_two_initialisations.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 77.47000215318468,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 4640
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 12852
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "914a8112bbc9645079c59c4662f70c1a5a09e183fa59fe559512990021824b27"
+    },
+    {
+      "file": "supp01_graph_diagnostics.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 120.64999999999999,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 5576
+        },
+        {
+          "name": "GCWXDV+DejaVuSans-Oblique",
+          "type": "Type0",
+          "embedded_bytes": 3304
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 11692
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "54bd3e5cb2426a0db613f7dd4c2f1fdeac139bfcac5b6f05d7b55273ed4123eb"
+    },
+    {
+      "file": "supp03_expanded_geometry.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 74.92999784681531,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 4796
+        },
+        {
+          "name": "GCWXDV+DejaVuSans-Oblique",
+          "type": "Type0",
+          "embedded_bytes": 3592
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 10640
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "2dd070221c8c6d64a9165444db91d48a6318978a4c14b0021ac1a1dc7be4f3f7"
+    },
+    {
+      "file": "supp04_choice_degree.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 127.0,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 4960
+        },
+        {
+          "name": "GCWXDV+DejaVuSans-Oblique",
+          "type": "Type0",
+          "embedded_bytes": 3524
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 13268
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "efb32620bed35efed4e150e1f0fc198c3697b0ee477b7dc98c8b649d09b02538"
+    },
+    {
+      "file": "supp05_scaling.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 121.92000215318467,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 4960
+        },
+        {
+          "name": "GCWXDV+DejaVuSans-Oblique",
+          "type": "Type0",
+          "embedded_bytes": 4800
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 14156
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "8dfce111794a886e3f9b0634f44cba26671d80378dba0177d98bc2a65fb4ec68"
+    },
+    {
+      "file": "supp02_controls.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 90.17000215318468,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 4640
+        },
+        {
+          "name": "GCWXDV+DejaVuSans-Oblique",
+          "type": "Type0",
+          "embedded_bytes": 3404
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 12128
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "9dded25f2bc61a840065e3d31417e60c9172cc80b18ff86f2ba4f986b5282cc4"
+    },
+    {
+      "file": "supp07_many_detail.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 124.45999569363063,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 7.0,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 5576
+        },
+        {
+          "name": "GCWXDV+DejaVuSans-Oblique",
+          "type": "Type0",
+          "embedded_bytes": 3600
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 11952
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "3f22bfce5799148620bd7c95d0f874a2778e049ac5622de4d552b8182b2e2b6c"
+    },
+    {
+      "file": "supp08_score_response.pdf",
+      "pages": 1,
+      "width_mm": 179.99999491373697,
+      "height_mm": 87.62999784681531,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.0,
+      "maximum_glyph_font_pt": 7.0,
+      "minimum_body_text_pt": 6.800000190734863,
+      "fonts": [
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 4796
+        },
+        {
+          "name": "GCWXDV+DejaVuSans-Oblique",
+          "type": "Type0",
+          "embedded_bytes": 5032
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 15184
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": true,
+      "sha256": "53d507aa5eab1a13e2d97e5cbb3ba6cfa18f436569c2744da5994fe43a4a72db"
+    },
+    {
+      "file": "supp09_signal_anatomy.pdf",
+      "pages": 1,
+      "width_mm": 179.9999195522732,
+      "height_mm": 114.99991421169703,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 6.973800182342529,
+      "maximum_glyph_font_pt": 9.962599754333496,
+      "minimum_body_text_pt": 6.973800182342529,
+      "fonts": [
+        {
+          "name": "YDMJHQ+LMSans10-Bold",
+          "type": "Type1",
+          "embedded_bytes": 24933
+        },
+        {
+          "name": "RIAGAA+LMMathItalic7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 7317
+        },
+        {
+          "name": "BNTMSZ+LMSans8-Regular",
+          "type": "Type1",
+          "embedded_bytes": 18999
+        },
+        {
+          "name": "KNSKJY+LMMathItalic5-Regular",
+          "type": "Type1",
+          "embedded_bytes": 4048
+        },
+        {
+          "name": "ADUZWB+LMMathSymbols7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 3656
+        },
+        {
+          "name": "YXJNLE+LMRoman7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 24121
+        },
+        {
+          "name": "RRLDOQ+LMMathSymbols5-Regular",
+          "type": "Type1",
+          "embedded_bytes": 2904
+        },
+        {
+          "name": "WKNEQI+LMMathExtension10-Regular",
+          "type": "Type1",
+          "embedded_bytes": 3167
+        },
+        {
+          "name": "MILMUZ+LMRoman5-Regular",
+          "type": "Type1",
+          "embedded_bytes": 15273
+        }
+      ],
+      "raster_elements": [],
+      "svg_editable_text": false,
+      "sha256": "6870db41aa748abe57df80ed78ea8500a3d5d2f41c30fcfe2a4f4eb5bfa0b263"
+    },
+    {
+      "file": "supp10_noise_propagation.pdf",
+      "pages": 1,
+      "width_mm": 179.9999195522732,
+      "height_mm": 123.99997855292426,
+      "text_spans_outside_page": [],
+      "maximum_standard_text_pt": 7.000349521636963,
+      "maximum_glyph_font_pt": 7.000349521636963,
+      "minimum_body_text_pt": 6.800339698791504,
+      "fonts": [
+        {
+          "name": "URXAPN+LMSans10-Bold",
+          "type": "Type1",
+          "embedded_bytes": 23440
+        },
+        {
+          "name": "KPINOW+LMSans8-Regular",
+          "type": "Type1",
+          "embedded_bytes": 18117
+        },
+        {
+          "name": "ASFAID+LMMathItalic7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 4760
+        },
+        {
+          "name": "TUMJCH+LMRoman7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 22604
+        },
+        {
+          "name": "JFAOQY+LMMathSymbols7-Regular",
+          "type": "Type1",
+          "embedded_bytes": 2877
+        },
+        {
+          "name": "HUNSQQ+LMMathItalic5-Regular",
+          "type": "Type1",
+          "embedded_bytes": 2951
+        },
+        {
+          "name": "MMSBPQ+LMRoman7-Bold",
+          "type": "Type1",
+          "embedded_bytes": 14970
+        },
+        {
+          "name": "PWBHGQ+LMMathSymbols5-Regular",
+          "type": "Type1",
+          "embedded_bytes": 2923
+        },
+        {
+          "name": "EVICAO+DejaVuSans-Bold",
+          "type": "Type0",
+          "embedded_bytes": 4592
+        },
+        {
+          "name": "BMQQDV+DejaVuSans",
+          "type": "Type0",
+          "embedded_bytes": 10960
+        }
+      ],
+      "raster_elements": [
+        {
+          "width_px": 929,
+          "height_px": 928,
+          "dpi_x": 599.9700078774283,
+          "dpi_y": 599.9699903568618
+        },
+        {
+          "width_px": 929,
+          "height_px": 928,
+          "dpi_x": 599.9700489357292,
+          "dpi_y": 599.9699903568618
+        },
+        {
+          "width_px": 63,
+          "height_px": 1251,
+          "dpi_x": 599.9711307914006,
+          "dpi_y": 599.9700767017778
+        }
+      ],
+      "svg_editable_text": false,
+      "sha256": "a45d8403193b42db2c97a8fc75692caf27bbd79db04893b65a7ace39de0bc8c1"
+    }
+  ],
+  "matplotlib_components_checked": 13,
+  "text_collision_candidates": 0,
+  "standard_text_target_pt": "6.5\u20137; mathematical scripts are naturally smaller and extensible mathematical operators use their natural glyph font size",
+  "all_published_widths_at_most_180mm": true,
+  "all_published_heights_at_most_170mm": true,
+  "all_fonts_embedded": true,
+  "all_text_inside_page": true,
+  "guideline_urls": [
+    "https://www.nature.com/nathumbehav/submission-guidelines/aip-and-formatting",
+    "https://www.nature.com/documents/NRJs-guide-to-preparing-final-artwork.pdf"
+  ],
+  "notes": [
+    "Automatic text-pair checks use the actually drawn tick labels and text-only bounding boxes, not annotation leader-arrow boxes.",
+    "Leaders, plotted marks and TikZ layout are additionally checked in rendered previews.",
+    "Only dense correlation-matrix artwork and colour gradients are raster elements; scientific labels, curves, uncertainty marks and diagram elements remain vector."
+  ]
+}

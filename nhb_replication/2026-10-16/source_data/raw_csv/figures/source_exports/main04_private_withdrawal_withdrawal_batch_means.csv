@@ -1,0 +1,17 @@
+panel,lam,metric,graph_id,value
+c,0.0,first_step_probability,0,0.6100721099334963
+c,0.0,first_step_probability,1,0.6181230026682901
+c,0.0,first_step_probability,2,0.6139440916662985
+c,0.0,first_step_probability,3,0.6148149224145875
+c,0.6,first_step_probability,0,0.002999536449735825
+c,0.6,first_step_probability,1,0.003171485554064525
+c,0.6,first_step_probability,2,0.0031200423822998003
+c,0.6,first_step_probability,3,0.0030841090342209497
+d,0.0,optimal_fraction,0,0.6436765
+d,0.0,optimal_fraction,1,0.6448285
+d,0.0,optimal_fraction,2,0.6441937499999999
+d,0.0,optimal_fraction,3,0.644313
+d,0.6,optimal_fraction,0,0.002545499999999975
+d,0.6,optimal_fraction,1,0.00246725
+d,0.6,optimal_fraction,2,0.002634499999999975
+d,0.6,optimal_fraction,3,0.00253375

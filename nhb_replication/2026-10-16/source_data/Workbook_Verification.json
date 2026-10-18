@@ -1,0 +1,723 @@
+{
+  "workbooks": 14,
+  "numeric_cells_checked": 1004742,
+  "text_cells_checked": 687751,
+  "blank_cells_checked": 138,
+  "value_mismatches": 0,
+  "formula_error_cells": 0,
+  "all_source_values_reconciled": true,
+  "native_table_headers_case_insensitive_unique": true,
+  "frozen_headers_and_native_filtered_tables_verified": true,
+  "reports": [
+    {
+      "id": "F3",
+      "file": "Fig_3_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population values",
+          "rows": 96,
+          "columns": 19,
+          "cells_checked": 1824,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch means",
+          "rows": 24,
+          "columns": 16,
+          "cells_checked": 384,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted intervals",
+          "rows": 6,
+          "columns": 35,
+          "cells_checked": 210,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Population curves",
+          "rows": 48000,
+          "columns": 7,
+          "cells_checked": 336000,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch curves",
+          "rows": 12000,
+          "columns": 6,
+          "cells_checked": 72000,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted trajectory intervals",
+          "rows": 3000,
+          "columns": 14,
+          "cells_checked": 42000,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Frozen multipliers",
+          "rows": 200,
+          "columns": 4,
+          "cells_checked": 800,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Annotated multiplier",
+          "rows": 1,
+          "columns": 3,
+          "cells_checked": 3,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "9d342a3f835adc444f490b1969e66b3cbbbac43b52970ba21b4a68b6006b8b26",
+      "bytes": 2000115
+    },
+    {
+      "id": "F4",
+      "file": "Fig_4_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population values",
+          "rows": 1520,
+          "columns": 19,
+          "cells_checked": 28880,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch means",
+          "rows": 380,
+          "columns": 16,
+          "cells_checked": 6080,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted intervals",
+          "rows": 95,
+          "columns": 35,
+          "cells_checked": 3325,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "8cde1c7b195d9d8832f7add6f2e5f05bb84f8135dfec52a37b3568efde97f17b",
+      "bytes": 171150
+    },
+    {
+      "id": "F5",
+      "file": "Fig_5_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population curves",
+          "rows": 96000,
+          "columns": 7,
+          "cells_checked": 672000,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch curves",
+          "rows": 24000,
+          "columns": 6,
+          "cells_checked": 144000,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted trajectory intervals",
+          "rows": 6000,
+          "columns": 14,
+          "cells_checked": 84000,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Paired withdrawal populations",
+          "rows": 64,
+          "columns": 6,
+          "cells_checked": 384,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Withdrawal batches",
+          "rows": 16,
+          "columns": 5,
+          "cells_checked": 80,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Withdrawal intervals",
+          "rows": 4,
+          "columns": 24,
+          "cells_checked": 96,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Paired contrasts",
+          "rows": 3,
+          "columns": 40,
+          "cells_checked": 120,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Paired population values",
+          "rows": 48,
+          "columns": 7,
+          "cells_checked": 336,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Paired batch values",
+          "rows": 12,
+          "columns": 6,
+          "cells_checked": 72,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "05dc004675f2fb0159195c240b22c9041831838769e93294427f085c31f979ae",
+      "bytes": 4068859
+    },
+    {
+      "id": "F6",
+      "file": "Fig_6_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population values",
+          "rows": 156,
+          "columns": 19,
+          "cells_checked": 2964,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch means",
+          "rows": 78,
+          "columns": 16,
+          "cells_checked": 1248,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted intervals",
+          "rows": 39,
+          "columns": 36,
+          "cells_checked": 1404,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "91392366a594858d8713a29e0674ee297f19c27689ca58fbc54304a17b3f96b7",
+      "bytes": 46087
+    },
+    {
+      "id": "S1",
+      "file": "Supplementary_Fig_1_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population values",
+          "rows": 384,
+          "columns": 19,
+          "cells_checked": 7296,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch means",
+          "rows": 96,
+          "columns": 16,
+          "cells_checked": 1536,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted intervals",
+          "rows": 24,
+          "columns": 35,
+          "cells_checked": 840,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "4075f09c940b64cdf769c8ebf1d840ac8fa63db7eca8f37876e656d45c788b97",
+      "bytes": 57790
+    },
+    {
+      "id": "S2",
+      "file": "Supplementary_Fig_2_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population values",
+          "rows": 228,
+          "columns": 19,
+          "cells_checked": 4332,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch means",
+          "rows": 66,
+          "columns": 16,
+          "cells_checked": 1056,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "7bf95f195d9300c105e2f245c98119bb53b42fed502407ca44793b2b9abb44ab",
+      "bytes": 37007
+    },
+    {
+      "id": "S3",
+      "file": "Supplementary_Fig_3_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population values",
+          "rows": 576,
+          "columns": 19,
+          "cells_checked": 10944,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch means",
+          "rows": 144,
+          "columns": 16,
+          "cells_checked": 2304,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted intervals",
+          "rows": 9,
+          "columns": 35,
+          "cells_checked": 315,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "e840db58e6d919b38cd9b543eb1f4ea0f4bcf0da98b007e3a7dbad02edb418cb",
+      "bytes": 71694
+    },
+    {
+      "id": "S4",
+      "file": "Supplementary_Fig_4_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population values",
+          "rows": 512,
+          "columns": 19,
+          "cells_checked": 9728,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch means",
+          "rows": 128,
+          "columns": 16,
+          "cells_checked": 2048,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted intervals",
+          "rows": 32,
+          "columns": 35,
+          "cells_checked": 1120,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "81478b7701987d560963dea8e6be4c9ec30c2a360fc193e689bb0de8e680ed0f",
+      "bytes": 71764
+    },
+    {
+      "id": "S5",
+      "file": "Supplementary_Fig_5_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population values",
+          "rows": 384,
+          "columns": 19,
+          "cells_checked": 7296,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch means",
+          "rows": 96,
+          "columns": 16,
+          "cells_checked": 1536,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted intervals",
+          "rows": 24,
+          "columns": 35,
+          "cells_checked": 840,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "680f752cb2b9b0ea6a4e0ea647556b88af8aa3c4b637bca9a512f7198a5b8b80",
+      "bytes": 58297
+    },
+    {
+      "id": "S6",
+      "file": "Supplementary_Fig_6_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population values",
+          "rows": 384,
+          "columns": 19,
+          "cells_checked": 7296,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch means",
+          "rows": 96,
+          "columns": 16,
+          "cells_checked": 1536,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted intervals",
+          "rows": 24,
+          "columns": 35,
+          "cells_checked": 840,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "713680f96158210cf252336df74ad05c6f402d7947042c7a6fdd3a4c02d1eb92",
+      "bytes": 58263
+    },
+    {
+      "id": "S7",
+      "file": "Supplementary_Fig_7_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Population bin counts",
+          "rows": 600,
+          "columns": 11,
+          "cells_checked": 6600,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Batch histograms",
+          "rows": 300,
+          "columns": 8,
+          "cells_checked": 2400,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Plotted mean histograms",
+          "rows": 150,
+          "columns": 7,
+          "cells_checked": 1050,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "ed7649702ee623cf40f3f487e52a5ac8b647dfe3c0fa0184d810d2df496565d6",
+      "bytes": 57263
+    },
+    {
+      "id": "S8",
+      "file": "Supplementary_Fig_8_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Score grid",
+          "rows": 1001,
+          "columns": 6,
+          "cells_checked": 6006,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Response grid",
+          "rows": 1001,
+          "columns": 6,
+          "cells_checked": 6006,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Gain grid",
+          "rows": 200,
+          "columns": 4,
+          "cells_checked": 800,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "1c579edbf6185d4da7ca35ded5f00910db514fc307542a573e276a86e96c3660",
+      "bytes": 112413
+    },
+    {
+      "id": "S10",
+      "file": "Supplementary_Fig_10_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Mean conditional correlations",
+          "rows": 20000,
+          "columns": 6,
+          "cells_checked": 120000,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Conditional noise populations",
+          "rows": 16,
+          "columns": 23,
+          "cells_checked": 368,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Conditional noise batches",
+          "rows": 4,
+          "columns": 21,
+          "cells_checked": 84,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Conditional noise summary",
+          "rows": 20,
+          "columns": 9,
+          "cells_checked": 180,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Community noise values",
+          "rows": 1600,
+          "columns": 10,
+          "cells_checked": 16000,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Withdrawal sensitivity",
+          "rows": 16,
+          "columns": 12,
+          "cells_checked": 192,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "cbb26ebe110263dfdab443e55515d47a1b91064236822e30b5f2c540a6987c97",
+      "bytes": 610335
+    },
+    {
+      "id": "Tables",
+      "file": "Statistical_Comparisons_Source_Data.xlsx",
+      "sheets": [
+        {
+          "name": "Main Table 1",
+          "rows": 6,
+          "columns": 40,
+          "cells_checked": 240,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Main Table 2",
+          "rows": 3,
+          "columns": 40,
+          "cells_checked": 120,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Geometry contrasts",
+          "rows": 9,
+          "columns": 40,
+          "cells_checked": 360,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Endpoint estimates",
+          "rows": 1328,
+          "columns": 35,
+          "cells_checked": 46480,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Paired contrasts",
+          "rows": 42,
+          "columns": 40,
+          "cells_checked": 1680,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Paired batch values",
+          "rows": 600,
+          "columns": 6,
+          "cells_checked": 3600,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Paired population values",
+          "rows": 2400,
+          "columns": 7,
+          "cells_checked": 16800,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        },
+        {
+          "name": "Variable definitions",
+          "rows": 82,
+          "columns": 4,
+          "cells_checked": 328,
+          "frozen_header_rows": 5,
+          "native_tables": 1
+        }
+      ],
+      "value_mismatches": 0,
+      "sha256": "6cc52563e3fb94e50198267f68ec8c393b52cacfbeeae8eab927819cd10880fb",
+      "bytes": 478039
+    }
+  ]
+}

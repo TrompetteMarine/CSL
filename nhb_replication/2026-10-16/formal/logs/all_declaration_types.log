@@ -1,0 +1,890 @@
+@CSLRepair.act.{u_1} : {C : Type u_1} → [Fintype.{u_1} C] → (C → C → Real) → (C → Real) → C → Real
+@CSLRepair.RowStochastic.{u_1} : {C : Type u_1} → [Fintype.{u_1} C] → (C → C → Real) → Prop
+@CSLRepair.macroMix.{u_1} : {C : Type u_1} → (C → C → Real) → (C → Real) → Real → C → C → Real
+@CSLRepair.block_aggregate.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (n : C → Nat) (B : C → C → Real)
+  (f : (c : C) × Fin (n c) → Real) (c : C),
+  Eq.{1} (∑ j, HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} (B c (Sigma.fst.{u_1, 0} j)) ↑(n (Sigma.fst.{u_1, 0} j))) (f j))
+    (∑ d, HMul.hMul.{0, 0, 0} (B c d) (HDiv.hDiv.{0, 0, 0} (∑ j, f (Sigma.mk.{u_1, 0} d j)) ↑(n d)))
+@CSLRepair.self_exclusion.{u_1} : ∀ {I : Type u_1} [inst : Fintype.{u_1} I] [inst_1 : DecidableEq.{u_1 + 1} I]
+  (w f : I → Real) (i : I),
+  Eq.{1} (∑ j ∈ Finset.erase.{u_1} Finset.univ.{u_1} i, HMul.hMul.{0, 0, 0} (w j) (f j))
+    (HSub.hSub.{0, 0, 0} (∑ j, HMul.hMul.{0, 0, 0} (w j) (f j)) (HMul.hMul.{0, 0, 0} (w i) (f i)))
+CSLRepair.convex_update_bounds : ∀ (q r R w α g : Real),
+  LE.le.{0} 0 q →
+    LE.le.{0} q 1 →
+      LE.le.{0} 0 R →
+        LE.le.{0} R 1 →
+          LE.le.{0} 0 α →
+            LE.le.{0} 0 g →
+              LE.le.{0} 0 r →
+                LE.le.{0} r w →
+                  LE.le.{0} (HAdd.hAdd.{0, 0, 0} α (HMul.hMul.{0, 0, 0} g w)) 1 →
+                    And
+                      (LE.le.{0} 0
+                        (HAdd.hAdd.{0, 0, 0}
+                          (HAdd.hAdd.{0, 0, 0}
+                            (HMul.hMul.{0, 0, 0}
+                              (HSub.hSub.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 α) (HMul.hMul.{0, 0, 0} g w)) q)
+                            (HMul.hMul.{0, 0, 0} α R))
+                          (HMul.hMul.{0, 0, 0} g r)))
+                      (LE.le.{0}
+                        (HAdd.hAdd.{0, 0, 0}
+                          (HAdd.hAdd.{0, 0, 0}
+                            (HMul.hMul.{0, 0, 0}
+                              (HSub.hSub.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 α) (HMul.hMul.{0, 0, 0} g w)) q)
+                            (HMul.hMul.{0, 0, 0} α R))
+                          (HMul.hMul.{0, 0, 0} g r))
+                        1)
+CSLRepair.peer_gain_bounds : ∀ (b c w ε : Real),
+  LE.le.{0} 0 b →
+    LE.le.{0} 0 c →
+      LE.le.{0} c w →
+        LT.lt.{0} 0 ε →
+          And (LE.le.{0} 0 (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} b c) (HAdd.hAdd.{0, 0, 0} w ε)))
+            (LE.le.{0} (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} b c) (HAdd.hAdd.{0, 0, 0} w ε)) b)
+CSLRepair.gain_budget : ∀ (α αmax b g w : Real),
+  LE.le.{0} α αmax →
+    LE.le.{0} 0 g →
+      LE.le.{0} g b →
+        LE.le.{0} 0 w →
+          LE.le.{0} w 1 →
+            LE.le.{0} (HAdd.hAdd.{0, 0, 0} αmax b) 1 → LE.le.{0} (HAdd.hAdd.{0, 0, 0} α (HMul.hMul.{0, 0, 0} g w)) 1
+CSLRepair.alphaPlus : Real → Real → Real → Real
+CSLRepair.alphaMinus : Real → Real → Real → Real
+CSLRepair.privateDrift : Real → Real → Real → Real → Real → Real
+CSLRepair.realised_sign_counterexample : And
+  (Eq.{1} (CSLRepair.privateDrift (1 / 2) (11 / 20) (9 / 10) (1 / 20) (2 / 5)) (Neg.neg.{0} (47 / 800)))
+  (Eq.{1} (HMul.hMul.{0, 0, 0} (CSLRepair.alphaPlus (9 / 10) (1 / 20) (2 / 5)) (HSub.hSub.{0, 0, 0} (11 / 20) (1 / 2)))
+    (17 / 4000))
+@CSLRepair.common_field.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (B : C → C → Real),
+  CSLRepair.RowStochastic.{u_1} B → ∀ (r : Real) (c : C), Eq.{1} (CSLRepair.act.{u_1} B (fun x => r) c) r
+@CSLRepair.common_linear_multiplier.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (B : C → C → Real),
+  CSLRepair.RowStochastic.{u_1} B →
+    ∀ (lam k r : Real) (c : C),
+      Eq.{1} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} lam k) (CSLRepair.act.{u_1} B (fun x => r) c))
+        (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} lam k) r)
+@CSLRepair.macro_stochastic.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (B : C → C → Real),
+  CSLRepair.RowStochastic.{u_1} B →
+    ∀ (ω : C → Real),
+      (∀ (d : C), LE.le.{0} 0 (ω d)) →
+        Eq.{1} (∑ d, ω d) 1 →
+          ∀ (θ : Real), LE.le.{0} 0 θ → LE.le.{0} θ 1 → CSLRepair.RowStochastic.{u_1} (CSLRepair.macroMix.{u_1} B ω θ)
+@CSLRepair.macro_action.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (B : C → C → Real) (ω z : C → Real) (θ : Real)
+  (c : C),
+  Eq.{1} (CSLRepair.act.{u_1} (CSLRepair.macroMix.{u_1} B ω θ) z c)
+    (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 θ) (CSLRepair.act.{u_1} B z c))
+      (HMul.hMul.{0, 0, 0} θ (∑ d, HMul.hMul.{0, 0, 0} (ω d) (z d))))
+@CSLRepair.macro_pairwise_difference.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (B : C → C → Real)
+  (ω z : C → Real) (θ : Real) (c d : C),
+  Eq.{1}
+    (HSub.hSub.{0, 0, 0} (CSLRepair.act.{u_1} (CSLRepair.macroMix.{u_1} B ω θ) z c)
+      (CSLRepair.act.{u_1} (CSLRepair.macroMix.{u_1} B ω θ) z d))
+    (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 θ)
+      (HSub.hSub.{0, 0, 0} (CSLRepair.act.{u_1} B z c) (CSLRepair.act.{u_1} B z d)))
+@CSLRepair.macro_row_distance.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (B : C → C → Real) (ω : C → Real)
+  (θ : Real),
+  LE.le.{0} θ 1 →
+    ∀ (c d : C),
+      Eq.{1}
+        (∑ j, abs.{0} (HSub.hSub.{0, 0, 0} (CSLRepair.macroMix.{u_1} B ω θ c j) (CSLRepair.macroMix.{u_1} B ω θ d j)))
+        (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 θ) (∑ j, abs.{0} (HSub.hSub.{0, 0, 0} (B c j) (B d j))))
+@CSLRepair.field_sup_bound.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (B : C → C → Real),
+  CSLRepair.RowStochastic.{u_1} B →
+    ∀ (z : C → Real) (r : Real),
+      (∀ (d : C), LE.le.{0} (abs.{0} (z d)) r) → ∀ (c : C), LE.le.{0} (abs.{0} (CSLRepair.act.{u_1} B z c)) r
+@CSLRepair.additive_common_field.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (B : C → C → Real),
+  CSLRepair.RowStochastic.{u_1} B →
+    ∀ (ω : C → Real),
+      Eq.{1} (∑ d, ω d) 1 →
+        ∀ (lpair lmacro r : Real) (c : C),
+          Eq.{1}
+            (CSLRepair.act.{u_1}
+              (fun c d => HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} lpair (B c d)) (HMul.hMul.{0, 0, 0} lmacro (ω d)))
+              (fun x => r) c)
+            (HMul.hMul.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} lpair lmacro) r)
+CSLRepair.sigmoid : Real → Real
+CSLRepair.weightedReadout : (Real → Real) → Real → Real → Real
+CSLRepair.readout_derivative : ∀ (score : Real → Real) (h : Real),
+  ContinuousAt.{0, 0} score (1 / 2) →
+    HasDerivAt.{0, 0} (CSLRepair.weightedReadout score h)
+      (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (score (1 / 2)) h) 2) 0
+CSLRepair.zero_floor_derivative : ∀ (score : Real → Real) (h : Real),
+  ContinuousAt.{0, 0} score (1 / 2) →
+    Eq.{1} (score (1 / 2)) 0 → HasDerivAt.{0, 0} (CSLRepair.weightedReadout score h) 0 0
+@CSLRepair.pairwise_oscillation_bound.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] [DecidableEq.{u_1 + 1} C]
+  (B : C → C → Real),
+  CSLRepair.RowStochastic.{u_1} B →
+    ∀ (z : C → Real) (L U : Real),
+      LE.le.{0} L U →
+        (∀ (j : C), And (LE.le.{0} L (z j)) (LE.le.{0} (z j) U)) →
+          ∀ (c d : C),
+            LE.le.{0} (abs.{0} (HSub.hSub.{0, 0, 0} (CSLRepair.act.{u_1} B z c) (CSLRepair.act.{u_1} B z d)))
+              (HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} (∑ j, abs.{0} (HSub.hSub.{0, 0, 0} (B c j) (B d j))) 2)
+                (HSub.hSub.{0, 0, 0} U L))
+CSLRepair.self_exclusion_ratio_bound : ∀ (u w c d ε : Real),
+  LE.le.{0} 0 u →
+    LE.le.{0} u w →
+      LE.le.{0} 0 d →
+        LE.le.{0} d 1 →
+          LE.le.{0} (HMul.hMul.{0, 0, 0} u d) c →
+            LE.le.{0} c (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} w u) (HMul.hMul.{0, 0, 0} u d)) →
+              LT.lt.{0} 0 ε →
+                LE.le.{0}
+                  (abs.{0}
+                    (HSub.hSub.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} c (HAdd.hAdd.{0, 0, 0} w ε))
+                      (HDiv.hDiv.{0, 0, 0} (HSub.hSub.{0, 0, 0} c (HMul.hMul.{0, 0, 0} u d))
+                        (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} w u) ε))))
+                  (HDiv.hDiv.{0, 0, 0} u (HAdd.hAdd.{0, 0, 0} w ε))
+@CSLRepair.field_deviation_bound.{u_1} : ∀ {I : Type u_1} [inst : Fintype.{u_1} I] (W V f : I → Real) (r : Real),
+  LE.le.{0} 0 r →
+    (∀ (i : I), LE.le.{0} (abs.{0} (f i)) r) →
+      LE.le.{0} (abs.{0} (∑ i, HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} (W i) (V i)) (f i)))
+        (HMul.hMul.{0, 0, 0} r (∑ i, abs.{0} (HSub.hSub.{0, 0, 0} (W i) (V i))))
+@CSLRepair.stationary_macro_coordinate.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] [DecidableEq.{u_1 + 1} C]
+  (B : C → C → Real) (π z : C → Real),
+  (∀ (d : C), Eq.{1} (∑ c, HMul.hMul.{0, 0, 0} (π c) (B c d)) (π d)) →
+    Eq.{1} (∑ c, HMul.hMul.{0, 0, 0} (π c) (CSLRepair.act.{u_1} B z c)) (∑ d, HMul.hMul.{0, 0, 0} (π d) (z d))
+CSLRepair.sigmoid_pos : ∀ (x : Real), LT.lt.{0} 0 (CSLRepair.sigmoid x)
+CSLRepair.sigmoid_lt_one : ∀ (x : Real), LT.lt.{0} (CSLRepair.sigmoid x) 1
+CSLRepair.continuous_sigmoid : Continuous.{0, 0} CSLRepair.sigmoid
+@CSLRepair.condexp_signed_decisiveness.{u_1} : ∀ {Ω : Type u_1} {m mΩ : MeasurableSpace.{u_1} Ω},
+  LE.le.{u_1} m mΩ →
+    ∀ (P : MeasureTheory.Measure.{u_1} Ω) [MeasureTheory.IsProbabilityMeasure.{u_1} P] (A : Set.{u_1} Ω),
+      MeasurableSet.{u_1} A →
+        ∀ (p d : Ω → Real),
+          Measurable.{u_1, 0} d →
+            (∀ (ω : Ω), LE.le.{0} (abs.{0} (d ω)) 1) →
+              Filter.EventuallyEq.{u_1, 0} (MeasureTheory.ae.{u_1, u_1} P)
+                  (MeasureTheory.condExp.{u_1, 0} m P (Set.indicator.{u_1, 0} A fun x => 1)) p →
+                Filter.EventuallyEq.{u_1, 0} (MeasureTheory.ae.{u_1, u_1} P)
+                  (MeasureTheory.condExp.{u_1, 0} m P fun ω =>
+                    HMul.hMul.{0, 0, 0} (d ω)
+                      (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 (Set.indicator.{u_1, 0} A (fun x => 1) ω)) 1))
+                  fun ω => HMul.hMul.{0, 0, 0} (d ω) (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 (p ω)) 1)
+@CSLRepair.choiceGap.{u_1} : {C : Type u_1} →
+  [Fintype.{u_1} C] →
+    {n : C → Nat} → (C → C → Real) → Real → ((c : C) × Fin (n c) → Real) → (C → Real) → (c : C) × Fin (n c) → Real
+@CSLRepair.conditional_signed_mean.{u_1,
+    u_2} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (n : C → Nat) {Ω : Type u_2} {m mΩ : MeasurableSpace.{u_2} Ω},
+  LE.le.{u_2} m mΩ →
+    ∀ (P : MeasureTheory.Measure.{u_2} Ω) [MeasureTheory.IsProbabilityMeasure.{u_2} P] (K : C → C → Real) (lam h : Real)
+      (score : Real → Real),
+      Measurable.{0, 0} score →
+        (∀ (p : Real), LE.le.{0} 0 p → LE.le.{0} p 1 → And (LE.le.{0} 0 (score p)) (LE.le.{0} (score p) 1)) →
+          ∀ (q : (c : C) × Fin (n c) → Ω → Real),
+            (∀ (i : (c : C) × Fin (n c)), Measurable.{u_2, 0} (q i)) →
+              ∀ (ψ : C → Ω → Real),
+                (∀ (c : C), Measurable.{u_2, 0} (ψ c)) →
+                  ∀ (A : (c : C) × Fin (n c) → Set.{u_2} Ω),
+                    (∀ (i : (c : C) × Fin (n c)), MeasurableSet.{u_2} (A i)) →
+                      (∀ (i : (c : C) × Fin (n c)),
+                          Filter.EventuallyEq.{u_2, 0} (MeasureTheory.ae.{u_2, u_2} P)
+                            (MeasureTheory.condExp.{u_2, 0} m P (Set.indicator.{u_2, 0} (A i) fun x => 1)) fun ω =>
+                            CSLRepair.sigmoid
+                              (HMul.hMul.{0, 0, 0} h
+                                (CSLRepair.choiceGap.{u_1} K lam (fun j => q j ω) (fun d => ψ d ω) i))) →
+                        ∀ (c : C),
+                          Filter.EventuallyEq.{u_2, 0} (MeasureTheory.ae.{u_2, u_2} P)
+                            (MeasureTheory.condExp.{u_2, 0} m P fun ω =>
+                              HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} 1 ↑(n c))
+                                (∑ j,
+                                  HMul.hMul.{0, 0, 0}
+                                    (score
+                                      (CSLRepair.sigmoid
+                                        (HMul.hMul.{0, 0, 0} h
+                                          (CSLRepair.choiceGap.{u_1} K lam (fun j => q j ω) (fun d => ψ d ω)
+                                            (Sigma.mk.{u_1, 0} c j)))))
+                                    (HSub.hSub.{0, 0, 0}
+                                      (HMul.hMul.{0, 0, 0} 2
+                                        (Set.indicator.{u_2, 0} (A (Sigma.mk.{u_1, 0} c j)) (fun x => 1) ω))
+                                      1)))
+                            fun ω =>
+                            HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} 1 ↑(n c))
+                              (∑ j,
+                                CSLRepair.weightedReadout score h
+                                  (CSLRepair.choiceGap.{u_1} K lam (fun j => q j ω) (fun d => ψ d ω)
+                                    (Sigma.mk.{u_1, 0} c j)))
+@CSLRepair.fieldJacobian.{u_1} : {C : Type u_1} →
+  [Fintype.{u_1} C] →
+    (n : C → Nat) →
+      (C → C → Real) →
+        Real →
+          ((c : C) × Fin (n c) → Real) →
+            ContinuousLinearMap.{0, 0, u_1, u_1} (RingHom.id.{0} Real) (C → Real) (C → Real)
+@CSLRepair.fieldJacobian_apply.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (n : C → Nat) (K : C → C → Real)
+  (lam : Real) (Gd : (c : C) × Fin (n c) → Real) (v : C → Real) (c : C),
+  Eq.{1} ((CSLRepair.fieldJacobian.{u_1} n K lam Gd) v c)
+    (HMul.hMul.{0, 0, 0}
+      (HMul.hMul.{0, 0, 0} lam (HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} 1 ↑(n c)) (∑ j, Gd (Sigma.mk.{u_1, 0} c j))))
+      (CSLRepair.act.{u_1} K v c))
+@CSLRepair.field_jacobian.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (n : C → Nat) (K : C → C → Real)
+  (lam : Real) (G : Real → Real) (q : (c : C) × Fin (n c) → Real) (ψ : C → Real) (Gd : (c : C) × Fin (n c) → Real),
+  (∀ (i : (c : C) × Fin (n c)), HasDerivAt.{0, 0} G (Gd i) (CSLRepair.choiceGap.{u_1} K lam q ψ i)) →
+    HasFDerivAt.{0, u_1, u_1}
+      (fun z c =>
+        HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} 1 ↑(n c))
+          (∑ j, G (CSLRepair.choiceGap.{u_1} K lam q z (Sigma.mk.{u_1, 0} c j))))
+      (CSLRepair.fieldJacobian.{u_1} n K lam Gd) ψ
+CSLRepair.realisedIncrement : Real → Real → Real → Real → Real → Real
+CSLRepair.realisedIncrement_eq_affine : ∀ (q d amin amax r : Real),
+  Or (Eq.{1} r 0) (Eq.{1} r 1) →
+    LE.le.{0} 0 q →
+      LE.le.{0} q 1 →
+        Eq.{1} (CSLRepair.realisedIncrement q d amin amax r)
+          (HSub.hSub.{0, 0, 0}
+            (HMul.hMul.{0, 0, 0} r (HMul.hMul.{0, 0, 0} (CSLRepair.alphaPlus d amin amax) (HSub.hSub.{0, 0, 0} 1 q)))
+            (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 r) (HMul.hMul.{0, 0, 0} (CSLRepair.alphaMinus d amin amax) q)))
+@CSLRepair.realised_sign_expectation.{u_1} : ∀ {Ω : Type u_1} [inst : MeasurableSpace.{u_1} Ω]
+  (P : MeasureTheory.Measure.{u_1} Ω) [MeasureTheory.IsProbabilityMeasure.{u_1} P] (R : Ω → Real),
+  Measurable.{u_1, 0} R →
+    (∀ (ω : Ω), Or (Eq.{1} (R ω) 0) (Eq.{1} (R ω) 1)) →
+      ∀ (μ : Real),
+        Eq.{1} (MeasureTheory.Measure.real.{u_1} P (setOf.{u_1} fun ω => Eq.{1} (R ω) 1)) μ →
+          ∀ (q d amin amax : Real),
+            LE.le.{0} 0 q →
+              LE.le.{0} q 1 →
+                Eq.{1} (∫ (ω : Ω), CSLRepair.realisedIncrement q d amin amax (R ω) ∂P)
+                  (CSLRepair.privateDrift q μ d amin amax)
+@CSLRepair.realised_sign_condexp.{u_1} : ∀ {Ω : Type u_1} {m mΩ : MeasurableSpace.{u_1} Ω},
+  LE.le.{u_1} m mΩ →
+    ∀ (P : MeasureTheory.Measure.{u_1} Ω) [MeasureTheory.IsProbabilityMeasure.{u_1} P] (R : Ω → Real),
+      Measurable.{u_1, 0} R →
+        (∀ (ω : Ω), Or (Eq.{1} (R ω) 0) (Eq.{1} (R ω) 1)) →
+          ∀ (μ : Real),
+            (Filter.EventuallyEq.{u_1, 0} (MeasureTheory.ae.{u_1, u_1} P)
+                (MeasureTheory.condExp.{u_1, 0} m P
+                  (Set.indicator.{u_1, 0} (setOf.{u_1} fun ω => Eq.{1} (R ω) 1) fun x => 1))
+                fun x => μ) →
+              ∀ (q d : Ω → Real),
+                Measurable.{u_1, 0} q →
+                  Measurable.{u_1, 0} d →
+                    (∀ (ω : Ω), LE.le.{0} 0 (q ω)) →
+                      (∀ (ω : Ω), LE.le.{0} (q ω) 1) →
+                        (∀ (ω : Ω), LE.le.{0} 0 (d ω)) →
+                          (∀ (ω : Ω), LE.le.{0} (d ω) 1) →
+                            ∀ (amin amax : Real),
+                              Filter.EventuallyEq.{u_1, 0} (MeasureTheory.ae.{u_1, u_1} P)
+                                (MeasureTheory.condExp.{u_1, 0} m P fun ω =>
+                                  CSLRepair.realisedIncrement (q ω) (d ω) amin amax (R ω))
+                                fun ω => CSLRepair.privateDrift (q ω) μ (d ω) amin amax
+CSLRepair.driftTarget : Real → Real → Real → Real → Real
+CSLRepair.privateDrift_eq_target : ∀ (q μ d amin amax : Real),
+  LT.lt.{0} 0
+      (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} μ (CSLRepair.alphaPlus d amin amax))
+        (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 μ) (CSLRepair.alphaMinus d amin amax))) →
+    Eq.{1} (CSLRepair.privateDrift q μ d amin amax)
+      (HMul.hMul.{0, 0, 0}
+        (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} μ (CSLRepair.alphaPlus d amin amax))
+          (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 μ) (CSLRepair.alphaMinus d amin amax)))
+        (HSub.hSub.{0, 0, 0} (CSLRepair.driftTarget μ d amin amax) q))
+CSLRepair.privateDrift_eq_zero_iff : ∀ (q μ d amin amax : Real),
+  LT.lt.{0} 0
+      (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} μ (CSLRepair.alphaPlus d amin amax))
+        (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 μ) (CSLRepair.alphaMinus d amin amax))) →
+    Iff (Eq.{1} (CSLRepair.privateDrift q μ d amin amax) 0) (Eq.{1} q (CSLRepair.driftTarget μ d amin amax))
+CSLRepair.one_sub_sigmoid : ∀ (x : Real),
+  Eq.{1} (HSub.hSub.{0, 0, 0} 1 (CSLRepair.sigmoid x)) (CSLRepair.sigmoid (Neg.neg.{0} x))
+CSLRepair.sigmoid_monotone : Monotone.{0, 0} CSLRepair.sigmoid
+CSLRepair.explorationFloor : Real → Real → Real
+CSLRepair.explorationFloor_pos : ∀ (h lam : Real), LT.lt.{0} 0 (CSLRepair.explorationFloor h lam)
+CSLRepair.explorationFloor_lt_one : ∀ (h lam : Real), LT.lt.{0} (CSLRepair.explorationFloor h lam) 1
+@CSLRepair.choice_gap_bound.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (K : C → C → Real),
+  CSLRepair.RowStochastic.{u_1} K →
+    ∀ (lam : Real),
+      LE.le.{0} 0 lam →
+        ∀ (Q1 Q0 : Real),
+          And (LE.le.{0} 0 Q1) (LE.le.{0} Q1 1) →
+            And (LE.le.{0} 0 Q0) (LE.le.{0} Q0 1) →
+              ∀ (ψ : C → Real),
+                (∀ (d : C), LE.le.{0} (abs.{0} (ψ d)) 1) →
+                  ∀ (c : C),
+                    LE.le.{0}
+                      (abs.{0}
+                        (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} Q1 Q0)
+                          (HMul.hMul.{0, 0, 0} lam (CSLRepair.act.{u_1} K ψ c))))
+                      (HAdd.hAdd.{0, 0, 0} 1 lam)
+@CSLRepair.exploration_floor.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (K : C → C → Real),
+  CSLRepair.RowStochastic.{u_1} K →
+    ∀ (h lam : Real),
+      LT.lt.{0} 0 h →
+        LE.le.{0} 0 lam →
+          ∀ (Q1 Q0 : Real),
+            And (LE.le.{0} 0 Q1) (LE.le.{0} Q1 1) →
+              And (LE.le.{0} 0 Q0) (LE.le.{0} Q0 1) →
+                ∀ (ψ : C → Real),
+                  (∀ (d : C), LE.le.{0} (abs.{0} (ψ d)) 1) →
+                    ∀ (c : C),
+                      And
+                        (LE.le.{0} (CSLRepair.explorationFloor h lam)
+                          (CSLRepair.sigmoid
+                            (HMul.hMul.{0, 0, 0} h
+                              (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} Q1 Q0)
+                                (HMul.hMul.{0, 0, 0} lam (CSLRepair.act.{u_1} K ψ c))))))
+                        (LE.le.{0} (CSLRepair.explorationFloor h lam)
+                          (HSub.hSub.{0, 0, 0} 1
+                            (CSLRepair.sigmoid
+                              (HMul.hMul.{0, 0, 0} h
+                                (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} Q1 Q0)
+                                  (HMul.hMul.{0, 0, 0} lam (CSLRepair.act.{u_1} K ψ c)))))))
+@CSLRepair.condExp_indicator_compl.{u_1} : ∀ {Ω : Type u_1} {m mΩ : MeasurableSpace.{u_1} Ω},
+  LE.le.{u_1} m mΩ →
+    ∀ (P : MeasureTheory.Measure.{u_1} Ω) [MeasureTheory.IsProbabilityMeasure.{u_1} P] (A : Set.{u_1} Ω),
+      MeasurableSet.{u_1} A →
+        Filter.EventuallyEq.{u_1, 0} (MeasureTheory.ae.{u_1, u_1} P)
+          (MeasureTheory.condExp.{u_1, 0} m P (Set.indicator.{u_1, 0} (compl.{u_1} A) fun x => 1)) fun ω =>
+          HSub.hSub.{0, 0, 0} 1 (MeasureTheory.condExp.{u_1, 0} m P (Set.indicator.{u_1, 0} A fun x => 1) ω)
+@CSLRepair.avoidance_bound.{u_1} : ∀ {Ω : Type u_1} {mΩ : MeasurableSpace.{u_1} Ω}
+  (ℱ : MeasureTheory.Filtration.{u_1, 0} Nat mΩ) (P : MeasureTheory.Measure.{u_1} Ω)
+  [MeasureTheory.IsProbabilityMeasure.{u_1} P] (E : Nat → Set.{u_1} Ω),
+  (∀ (t : Nat), MeasurableSet.{u_1} (E t)) →
+    ∀ (ε : Real),
+      LE.le.{0} ε 1 →
+        (∀ (t : Nat),
+            ∀ᵐ (ω : Ω) ∂P,
+              LE.le.{0} ε (MeasureTheory.condExp.{u_1, 0} (↑ℱ t) P (Set.indicator.{u_1, 0} (E t) fun x => 1) ω)) →
+          ∀ (t0 H : Nat),
+            LE.le.{0}
+              (MeasureTheory.Measure.real.{u_1} P
+                (⋂ t,
+                  ⋂ (_ : Membership.mem.{0, 0} (Finset.Ico.{0} t0 (HAdd.hAdd.{0, 0, 0} t0 H)) t), compl.{u_1} (E t)))
+              (HPow.hPow.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 ε) H)
+@CSLRepair.frequently_of_condexp_floor.{u_1} : ∀ {Ω : Type u_1} {mΩ : MeasurableSpace.{u_1} Ω}
+  (ℱ : MeasureTheory.Filtration.{u_1, 0} Nat mΩ) (P : MeasureTheory.Measure.{u_1} Ω)
+  [MeasureTheory.IsProbabilityMeasure.{u_1} P] (E : Nat → Set.{u_1} Ω),
+  (∀ (t : Nat), MeasurableSet.{u_1} (E t)) →
+    ∀ (ε : Real),
+      LT.lt.{0} 0 ε →
+        (∀ (t : Nat),
+            ∀ᵐ (ω : Ω) ∂P,
+              LE.le.{0} ε (MeasureTheory.condExp.{u_1, 0} (↑ℱ t) P (Set.indicator.{u_1, 0} (E t) fun x => 1) ω)) →
+          ∀ᵐ (ω : Ω) ∂P, ∃ᶠ (t : Nat) in Filter.atTop.{0}, Membership.mem.{u_1, u_1} (E t) ω
+@CSLRepair.exploration_and_repeated_sampling.{u_1,
+    u_2} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] {Ω : Type u_2} {mΩ : MeasurableSpace.{u_2} Ω}
+  (ℱ : MeasureTheory.Filtration.{u_2, 0} Nat mΩ) (P : MeasureTheory.Measure.{u_2} Ω)
+  [MeasureTheory.IsProbabilityMeasure.{u_2} P] (K : C → C → Real),
+  CSLRepair.RowStochastic.{u_1} K →
+    ∀ (h lam : Real),
+      LT.lt.{0} 0 h →
+        LE.le.{0} 0 lam →
+          ∀ (c : C) (Q1 Q0 : Nat → Ω → Real) (ψ : Nat → C → Ω → Real),
+            (∀ (t : Nat) (ω : Ω), And (LE.le.{0} 0 (Q1 t ω)) (LE.le.{0} (Q1 t ω) 1)) →
+              (∀ (t : Nat) (ω : Ω), And (LE.le.{0} 0 (Q0 t ω)) (LE.le.{0} (Q0 t ω) 1)) →
+                (∀ (t : Nat) (d : C) (ω : Ω), LE.le.{0} (abs.{0} (ψ t d ω)) 1) →
+                  ∀ (A : Nat → Set.{u_2} Ω),
+                    (∀ (t : Nat), MeasurableSet.{u_2} (A t)) →
+                      (∀ (t : Nat),
+                          Filter.EventuallyEq.{u_2, 0} (MeasureTheory.ae.{u_2, u_2} P)
+                            (MeasureTheory.condExp.{u_2, 0} (↑ℱ t) P (Set.indicator.{u_2, 0} (A t) fun x => 1)) fun ω =>
+                            CSLRepair.sigmoid
+                              (HMul.hMul.{0, 0, 0} h
+                                (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} (Q1 t ω) (Q0 t ω))
+                                  (HMul.hMul.{0, 0, 0} lam (CSLRepair.act.{u_1} K (fun d => ψ t d ω) c))))) →
+                        And
+                          (∀ (t : Nat),
+                            ∀ᵐ (ω : Ω) ∂P,
+                              And
+                                (LE.le.{0} (CSLRepair.explorationFloor h lam)
+                                  (MeasureTheory.condExp.{u_2, 0} (↑ℱ t) P (Set.indicator.{u_2, 0} (A t) fun x => 1) ω))
+                                (LE.le.{0} (CSLRepair.explorationFloor h lam)
+                                  (MeasureTheory.condExp.{u_2, 0} (↑ℱ t) P
+                                    (Set.indicator.{u_2, 0} (compl.{u_2} (A t)) fun x => 1) ω)))
+                          (And
+                            (∀ (t0 H : Nat),
+                              LE.le.{0}
+                                (MeasureTheory.Measure.real.{u_2} P
+                                  (⋂ t,
+                                    ⋂ (_ : Membership.mem.{0, 0} (Finset.Ico.{0} t0 (HAdd.hAdd.{0, 0, 0} t0 H)) t),
+                                      compl.{u_2} (A t)))
+                                (HPow.hPow.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 (CSLRepair.explorationFloor h lam)) H))
+                            (And
+                              (∀ (t0 H : Nat),
+                                LE.le.{0}
+                                  (MeasureTheory.Measure.real.{u_2} P
+                                    (⋂ t,
+                                      ⋂ (_ : Membership.mem.{0, 0} (Finset.Ico.{0} t0 (HAdd.hAdd.{0, 0, 0} t0 H)) t),
+                                        A t))
+                                  (HPow.hPow.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 (CSLRepair.explorationFloor h lam)) H))
+                              (And (∀ᵐ (ω : Ω) ∂P, ∃ᶠ (t : Nat) in Filter.atTop.{0}, Membership.mem.{u_2, u_2} (A t) ω)
+                                (∀ᵐ (ω : Ω) ∂P, ∃ᶠ (t : Nat) in Filter.atTop.{0}, ω ∉ A t))))
+CSLRepair.scoreConstant : Real → Real
+CSLRepair.scorePreference : Real → Real
+CSLRepair.scoreQuadratic : Real → Real
+CSLRepair.scoreZeroFloor : Real → Real
+@CSLRepair.abs_two_mul_sub_one_le : ∀ {p : Real},
+  LE.le.{0} 0 p → LE.le.{0} p 1 → LE.le.{0} (abs.{0} (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 p) 1)) 1
+CSLRepair.score_conventions_admissible : And
+  (And (Continuous.{0, 0} CSLRepair.scoreConstant)
+    (And (Continuous.{0, 0} CSLRepair.scorePreference)
+      (And (Continuous.{0, 0} CSLRepair.scoreQuadratic) (Continuous.{0, 0} CSLRepair.scoreZeroFloor))))
+  (∀ (p : Real),
+    LE.le.{0} 0 p →
+      LE.le.{0} p 1 →
+        And (And (LE.le.{0} 0 (CSLRepair.scoreConstant p)) (LE.le.{0} (CSLRepair.scoreConstant p) 1))
+          (And (And (LE.le.{0} 0 (CSLRepair.scorePreference p)) (LE.le.{0} (CSLRepair.scorePreference p) 1))
+            (And (And (LE.le.{0} 0 (CSLRepair.scoreQuadratic p)) (LE.le.{0} (CSLRepair.scoreQuadratic p) 1))
+              (And (LE.le.{0} 0 (CSLRepair.scoreZeroFloor p)) (LE.le.{0} (CSLRepair.scoreZeroFloor p) 1)))))
+CSLRepair.hasDerivAt_sigmoid : ∀ (x : Real),
+  HasDerivAt.{0, 0} CSLRepair.sigmoid
+    (HMul.hMul.{0, 0, 0} (CSLRepair.sigmoid x) (HSub.hSub.{0, 0, 0} 1 (CSLRepair.sigmoid x))) x
+CSLRepair.hasDerivAt_constant_readout : ∀ (h x : Real),
+  HasDerivAt.{0, 0} (CSLRepair.weightedReadout CSLRepair.scoreConstant h)
+    (HMul.hMul.{0, 0, 0} h
+      (HMul.hMul.{0, 0, 0} (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h x))
+        (HSub.hSub.{0, 0, 0} 1 (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h x)))))
+    x
+CSLRepair.zero_mean_gap_not_homogeneous : ∀ (h : Real),
+  Ne.{1} h 0 →
+    And (Eq.{1} (HDiv.hDiv.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} 1 (-1)) 2) 0)
+      (LT.lt.{0}
+        (abs.{0}
+          (HDiv.hDiv.{0, 0, 0}
+            (HAdd.hAdd.{0, 0, 0}
+              (HMul.hMul.{0, 0, 0} h
+                (HMul.hMul.{0, 0, 0} (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h 1))
+                  (HSub.hSub.{0, 0, 0} 1 (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h 1)))))
+              (HMul.hMul.{0, 0, 0} h
+                (HMul.hMul.{0, 0, 0} (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h (-1)))
+                  (HSub.hSub.{0, 0, 0} 1 (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h (-1)))))))
+            2))
+        (abs.{0}
+          (HMul.hMul.{0, 0, 0} h
+            (HMul.hMul.{0, 0, 0} (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h 0))
+              (HSub.hSub.{0, 0, 0} 1 (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h 0)))))))
+@CSLRepair.frozen_map_jacobian.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (K : C → C → Real) (lam h : Real)
+  (score : Real → Real),
+  ContinuousAt.{0, 0} score (1 / 2) →
+    And
+      (HasFDerivAt.{0, u_1, u_1}
+        (fun z c => CSLRepair.weightedReadout score h (HMul.hMul.{0, 0, 0} lam (CSLRepair.act.{u_1} K z c)))
+        (CSLRepair.fieldJacobian.{u_1} (fun x => 1) K lam fun x =>
+          HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (score (1 / 2)) h) 2)
+        0)
+      (∀ (v : C → Real) (c : C),
+        Eq.{1}
+          ((CSLRepair.fieldJacobian.{u_1} (fun x => 1) K lam fun x =>
+              HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (score (1 / 2)) h) 2)
+            v c)
+          (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} lam (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (score (1 / 2)) h) 2))
+            (CSLRepair.act.{u_1} K v c)))
+@CSLRepair.fixed_gain_stationary_variance.{u_1} : ∀ {Ω : Type u_1} [inst : MeasurableSpace.{u_1} Ω]
+  (P : MeasureTheory.Measure.{u_1} Ω) [MeasureTheory.IsProbabilityMeasure.{u_1} P] (Q R : Ω → Real),
+  MeasureTheory.MemLp.{u_1, 0} Q 2 P →
+    Measurable.{u_1, 0} R →
+      (∀ (ω : Ω), Or (Eq.{1} (R ω) 0) (Eq.{1} (R ω) 1)) →
+        ProbabilityTheory.IndepFun.{u_1, 0, 0} Q R P →
+          ∀ (α μ : Real),
+            LT.lt.{0} 0 α →
+              LT.lt.{0} α 1 →
+                LT.lt.{0} 0 μ →
+                  LT.lt.{0} μ 1 →
+                    Eq.{1} (MeasureTheory.Measure.real.{u_1} P (setOf.{u_1} fun ω => Eq.{1} (R ω) 1)) μ →
+                      Eq.{1} (∫ (ω : Ω), Q ω ∂P) μ →
+                        Eq.{1} (ProbabilityTheory.variance.{u_1} Q P)
+                            (HDiv.hDiv.{0, 0, 0}
+                              (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} α μ) (HSub.hSub.{0, 0, 0} 1 μ))
+                              (HSub.hSub.{0, 0, 0} 2 α)) →
+                          And
+                            (LT.lt.{0} 0
+                              (HDiv.hDiv.{0, 0, 0}
+                                (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} α μ) (HSub.hSub.{0, 0, 0} 1 μ))
+                                (HSub.hSub.{0, 0, 0} 2 α)))
+                            (And
+                              (Eq.{1}
+                                (∫ (ω : Ω),
+                                  HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 α) (Q ω))
+                                    (HMul.hMul.{0, 0, 0} α (R ω)) ∂P)
+                                μ)
+                              (Eq.{1}
+                                (ProbabilityTheory.variance.{u_1}
+                                  (fun ω =>
+                                    HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 α) (Q ω))
+                                      (HMul.hMul.{0, 0, 0} α (R ω)))
+                                  P)
+                                (HDiv.hDiv.{0, 0, 0}
+                                  (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} α μ) (HSub.hSub.{0, 0, 0} 1 μ))
+                                  (HSub.hSub.{0, 0, 0} 2 α))))
+CSLRepair.private_gain_bounds : ∀ (d amin amax : Real),
+  LE.le.{0} 0 d →
+    LE.le.{0} d 1 →
+      LE.le.{0} amin amax →
+        And (LE.le.{0} amin (CSLRepair.alphaPlus d amin amax))
+          (And (LE.le.{0} (CSLRepair.alphaPlus d amin amax) amax)
+            (And (LE.le.{0} amin (CSLRepair.alphaMinus d amin amax))
+              (LE.le.{0} (CSLRepair.alphaMinus d amin amax) amax)))
+CSLRepair.preference_score_bounds : ∀ (p : Real),
+  LE.le.{0} 0 p →
+    LE.le.{0} p 1 →
+      And (LE.le.{0} (1 / 2) (max.{0} p (HSub.hSub.{0, 0, 0} 1 p))) (LE.le.{0} (max.{0} p (HSub.hSub.{0, 0, 0} 1 p)) 1)
+CSLRepair.logistic_decisiveness_bounds : ∀ (x : Real),
+  And (LE.le.{0} (1 / 2) (max.{0} (CSLRepair.sigmoid x) (HSub.hSub.{0, 0, 0} 1 (CSLRepair.sigmoid x))))
+    (LE.le.{0} (max.{0} (CSLRepair.sigmoid x) (HSub.hSub.{0, 0, 0} 1 (CSLRepair.sigmoid x))) 1)
+CSLRepair.realised_gain_bounds : ∀ (q R d amin amax : Real),
+  LE.le.{0} 0 d →
+    LE.le.{0} d 1 →
+      LE.le.{0} amin amax →
+        And
+          (LE.le.{0} amin
+            (ite.{1} (LE.le.{0} 0 (HSub.hSub.{0, 0, 0} R q)) (CSLRepair.alphaPlus d amin amax)
+              (CSLRepair.alphaMinus d amin amax)))
+          (LE.le.{0}
+            (ite.{1} (LE.le.{0} 0 (HSub.hSub.{0, 0, 0} R q)) (CSLRepair.alphaPlus d amin amax)
+              (CSLRepair.alphaMinus d amin amax))
+            amax)
+CSLRepair.private_target_den_pos : ∀ (μ d amin amax : Real),
+  LE.le.{0} 0 μ →
+    LE.le.{0} μ 1 →
+      LE.le.{0} 0 d →
+        LE.le.{0} d 1 →
+          LT.lt.{0} 0 amin →
+            LE.le.{0} amin amax →
+              LT.lt.{0} 0
+                (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} μ (CSLRepair.alphaPlus d amin amax))
+                  (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 μ) (CSLRepair.alphaMinus d amin amax)))
+CSLRepair.private_target_bounds : ∀ (μ d amin amax : Real),
+  LE.le.{0} 0 μ →
+    LE.le.{0} μ 1 →
+      LE.le.{0} 0 d →
+        LE.le.{0} d 1 →
+          LT.lt.{0} 0 amin →
+            LE.le.{0} amin amax →
+              And (LE.le.{0} 0 (CSLRepair.driftTarget μ d amin amax))
+                (LE.le.{0} (CSLRepair.driftTarget μ d amin amax) 1)
+CSLRepair.realisedUpdate : Real → Real → Real → Real → Real → Real → Real → Real → Real
+CSLRepair.realised_update_bounds : ∀ (q R α amax b v w r ε : Real),
+  And (LE.le.{0} 0 q) (LE.le.{0} q 1) →
+    And (LE.le.{0} 0 R) (LE.le.{0} R 1) →
+      LE.le.{0} 0 α →
+        LE.le.{0} α amax →
+          LE.le.{0} 0 b →
+            LE.le.{0} 0 v →
+              LE.le.{0} v w →
+                LE.le.{0} w 1 →
+                  LE.le.{0} 0 r →
+                    LE.le.{0} r w →
+                      LT.lt.{0} 0 ε →
+                        LE.le.{0} (HAdd.hAdd.{0, 0, 0} amax b) 1 →
+                          And (LE.le.{0} 0 (CSLRepair.realisedUpdate q R α b v w r ε))
+                            (LE.le.{0} (CSLRepair.realisedUpdate q R α b v w r ε) 1)
+@CSLRepair.peer_mass_constraints.{u_1} : ∀ {I : Type u_1} [inst : Fintype.{u_1} I] (W a R d : I → Real),
+  (∀ (i : I), LE.le.{0} 0 (W i)) →
+    LE.le.{0} (∑ i, W i) 1 →
+      (∀ (i : I), And (LE.le.{0} 0 (a i)) (LE.le.{0} (a i) 1)) →
+        (∀ (i : I), And (LE.le.{0} 0 (R i)) (LE.le.{0} (R i) 1)) →
+          (∀ (i : I), And (LE.le.{0} 0 (d i)) (LE.le.{0} (d i) 1)) →
+            And (LE.le.{0} 0 (∑ i, HMul.hMul.{0, 0, 0} (W i) (a i)))
+              (And (LE.le.{0} (∑ i, HMul.hMul.{0, 0, 0} (W i) (a i)) 1)
+                (And (LE.le.{0} 0 (∑ i, HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (W i) (a i)) (R i)))
+                  (And
+                    (LE.le.{0} (∑ i, HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (W i) (a i)) (R i))
+                      (∑ i, HMul.hMul.{0, 0, 0} (W i) (a i)))
+                    (And (LE.le.{0} 0 (∑ i, HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (W i) (a i)) (d i)))
+                      (LE.le.{0} (∑ i, HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (W i) (a i)) (d i))
+                        (∑ i, HMul.hMul.{0, 0, 0} (W i) (a i)))))))
+CSLRepair.signed_mass_bound : ∀ (n : Nat),
+  LT.lt.{0} 0 n →
+    ∀ (d y : Fin n → Real),
+      (∀ (i : Fin n), LE.le.{0} (abs.{0} (d i)) 1) →
+        (∀ (i : Fin n), LE.le.{0} (abs.{0} (y i)) 1) →
+          LE.le.{0} (abs.{0} (HDiv.hDiv.{0, 0, 0} (∑ i, HMul.hMul.{0, 0, 0} (d i) (y i)) ↑n)) 1
+CSLRepair.scores_invariant : ∀ (q R α v w r : Nat → Real) (amax b ε : Real),
+  And (LE.le.{0} 0 (q 0)) (LE.le.{0} (q 0) 1) →
+    (∀ (t : Nat), And (LE.le.{0} 0 (R t)) (LE.le.{0} (R t) 1)) →
+      (∀ (t : Nat), And (LE.le.{0} 0 (α t)) (LE.le.{0} (α t) amax)) →
+        LE.le.{0} 0 b →
+          (∀ (t : Nat), And (LE.le.{0} 0 (v t)) (LE.le.{0} (v t) (w t))) →
+            (∀ (t : Nat), LE.le.{0} (w t) 1) →
+              (∀ (t : Nat), And (LE.le.{0} 0 (r t)) (LE.le.{0} (r t) (w t))) →
+                LT.lt.{0} 0 ε →
+                  LE.le.{0} (HAdd.hAdd.{0, 0, 0} amax b) 1 →
+                    (∀ (t : Nat),
+                        Eq.{1} (q (HAdd.hAdd.{0, 0, 0} t 1))
+                          (CSLRepair.realisedUpdate (q t) (R t) (α t) b (v t) (w t) (r t) ε)) →
+                      ∀ (t : Nat), And (LE.le.{0} 0 (q t)) (LE.le.{0} (q t) 1)
+@CSLRepair.act_scale.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (B : C → C → Real) (ψ : C → Real) (scale : Real)
+  (c : C),
+  Eq.{1} (CSLRepair.act.{u_1} B (fun d => HMul.hMul.{0, 0, 0} scale (ψ d)) c)
+    (HMul.hMul.{0, 0, 0} scale (CSLRepair.act.{u_1} B ψ c))
+@CSLRepair.controlled_field_rescaling.{u_1} : ∀ {C : Type u_1} [inst : Fintype.{u_1} C] (B : C → C → Real)
+  (ψ : C → Real) (scale lam : Real) (c : C),
+  Eq.{1} (HMul.hMul.{0, 0, 0} lam (CSLRepair.act.{u_1} B (fun d => HMul.hMul.{0, 0, 0} scale (ψ d)) c))
+    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} scale lam) (CSLRepair.act.{u_1} B ψ c))
+CSLRepair.emitted_signal_rescaling : ∀ (n : Nat) (sign : Fin n → Real) (score scale : Real),
+  Eq.{1} (HDiv.hDiv.{0, 0, 0} (∑ i, HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} scale score) (sign i)) ↑n)
+    (HMul.hMul.{0, 0, 0} scale (HDiv.hDiv.{0, 0, 0} (∑ i, HMul.hMul.{0, 0, 0} score (sign i)) ↑n))
+CSLRepair.twoField : Real → Real → Real → Prod.{0, 0} Real Real
+CSLRepair.two_community_common : ∀ (Γ x : Real), Eq.{1} (CSLRepair.twoField Γ x x) (Prod.mk.{0, 0} x x)
+CSLRepair.two_community_relative : ∀ (Γ x : Real),
+  Eq.{1} (CSLRepair.twoField Γ x (Neg.neg.{0} x))
+    (Prod.mk.{0, 0} (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 (HMul.hMul.{0, 0, 0} 2 Γ)) x)
+      (HMul.hMul.{0, 0, 0} (Neg.neg.{0} (HSub.hSub.{0, 0, 0} 1 (HMul.hMul.{0, 0, 0} 2 Γ))) x))
+CSLRepair.two_community_difference : ∀ (Γ x y : Real),
+  Eq.{1} (HSub.hSub.{0, 0, 0} (CSLRepair.twoField Γ x y).1 (CSLRepair.twoField Γ x y).2)
+    (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 (HMul.hMul.{0, 0, 0} 2 Γ)) (HSub.hSub.{0, 0, 0} x y))
+CSLRepair.default_frozen_multipliers : And
+  (Eq.{1} (HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (1 / 2) 12) 2) (3 / 5)) (9 / 5))
+  (Eq.{1}
+    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (1 / 2) 12) 2) (3 / 5))
+      (HSub.hSub.{0, 0, 0} 1 (HMul.hMul.{0, 0, 0} 2 (3 / 20))))
+    (63 / 50))
+CSLRepair.default_relative_amplifies : LT.lt.{0} 1
+  (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (1 / 2) 12) 2) (3 / 5))
+    (HSub.hSub.{0, 0, 0} 1 (HMul.hMul.{0, 0, 0} 2 (3 / 20))))
+CSLRepair.sigmoid_strictMono : StrictMono.{0, 0} CSLRepair.sigmoid
+CSLRepair.withdrawal_probability : ∀ (h g lam H : Real),
+  LE.le.{0} 0 h →
+    LE.le.{0} (HMul.hMul.{0, 0, 0} lam H) 0 →
+      LE.le.{0} (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h (HAdd.hAdd.{0, 0, 0} g (HMul.hMul.{0, 0, 0} lam H))))
+        (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h g))
+CSLRepair.withdrawal_probability_strict : ∀ (h g lam H : Real),
+  LT.lt.{0} 0 h →
+    LT.lt.{0} (HMul.hMul.{0, 0, 0} lam H) 0 →
+      LT.lt.{0} (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h (HAdd.hAdd.{0, 0, 0} g (HMul.hMul.{0, 0, 0} lam H))))
+        (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h g))
+@CSLRepair.average_subset_bound.{u_1} : ∀ {I : Type u_1} [inst : Fintype.{u_1} I] [DecidableEq.{u_1 + 1} I]
+  (S : Finset.{u_1} I) (p : I → Real) (u : Real),
+  (∀ (i : I), Membership.mem.{u_1, u_1} S i → LE.le.{0} (p i) u) →
+    (∀ (i : I), LE.le.{0} (p i) 1) →
+      LE.le.{0} (∑ i, p i)
+        (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} (↑(Finset.card.{u_1} S)) u)
+          (HSub.hSub.{0, 0, 0} ↑(Fintype.card.{u_1} I) ↑(Finset.card.{u_1} S)))
+@CSLRepair.population_expression_bound.{u_1} : ∀ {I : Type u_1} [inst : Fintype.{u_1} I] [DecidableEq.{u_1 + 1} I]
+  (S : Finset.{u_1} I) (g H : I → Real) (h lam gbar a : Real),
+  LT.lt.{0} 0 (Fintype.card.{u_1} I) →
+    LE.le.{0} 0 h →
+      (∀ (i : I),
+          Membership.mem.{u_1, u_1} S i →
+            And (LE.le.{0} (g i) gbar) (LE.le.{0} (HMul.hMul.{0, 0, 0} lam (H i)) (Neg.neg.{0} a))) →
+        LE.le.{0}
+          (HDiv.hDiv.{0, 0, 0}
+            (∑ i, CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h (HAdd.hAdd.{0, 0, 0} (g i) (HMul.hMul.{0, 0, 0} lam (H i)))))
+            ↑(Fintype.card.{u_1} I))
+          (HAdd.hAdd.{0, 0, 0}
+            (HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} ↑(Finset.card.{u_1} S) ↑(Fintype.card.{u_1} I))
+              (CSLRepair.sigmoid (HMul.hMul.{0, 0, 0} h (HSub.hSub.{0, 0, 0} gbar a))))
+            (HSub.hSub.{0, 0, 0} 1 (HDiv.hDiv.{0, 0, 0} ↑(Finset.card.{u_1} S) ↑(Fintype.card.{u_1} I))))
+CSLRepair.bernoulli_variance_identity : ∀ (μ x0 x1 : Real),
+  Eq.{1}
+    (HAdd.hAdd.{0, 0, 0}
+      (HMul.hMul.{0, 0, 0} μ
+        (HPow.hPow.{0, 0, 0}
+          (HSub.hSub.{0, 0, 0} x1
+            (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} μ x1) (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 μ) x0)))
+          2))
+      (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 μ)
+        (HPow.hPow.{0, 0, 0}
+          (HSub.hSub.{0, 0, 0} x0
+            (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} μ x1) (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 μ) x0)))
+          2)))
+    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} μ (HSub.hSub.{0, 0, 0} 1 μ))
+      (HPow.hPow.{0, 0, 0} (HSub.hSub.{0, 0, 0} x1 x0) 2))
+CSLRepair.reward_branch_separation : ∀ (q ap am amin : Real),
+  LE.le.{0} 0 q →
+    LE.le.{0} q 1 →
+      LE.le.{0} amin ap →
+        LE.le.{0} amin am →
+          LE.le.{0} amin
+            (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} ap (HSub.hSub.{0, 0, 0} 1 q)) (HMul.hMul.{0, 0, 0} am q))
+CSLRepair.reward_variance_lower_bound : ∀ (μ q ap am amin base : Real),
+  LE.le.{0} 0 μ →
+    LE.le.{0} μ 1 →
+      LE.le.{0} 0 q →
+        LE.le.{0} q 1 →
+          LE.le.{0} 0 amin →
+            LE.le.{0} amin ap →
+              LE.le.{0} amin am →
+                LE.le.{0}
+                  (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} μ (HSub.hSub.{0, 0, 0} 1 μ)) (HPow.hPow.{0, 0, 0} amin 2))
+                  (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} μ (HSub.hSub.{0, 0, 0} 1 μ))
+                    (HPow.hPow.{0, 0, 0}
+                      (HSub.hSub.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} base (HMul.hMul.{0, 0, 0} ap (HSub.hSub.{0, 0, 0} 1 q)))
+                        (HSub.hSub.{0, 0, 0} base (HMul.hMul.{0, 0, 0} am q)))
+                      2))
+CSLRepair.finite_horizon_error_bound : ∀ (E : Nat → Real) (K δ : Real),
+  LE.le.{0} 0 K →
+    (∀ (t : Nat), LE.le.{0} (E (HAdd.hAdd.{0, 0, 0} t 1)) (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} K (E t)) δ)) →
+      ∀ (T : Nat),
+        LE.le.{0} (E T)
+          (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HPow.hPow.{0, 0, 0} K T) (E 0))
+            (HMul.hMul.{0, 0, 0} δ (∑ j ∈ Finset.range T, HPow.hPow.{0, 0, 0} K j)))
+CSLRepair.coupled_error_step : ∀ (X Z : Nat → Real) (a b c d K εX εZ : Real),
+  (∀ (t : Nat), LE.le.{0} 0 (X t)) →
+    (∀ (t : Nat), LE.le.{0} 0 (Z t)) →
+      LE.le.{0} (HAdd.hAdd.{0, 0, 0} a c) K →
+        LE.le.{0} (HAdd.hAdd.{0, 0, 0} b d) K →
+          (∀ (t : Nat),
+              LE.le.{0} (X (HAdd.hAdd.{0, 0, 0} t 1))
+                (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} a (X t)) (HMul.hMul.{0, 0, 0} b (Z t)))
+                  εX)) →
+            (∀ (t : Nat),
+                LE.le.{0} (Z (HAdd.hAdd.{0, 0, 0} t 1))
+                  (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} c (X t)) (HMul.hMul.{0, 0, 0} d (Z t)))
+                    εZ)) →
+              ∀ (t : Nat),
+                LE.le.{0} (HAdd.hAdd.{0, 0, 0} (X (HAdd.hAdd.{0, 0, 0} t 1)) (Z (HAdd.hAdd.{0, 0, 0} t 1)))
+                  (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} K (HAdd.hAdd.{0, 0, 0} (X t) (Z t)))
+                    (HAdd.hAdd.{0, 0, 0} εX εZ))
+CSLRepair.coupled_finite_horizon_error_bound : ∀ (X Z : Nat → Real) (a b c d K εX εZ : Real),
+  LE.le.{0} 0 K →
+    (∀ (t : Nat), LE.le.{0} 0 (X t)) →
+      (∀ (t : Nat), LE.le.{0} 0 (Z t)) →
+        LE.le.{0} (HAdd.hAdd.{0, 0, 0} a c) K →
+          LE.le.{0} (HAdd.hAdd.{0, 0, 0} b d) K →
+            (∀ (t : Nat),
+                LE.le.{0} (X (HAdd.hAdd.{0, 0, 0} t 1))
+                  (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} a (X t)) (HMul.hMul.{0, 0, 0} b (Z t)))
+                    εX)) →
+              (∀ (t : Nat),
+                  LE.le.{0} (Z (HAdd.hAdd.{0, 0, 0} t 1))
+                    (HAdd.hAdd.{0, 0, 0}
+                      (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} c (X t)) (HMul.hMul.{0, 0, 0} d (Z t))) εZ)) →
+                ∀ (T : Nat),
+                  LE.le.{0} (HAdd.hAdd.{0, 0, 0} (X T) (Z T))
+                    (HAdd.hAdd.{0, 0, 0}
+                      (HMul.hMul.{0, 0, 0} (HPow.hPow.{0, 0, 0} K T) (HAdd.hAdd.{0, 0, 0} (X 0) (Z 0)))
+                      (HMul.hMul.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} εX εZ) (∑ j ∈ Finset.range T, HPow.hPow.{0, 0, 0} K j)))
+@CSLRepair.stochastic_row_square_bound.{u_1} : ∀ {V : Type u_1} [inst : Fintype.{u_1} V] (w : V → Real),
+  (∀ (v : V), LE.le.{0} 0 (w v)) → Eq.{1} (∑ v, w v) 1 → LE.le.{0} (∑ v, HPow.hPow.{0, 0, 0} (w v) 2) 1
+@CSLRepair.weighted_inverse_size_bound.{u_1} : ∀ {V : Type u_1} [inst : Fintype.{u_1} V] (w u : V → Real) (δ : Real),
+  (∀ (v : V), LE.le.{0} 0 (w v)) →
+    Eq.{1} (∑ v, w v) 1 →
+      (∀ (v : V), And (LE.le.{0} 0 (u v)) (LE.le.{0} (u v) δ)) →
+        LE.le.{0} (∑ v, HMul.hMul.{0, 0, 0} (HPow.hPow.{0, 0, 0} (w v) 2) (u v)) δ
+@CSLRepair.Within.{u_1} : {V : Type u_1} → (V → V → Prop) → Nat → V → V → Prop
+@CSLRepair.within_refl.{u_1} : ∀ {V : Type u_1} (Adj : V → V → Prop) (r : Nat) (u : V), CSLRepair.Within.{u_1} Adj r u u
+@CSLRepair.within_comp.{u_1} : ∀ {V : Type u_1} (Adj : V → V → Prop) {r s : Nat} {u v w : V},
+  CSLRepair.Within.{u_1} Adj r u v →
+    CSLRepair.Within.{u_1} Adj s v w → CSLRepair.Within.{u_1} Adj (HAdd.hAdd.{0, 0, 0} r s) u w
+@CSLRepair.within_mono.{u_1} : ∀ {V : Type u_1} (Adj : V → V → Prop) {r s : Nat} {u v : V},
+  LE.le.{0} r s → CSLRepair.Within.{u_1} Adj r u v → CSLRepair.Within.{u_1} Adj s u v
+@CSLRepair.localEvolve.{u_1, u_2,
+    u_3} : {V : Type u_1} →
+  {S : Type u_2} → {I : Type u_3} → ((V → S) → (V → I) → V → S) → (V → S) → (Nat → V → I) → Nat → V → S
+@CSLRepair.TwoHopLocal.{u_1, u_2,
+    u_3} : {V : Type u_1} → {S : Type u_2} → {I : Type u_3} → (V → V → Prop) → ((V → S) → (V → I) → V → S) → Prop
+@CSLRepair.OneHopLocal.{u_1, u_2, u_3,
+    u_4} : {V : Type u_1} →
+  {A : Type u_2} → {B : Type u_3} → {C : Type u_4} → (V → V → Prop) → ((V → A) → (V → B) → V → C) → Prop
+@CSLRepair.one_hop_stages_two_hop.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {S : Type u_2} {I : Type u_3} {L : Type u_4} (Adj : V → V → Prop)
+  (emit : (V → S) → (V → I) → V → L) (update : (V → S) → (V → L) → V → S),
+  CSLRepair.OneHopLocal.{u_1, u_2, u_3, u_4} Adj emit →
+    CSLRepair.OneHopLocal.{u_1, u_2, u_4, u_2} Adj update →
+      CSLRepair.TwoHopLocal.{u_1, u_2, u_3} Adj fun x ξ => update x (emit x ξ)
+@CSLRepair.two_hop_finite_cone.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {S : Type u_2} {I : Type u_3} (Adj : V → V → Prop) (step : (V → S) → (V → I) → V → S),
+  CSLRepair.TwoHopLocal.{u_1, u_2, u_3} Adj step →
+    ∀ (x y : V → S) (ξ ζ : Nat → V → I) (T : Nat) (root : V),
+      (∀ (v : V), CSLRepair.Within.{u_1} Adj (HMul.hMul.{0, 0, 0} 2 T) root v → Eq.{u_2 + 1} (x v) (y v)) →
+        (∀ (t : Nat),
+            LT.lt.{0} t T →
+              ∀ (v : V), CSLRepair.Within.{u_1} Adj (HMul.hMul.{0, 0, 0} 2 T) root v → Eq.{u_3 + 1} (ξ t v) (ζ t v)) →
+          Eq.{u_2 + 1} (CSLRepair.localEvolve.{u_1, u_2, u_3} step x ξ T root)
+            (CSLRepair.localEvolve.{u_1, u_2, u_3} step y ζ T root)
+@CSLRepair.two_hop_path_finite_cone.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {S : Type u_2} {I : Type u_3} (Adj : V → V → Prop) (step : (V → S) → (V → I) → V → S),
+  CSLRepair.TwoHopLocal.{u_1, u_2, u_3} Adj step →
+    ∀ (x y : V → S) (ξ ζ : Nat → V → I) (T : Nat) (root : V),
+      (∀ (v : V), CSLRepair.Within.{u_1} Adj (HMul.hMul.{0, 0, 0} 2 T) root v → Eq.{u_2 + 1} (x v) (y v)) →
+        (∀ (t : Nat),
+            LT.lt.{0} t T →
+              ∀ (v : V), CSLRepair.Within.{u_1} Adj (HMul.hMul.{0, 0, 0} 2 T) root v → Eq.{u_3 + 1} (ξ t v) (ζ t v)) →
+          ∀ (t : Nat),
+            LE.le.{0} t T →
+              Eq.{u_2 + 1} (CSLRepair.localEvolve.{u_1, u_2, u_3} step x ξ t root)
+                (CSLRepair.localEvolve.{u_1, u_2, u_3} step y ζ t root)
+CSLRepair.peerIncrement : Real → Real → Real → Real → Real → Real → Real
+CSLRepair.peer_partial_v : ∀ (b v w r q ε : Real),
+  Ne.{1} (HAdd.hAdd.{0, 0, 0} w ε) 0 →
+    HasDerivAt.{0, 0} (fun x => CSLRepair.peerIncrement b x w r q ε)
+      (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} b (HSub.hSub.{0, 0, 0} r (HMul.hMul.{0, 0, 0} w q)))
+        (HAdd.hAdd.{0, 0, 0} w ε))
+      v
+CSLRepair.peer_partial_r : ∀ (b v w r q ε : Real),
+  Ne.{1} (HAdd.hAdd.{0, 0, 0} w ε) 0 →
+    HasDerivAt.{0, 0} (fun x => CSLRepair.peerIncrement b v w x q ε)
+      (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} b v) (HAdd.hAdd.{0, 0, 0} w ε)) r
+CSLRepair.peer_partial_q : ∀ (b v w r q ε : Real),
+  Ne.{1} (HAdd.hAdd.{0, 0, 0} w ε) 0 →
+    HasDerivAt.{0, 0} (fun x => CSLRepair.peerIncrement b v w r x ε)
+      (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (Neg.neg.{0} b) v) w) (HAdd.hAdd.{0, 0, 0} w ε)) q
+CSLRepair.peer_partial_w : ∀ (b v w r q ε : Real),
+  Ne.{1} (HAdd.hAdd.{0, 0, 0} w ε) 0 →
+    HasDerivAt.{0, 0} (fun x => CSLRepair.peerIncrement b v x r q ε)
+      (HDiv.hDiv.{0, 0, 0}
+        (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (Neg.neg.{0} b) v) (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} q ε) r))
+        (HPow.hPow.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} w ε) 2))
+      w
+CSLRepair.peer_partial_bounds : ∀ (b v w r q ε : Real),
+  LE.le.{0} 0 b →
+    LE.le.{0} 0 v →
+      LE.le.{0} v w →
+        LE.le.{0} w 1 →
+          LE.le.{0} 0 r →
+            LE.le.{0} r w →
+              LE.le.{0} 0 q →
+                LE.le.{0} q 1 →
+                  LT.lt.{0} 0 ε →
+                    And
+                      (LE.le.{0}
+                        (abs.{0}
+                          (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} b (HSub.hSub.{0, 0, 0} r (HMul.hMul.{0, 0, 0} w q)))
+                            (HAdd.hAdd.{0, 0, 0} w ε)))
+                        b)
+                      (And
+                        (LE.le.{0} (abs.{0} (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} b v) (HAdd.hAdd.{0, 0, 0} w ε)))
+                          b)
+                        (And
+                          (LE.le.{0}
+                            (abs.{0}
+                              (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (Neg.neg.{0} b) v) w)
+                                (HAdd.hAdd.{0, 0, 0} w ε)))
+                            b)
+                          (LE.le.{0}
+                            (abs.{0}
+                              (HDiv.hDiv.{0, 0, 0}
+                                (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (Neg.neg.{0} b) v)
+                                  (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} q ε) r))
+                                (HPow.hPow.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} w ε) 2)))
+                            b)))
+CSLRepair.peer_self_exclusion_bound : ∀ (b u v w r d R q ε : Real),
+  LE.le.{0} 0 b →
+    LE.le.{0} 0 u →
+      LE.le.{0} u w →
+        LE.le.{0} 0 d →
+          LE.le.{0} d 1 →
+            LE.le.{0} 0 R →
+              LE.le.{0} R 1 →
+                LE.le.{0} 0 q →
+                  LE.le.{0} q 1 →
+                    LE.le.{0} (HMul.hMul.{0, 0, 0} u d) v →
+                      LE.le.{0} v (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} w u) (HMul.hMul.{0, 0, 0} u d)) →
+                        LE.le.{0} (HMul.hMul.{0, 0, 0} u R) r →
+                          LE.le.{0} r (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} w u) (HMul.hMul.{0, 0, 0} u R)) →
+                            LT.lt.{0} 0 ε →
+                              LE.le.{0}
+                                (abs.{0}
+                                  (HSub.hSub.{0, 0, 0} (CSLRepair.peerIncrement b v w r q ε)
+                                    (CSLRepair.peerIncrement b (HSub.hSub.{0, 0, 0} v (HMul.hMul.{0, 0, 0} u d))
+                                      (HSub.hSub.{0, 0, 0} w u) (HSub.hSub.{0, 0, 0} r (HMul.hMul.{0, 0, 0} u R)) q ε)))
+                                (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 b) u)
+CSLRepair.peer_self_exclusion_bound_three : ∀ (b u v w r d R q ε : Real),
+  LE.le.{0} 0 b →
+    LE.le.{0} 0 u →
+      LE.le.{0} u w →
+        LE.le.{0} 0 d →
+          LE.le.{0} d 1 →
+            LE.le.{0} 0 R →
+              LE.le.{0} R 1 →
+                LE.le.{0} 0 q →
+                  LE.le.{0} q 1 →
+                    LE.le.{0} (HMul.hMul.{0, 0, 0} u d) v →
+                      LE.le.{0} v (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} w u) (HMul.hMul.{0, 0, 0} u d)) →
+                        LE.le.{0} (HMul.hMul.{0, 0, 0} u R) r →
+                          LE.le.{0} r (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} w u) (HMul.hMul.{0, 0, 0} u R)) →
+                            LT.lt.{0} 0 ε →
+                              LE.le.{0}
+                                (abs.{0}
+                                  (HSub.hSub.{0, 0, 0} (CSLRepair.peerIncrement b v w r q ε)
+                                    (CSLRepair.peerIncrement b (HSub.hSub.{0, 0, 0} v (HMul.hMul.{0, 0, 0} u d))
+                                      (HSub.hSub.{0, 0, 0} w u) (HSub.hSub.{0, 0, 0} r (HMul.hMul.{0, 0, 0} u R)) q ε)))
+                                (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 3 b) u)

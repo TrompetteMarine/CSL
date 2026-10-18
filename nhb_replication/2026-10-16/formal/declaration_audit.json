@@ -1,0 +1,1378 @@
+[
+  {
+    "name": "CSLRepair.act",
+    "kind": "def",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.RowStochastic",
+    "kind": "def",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.macroMix",
+    "kind": "def",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.block_aggregate",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.self_exclusion",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.convex_update_bounds",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.peer_gain_bounds",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.gain_budget",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.alphaPlus",
+    "kind": "def",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.alphaMinus",
+    "kind": "def",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.privateDrift",
+    "kind": "def",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.realised_sign_counterexample",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.common_field",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.common_linear_multiplier",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.macro_stochastic",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.macro_action",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.macro_pairwise_difference",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.macro_row_distance",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.field_sup_bound",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.additive_common_field",
+    "kind": "theorem",
+    "source": "RepairCore/Algebra.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.sigmoid",
+    "kind": "noncomputable def",
+    "source": "RepairTasks/Analysis.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.weightedReadout",
+    "kind": "noncomputable def",
+    "source": "RepairTasks/Analysis.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.readout_derivative",
+    "kind": "theorem",
+    "source": "RepairTasks/Analysis.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.zero_floor_derivative",
+    "kind": "theorem",
+    "source": "RepairTasks/Analysis.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.pairwise_oscillation_bound",
+    "kind": "theorem",
+    "source": "RepairTasks/Analysis.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.self_exclusion_ratio_bound",
+    "kind": "theorem",
+    "source": "RepairTasks/Analysis.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.field_deviation_bound",
+    "kind": "theorem",
+    "source": "RepairTasks/Analysis.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.stationary_macro_coordinate",
+    "kind": "theorem",
+    "source": "RepairTasks/Analysis.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.sigmoid_pos",
+    "kind": "lemma",
+    "source": "RepairProb/P1.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.sigmoid_lt_one",
+    "kind": "lemma",
+    "source": "RepairProb/P1.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.continuous_sigmoid",
+    "kind": "lemma",
+    "source": "RepairProb/P1.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.condexp_signed_decisiveness",
+    "kind": "lemma",
+    "source": "RepairProb/P1.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.choiceGap",
+    "kind": "noncomputable def",
+    "source": "RepairProb/P1.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.conditional_signed_mean",
+    "kind": "theorem",
+    "source": "RepairProb/P1.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.fieldJacobian",
+    "kind": "noncomputable def",
+    "source": "RepairProb/P1.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.fieldJacobian_apply",
+    "kind": "theorem",
+    "source": "RepairProb/P1.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.field_jacobian",
+    "kind": "theorem",
+    "source": "RepairProb/P1.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.realisedIncrement",
+    "kind": "noncomputable def",
+    "source": "RepairProb/P2.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.realisedIncrement_eq_affine",
+    "kind": "lemma",
+    "source": "RepairProb/P2.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.realised_sign_expectation",
+    "kind": "theorem",
+    "source": "RepairProb/P2.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.realised_sign_condexp",
+    "kind": "theorem",
+    "source": "RepairProb/P2.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.driftTarget",
+    "kind": "noncomputable def",
+    "source": "RepairProb/P2.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.privateDrift_eq_target",
+    "kind": "theorem",
+    "source": "RepairProb/P2.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.privateDrift_eq_zero_iff",
+    "kind": "theorem",
+    "source": "RepairProb/P2.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.one_sub_sigmoid",
+    "kind": "lemma",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.sigmoid_monotone",
+    "kind": "lemma",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.explorationFloor",
+    "kind": "noncomputable def",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.explorationFloor_pos",
+    "kind": "lemma",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.explorationFloor_lt_one",
+    "kind": "lemma",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.choice_gap_bound",
+    "kind": "theorem",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.exploration_floor",
+    "kind": "theorem",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.condExp_indicator_compl",
+    "kind": "lemma",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.avoidance_bound",
+    "kind": "theorem",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.frequently_of_condexp_floor",
+    "kind": "theorem",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.exploration_and_repeated_sampling",
+    "kind": "theorem",
+    "source": "RepairProb/P3.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.scoreConstant",
+    "kind": "noncomputable def",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.scorePreference",
+    "kind": "noncomputable def",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.scoreQuadratic",
+    "kind": "noncomputable def",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.scoreZeroFloor",
+    "kind": "noncomputable def",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.abs_two_mul_sub_one_le",
+    "kind": "lemma",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.score_conventions_admissible",
+    "kind": "theorem",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.hasDerivAt_sigmoid",
+    "kind": "lemma",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.hasDerivAt_constant_readout",
+    "kind": "lemma",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.zero_mean_gap_not_homogeneous",
+    "kind": "theorem",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.frozen_map_jacobian",
+    "kind": "theorem",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.fixed_gain_stationary_variance",
+    "kind": "theorem",
+    "source": "RepairProb/Supplement.lean",
+    "new_revision": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.private_gain_bounds",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.preference_score_bounds",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.logistic_decisiveness_bounds",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.realised_gain_bounds",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.private_target_den_pos",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.private_target_bounds",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.realisedUpdate",
+    "kind": "noncomputable def",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.realised_update_bounds",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.peer_mass_constraints",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.signed_mass_bound",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.scores_invariant",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.act_scale",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.controlled_field_rescaling",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.emitted_signal_rescaling",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.twoField",
+    "kind": "noncomputable def",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.two_community_common",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.two_community_relative",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.two_community_difference",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.default_frozen_multipliers",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.default_relative_amplifies",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.sigmoid_strictMono",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.withdrawal_probability",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.withdrawal_probability_strict",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.average_subset_bound",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.population_expression_bound",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.bernoulli_variance_identity",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.reward_branch_separation",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.reward_variance_lower_bound",
+    "kind": "theorem",
+    "source": "RepairSupplement/Finite.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.finite_horizon_error_bound",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.coupled_error_step",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.coupled_finite_horizon_error_bound",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.stochastic_row_square_bound",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.weighted_inverse_size_bound",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.Within",
+    "kind": "def",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.within_refl",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.within_comp",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.within_mono",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.localEvolve",
+    "kind": "def",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.TwoHopLocal",
+    "kind": "def",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.OneHopLocal",
+    "kind": "def",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.one_hop_stages_two_hop",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.two_hop_finite_cone",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.two_hop_path_finite_cone",
+    "kind": "theorem",
+    "source": "RepairSupplement/LimitsAux.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.peerIncrement",
+    "kind": "noncomputable def",
+    "source": "RepairSupplement/PeerRegularity.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.peer_partial_v",
+    "kind": "theorem",
+    "source": "RepairSupplement/PeerRegularity.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.peer_partial_r",
+    "kind": "theorem",
+    "source": "RepairSupplement/PeerRegularity.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.peer_partial_q",
+    "kind": "theorem",
+    "source": "RepairSupplement/PeerRegularity.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.peer_partial_w",
+    "kind": "theorem",
+    "source": "RepairSupplement/PeerRegularity.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.peer_partial_bounds",
+    "kind": "theorem",
+    "source": "RepairSupplement/PeerRegularity.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.peer_self_exclusion_bound",
+    "kind": "theorem",
+    "source": "RepairSupplement/PeerRegularity.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  },
+  {
+    "name": "CSLRepair.peer_self_exclusion_bound_three",
+    "kind": "theorem",
+    "source": "RepairSupplement/PeerRegularity.lean",
+    "new_revision": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "status": "kernel_checked_locally"
+  }
+]

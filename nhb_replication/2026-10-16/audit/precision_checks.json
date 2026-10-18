@@ -1,0 +1,30 @@
+{
+  "label": "f0008",
+  "QA_agent_trials": 40000000,
+  "path_error": 0.0,
+  "tail_error": 0.0,
+  "ranking_differences": 0,
+  "max_terminal_storage_error": 2.978466384639944e-08,
+  "resolved_ties": [
+    {
+      "rep": 0,
+      "agent": 6653,
+      "saved_Q": [
+        0.3053261637687683,
+        0.3053261637687683
+      ],
+      "replayed_Q": [
+        0.3053261645255737,
+        0.3053261655819616
+      ],
+      "exact_gap": -1.0563878660718728e-09
+    }
+  ],
+  "engine_audit": {
+    "clips": 0,
+    "gain_max": 0.547253,
+    "N": 10000,
+    "M": 200
+  },
+  "historical_arrays_unchanged": true
+}

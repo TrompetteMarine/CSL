@@ -1,0 +1,13 @@
+{
+  "configurations": 664,
+  "distinct_graph_source_combinations": 230,
+  "max_absolute_errors": {
+    "clustering": 0.0,
+    "mean_degree": 0.0,
+    "degree_sd": 0.0,
+    "components": 0.0,
+    "mean_path": 0.0,
+    "global_efficiency_sample": 0.0
+  },
+  "all_passed": true
+}

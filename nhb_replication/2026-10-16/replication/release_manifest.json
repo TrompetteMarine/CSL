@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "study": "Decision-generated credibility in networked social learning",
+  "source_revision": "2026-10-16",
+  "array_count": 664,
+  "array_partitions": {
+    "agent_study_arrays.zip": 616,
+    "many_communities_arrays.zip": 48
+  },
+  "assets": [
+    {
+      "name": "agent_study_arrays.zip",
+      "kind": "agent-study-raw-arrays",
+      "sha256": "ae4286a5d6b4dda661e3130fa8faa4f230b11de3cee570371f9079a1397d07c1",
+      "bytes": 268949907,
+      "entry_count": 616,
+      "uncompressed_bytes": 268948875,
+      "member_prefix": "data/results/",
+      "source_bytes_unchanged": true
+    },
+    {
+      "name": "many_communities_arrays.zip",
+      "kind": "many-community-raw-arrays",
+      "sha256": "04b356ef5f06bd716cb2290caaab5bc6a1237349215ee0f3760fe9d51cc0369e",
+      "bytes": 394026156,
+      "entry_count": 48,
+      "uncompressed_bytes": 393934156,
+      "member_prefix": "data/results/",
+      "source_bytes_unchanged": true
+    },
+    {
+      "name": "replication_metadata.zip",
+      "kind": "configuration-and-result-metadata",
+      "sha256": "13f14b03eb9141184289a49317daaa89d0573bcc4ff70099bce530364d45ee8b",
+      "bytes": 16538603,
+      "entry_count": 1343,
+      "uncompressed_bytes": 387589581,
+      "member_prefix": "baseline/nhb_smallworld_20261012/",
+      "source_bytes_unchanged": true
+    },
+    {
+      "name": "source_data_workbooks.zip",
+      "kind": "figure-and-statistical-table-source-data",
+      "sha256": "e7f44e1eb88f82ff1e50d2386a589a28a6b2dff91ab05516256c2b7e6ee85eba",
+      "bytes": 8745825,
+      "entry_count": 92,
+      "uncompressed_bytes": 39433484,
+      "member_prefix": "NHB_Source_Data/",
+      "source_bytes_unchanged": true,
+      "workbook_count": 14
+    }
+  ],
+  "verification": {
+    "all_zip_crc_checks_passed": true,
+    "every_member_sha256_verified": true,
+    "all_664_raw_arrays_accounted_for": true,
+    "source_array_bytes_unchanged": true,
+    "manuscript_and_supplementary_documents_excluded": true,
+    "no_hidden_paths": true,
+    "source_workbooks_native_zip_xml_verified": true
+  }
+}

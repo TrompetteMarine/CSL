@@ -1,0 +1,29 @@
+{
+  "regret": [
+    {
+      "quantity": "ring",
+      "propagated_variance": 0.1370087569359376,
+      "direct_variance": 0.13700875693593945,
+      "variance_if_temporal_covariance_omitted": 0.0005209543507812503,
+      "full_to_diagonal_variance_ratio": 262.9957053443783
+    },
+    {
+      "quantity": "broadcast",
+      "propagated_variance": 4.339844791666676e-06,
+      "direct_variance": 4.339844791662137e-06,
+      "variance_if_temporal_covariance_omitted": 4.7448229166666707e-07,
+      "full_to_diagonal_variance_ratio": 9.14648421634985
+    },
+    {
+      "quantity": "broadcast_minus_ring",
+      "propagated_variance": 0.1376651568901043,
+      "direct_variance": 0.1376651568901057,
+      "variance_if_temporal_covariance_omitted": 0.0005219898203125003,
+      "full_to_diagonal_variance_ratio": 263.731497307147
+    }
+  ],
+  "withdrawal_derivative_finite_difference_max_error": 3.392501557453187e-12,
+  "worst_case_probability_error_from_float32_score_rounding": 1.7881393432617188e-07,
+  "quantisation_scope": "Readout-only bound assuming per-coordinate nearest float32 rounding; not a global simulator forward-error bound.",
+  "no_parameter_uncertainty": "Parameters are fixed design constants, not fitted random estimates. No parameter posterior is assumed."
+}

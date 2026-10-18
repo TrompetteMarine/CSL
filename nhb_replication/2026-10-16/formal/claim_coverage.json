@@ -1,0 +1,216 @@
+{
+  "verification": {
+    "completed_utc": "2026-10-16T11:12:23.330184+00:00",
+    "toolchain": "Lean4.28.0",
+    "mathlib": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+    "source_contract": "unchanged",
+    "baseline_proofs": 49,
+    "new_proofs": 44,
+    "total_declarations": 117,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "build": "passed",
+    "type_audit": "passed",
+    "axiom_audit": "passed",
+    "runtime_compatibility": "readlink redirects only /proc/<getpid>/exe to /proc/self/exe; no Lean proof or kernel code changed",
+    "exclusions": [
+      "Full large-community stochastic coupling theorem",
+      "Feller invariant-law existence",
+      "Sparse local weak convergence and empirical LLN",
+      "Watts\u2013Strogatz graph-limit probability estimates",
+      "Joint sparse/large-community limit",
+      "Simulation outputs"
+    ]
+  },
+  "claims": [
+    {
+      "claim": "s:prop-quotient",
+      "coverage": "full_finite_identity",
+      "checked_declarations": [
+        "CSLRepair.block_aggregate",
+        "CSLRepair.self_exclusion"
+      ],
+      "scope": "Exact realised block quotient; no nonlinear mean-score closure."
+    },
+    {
+      "claim": "s:prop-bounded",
+      "coverage": "finite_update_and_induction",
+      "checked_declarations": [
+        "CSLRepair.private_gain_bounds",
+        "CSLRepair.logistic_decisiveness_bounds",
+        "CSLRepair.realised_gain_bounds",
+        "CSLRepair.peer_mass_constraints",
+        "CSLRepair.realised_update_bounds",
+        "CSLRepair.signed_mass_bound",
+        "CSLRepair.scores_invariant"
+      ],
+      "scope": "Explicit nonnegative mass constraints, positive regulariser and gain budget; literal realised update, no clipping."
+    },
+    {
+      "claim": "s:cor-sampling",
+      "coverage": "stated_conditional_probability_theorem",
+      "checked_declarations": [
+        "CSLRepair.exploration_and_repeated_sampling"
+      ],
+      "scope": "Filtration, measurability, bounded-state and conditional-choice hypotheses remain explicit; gain/invariance ingredients are separately checked."
+    },
+    {
+      "claim": "s:lem-drift",
+      "coverage": "private_component_formal",
+      "checked_declarations": [
+        "CSLRepair.conditional_signed_mean",
+        "CSLRepair.realised_sign_expectation",
+        "CSLRepair.realised_sign_condexp",
+        "CSLRepair.privateDrift_eq_target",
+        "CSLRepair.private_target_den_pos",
+        "CSLRepair.private_target_bounds"
+      ],
+      "scope": "Full peer conditional-drift averaging is analytic; private-only target is not a stationary mean or normative account."
+    },
+    {
+      "claim": "s:prop-withdrawal",
+      "coverage": "full_finite_propensity_bound",
+      "checked_declarations": [
+        "CSLRepair.withdrawal_probability",
+        "CSLRepair.withdrawal_probability_strict",
+        "CSLRepair.population_expression_bound"
+      ],
+      "scope": "At unchanged scores, h nonnegative for weak bounds and positive for strict bound; actual logistic probabilities and exact subset fraction."
+    },
+    {
+      "claim": "s:prop-frozen",
+      "coverage": "formal_components",
+      "checked_declarations": [
+        "CSLRepair.readout_derivative",
+        "CSLRepair.zero_floor_derivative",
+        "CSLRepair.field_jacobian",
+        "CSLRepair.frozen_map_jacobian",
+        "CSLRepair.two_community_common",
+        "CSLRepair.two_community_relative",
+        "CSLRepair.two_community_difference",
+        "CSLRepair.default_relative_amplifies"
+      ],
+      "scope": "Score continuity at one-half; private inputs frozen. General spectral-radius and ring-Fourier statements analytic; no adaptive-system bifurcation."
+    },
+    {
+      "claim": "s:prop-heterogeneous",
+      "coverage": "finite_sum_component_formal",
+      "checked_declarations": [
+        "CSLRepair.field_jacobian",
+        "CSLRepair.frozen_map_jacobian"
+      ],
+      "scope": "Differentiation of distributional integrals and global closed-form preference derivative remain analytic."
+    },
+    {
+      "claim": "s:lem-peer",
+      "coverage": "derivatives_and_exclusion_formal",
+      "checked_declarations": [
+        "CSLRepair.peer_partial_v",
+        "CSLRepair.peer_partial_r",
+        "CSLRepair.peer_partial_q",
+        "CSLRepair.peer_partial_w",
+        "CSLRepair.peer_partial_bounds",
+        "CSLRepair.peer_self_exclusion_bound",
+        "CSLRepair.peer_self_exclusion_bound_three"
+      ],
+      "scope": "Actual coordinate derivatives <=b; exact exclusion bound2bu with explicit postexclusion constraints. Segment integration for full multivariate Lipschitz estimate analytic."
+    },
+    {
+      "claim": "s:prop-constant",
+      "coverage": "algebraic_components",
+      "checked_declarations": [
+        "CSLRepair.controlled_field_rescaling",
+        "CSLRepair.emitted_signal_rescaling"
+      ],
+      "scope": "Full coupled control-path induction analytic; realised cases numerical. Not claimed as independently formalised whole process."
+    },
+    {
+      "claim": "s:prop-variance",
+      "coverage": "branch_algebra_only",
+      "checked_declarations": [
+        "CSLRepair.bernoulli_variance_identity",
+        "CSLRepair.reward_branch_separation",
+        "CSLRepair.reward_variance_lower_bound",
+        "CSLRepair.fixed_gain_stationary_variance"
+      ],
+      "scope": "Adaptive process conditional total variance and invariant-law conclusion analytic."
+    },
+    {
+      "claim": "s:thm-coupling",
+      "coverage": "deterministic_infrastructure",
+      "checked_declarations": [
+        "CSLRepair.finite_horizon_error_bound",
+        "CSLRepair.coupled_error_step",
+        "CSLRepair.coupled_finite_horizon_error_bound",
+        "CSLRepair.peer_partial_bounds",
+        "CSLRepair.peer_self_exclusion_bound_three"
+      ],
+      "scope": "Explicit recurrence iteration; stochastic coupling construction, concentration and derivation of its error recurrence remain analytic."
+    },
+    {
+      "claim": "s:thm-local",
+      "coverage": "deterministic_infrastructure",
+      "checked_declarations": [
+        "CSLRepair.one_hop_stages_two_hop",
+        "CSLRepair.two_hop_finite_cone",
+        "CSLRepair.two_hop_path_finite_cone"
+      ],
+      "scope": "Theorems assume explicit transition locality. Marked graph convergence, averaged continuity and two-root LLN analytic."
+    },
+    {
+      "claim": "s:prop-ws",
+      "coverage": "analytic_only",
+      "checked_declarations": [],
+      "scope": "All graph probability estimates and marked root-limit conclusions are analytic, not Lean certified."
+    },
+    {
+      "claim": "s:cor-joint",
+      "coverage": "deterministic_infrastructure",
+      "checked_declarations": [
+        "CSLRepair.stochastic_row_square_bound",
+        "CSLRepair.weighted_inverse_size_bound",
+        "CSLRepair.two_hop_finite_cone"
+      ],
+      "scope": "Dimension-free row algebra and conditional finite cones only; full joint stochastic limit analytic."
+    },
+    {
+      "claim": "s:prop-feller",
+      "coverage": "analytic_only",
+      "checked_declarations": [],
+      "scope": "Feller property and finite invariant-law existence."
+    },
+    {
+      "claim": "s:prop-pop-stationary",
+      "coverage": "analytic_only",
+      "checked_declarations": [],
+      "scope": "Self-consistent stationary population law and fixed-point theorem application."
+    },
+    {
+      "claim": "s:prop-invariant-limits",
+      "coverage": "analytic_only",
+      "checked_declarations": [],
+      "scope": "Subsequential finite invariant empirical-law limit."
+    },
+    {
+      "claim": "s:prop-clique",
+      "coverage": "analytic_only",
+      "checked_declarations": [],
+      "scope": "Clique block stochastic coupling and empirical law."
+    },
+    {
+      "claim": "s:prop-noncommuting",
+      "coverage": "analytic_only",
+      "checked_declarations": [],
+      "scope": "Finite-chain convergence, deterministic fixed point and iterated limits."
+    },
+    {
+      "claim": "numerical_results",
+      "coverage": "computed_evidence",
+      "checked_declarations": [],
+      "scope": "Simulation outputs, plots and robustness checks are independently audited computations, not Lean proofs."
+    }
+  ]
+}

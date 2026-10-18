@@ -1,0 +1,328 @@
+{
+  "configurations": 652,
+  "population_trajectories": 2512,
+  "fresh_start_agent_trials": 36672000000,
+  "entry_replay_populations": 16,
+  "paired_continuations": 32,
+  "replay_and_continuation_agent_trials": 480000000,
+  "cohorts": [
+    {
+      "group": "M10000",
+      "configurations": 48,
+      "populations": 96,
+      "agent_trials": 12800000000,
+      "horizons": [
+        500
+      ]
+    },
+    {
+      "group": "choiceonly",
+      "configurations": 32,
+      "populations": 128,
+      "agent_trials": 1280000000,
+      "horizons": [
+        1000
+      ]
+    },
+    {
+      "group": "controls",
+      "configurations": 96,
+      "populations": 384,
+      "agent_trials": 3840000000,
+      "horizons": [
+        1000
+      ]
+    },
+    {
+      "group": "degree",
+      "configurations": 32,
+      "populations": 128,
+      "agent_trials": 1280000000,
+      "horizons": [
+        1000
+      ]
+    },
+    {
+      "group": "followup",
+      "configurations": 108,
+      "populations": 432,
+      "agent_trials": 4320000000,
+      "horizons": [
+        1000
+      ]
+    },
+    {
+      "group": "primary",
+      "configurations": 240,
+      "populations": 960,
+      "agent_trials": 9600000000,
+      "horizons": [
+        1000
+      ]
+    },
+    {
+      "group": "scaling",
+      "configurations": 48,
+      "populations": 192,
+      "agent_trials": 1632000000,
+      "horizons": [
+        500
+      ]
+    },
+    {
+      "group": "two",
+      "configurations": 48,
+      "populations": 192,
+      "agent_trials": 1920000000,
+      "horizons": [
+        1000
+      ]
+    }
+  ],
+  "raw_archives_verified": 664,
+  "raw_array_dtypes": {
+    "float32": 570,
+    "float64": 94
+  },
+  "max_summary_errors": {
+    "regret_path_identity": 0,
+    "community_vs_population_window": 1.7763568394002505e-15,
+    "optimal_fraction": 0,
+    "private_correct": 0,
+    "private_gap": 2.9802322387695312e-08,
+    "latent_public_gap": 0,
+    "mean_removed_probability": 0,
+    "regret": 0,
+    "wrong_communities": 0,
+    "community_variance": 0,
+    "withdrawal_optimal_fraction": 0,
+    "withdrawal_private_correct": 0,
+    "withdrawal_first_step_probability": 0,
+    "withdrawal_direct_first_decision": 3.219646771412954e-15
+  },
+  "zero_substantive_clips": true,
+  "max_reported_gain": 0.549687,
+  "graph_weight_matrices_checked": 1328,
+  "constant_equivalence": [
+    {
+      "geometry": "ring",
+      "graph_id": 0,
+      "strong": "c0256",
+      "doubled": "c0260",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "ring",
+      "graph_id": 1,
+      "strong": "c0257",
+      "doubled": "c0261",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "ring",
+      "graph_id": 2,
+      "strong": "c0258",
+      "doubled": "c0262",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "ring",
+      "graph_id": 3,
+      "strong": "c0259",
+      "doubled": "c0263",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "ws0.1",
+      "graph_id": 0,
+      "strong": "c0280",
+      "doubled": "c0284",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "ws0.1",
+      "graph_id": 1,
+      "strong": "c0281",
+      "doubled": "c0285",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "ws0.1",
+      "graph_id": 2,
+      "strong": "c0282",
+      "doubled": "c0286",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "ws0.1",
+      "graph_id": 3,
+      "strong": "c0283",
+      "doubled": "c0287",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "regular",
+      "graph_id": 0,
+      "strong": "c0304",
+      "doubled": "c0308",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "regular",
+      "graph_id": 1,
+      "strong": "c0305",
+      "doubled": "c0309",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "regular",
+      "graph_id": 2,
+      "strong": "c0306",
+      "doubled": "c0310",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "regular",
+      "graph_id": 3,
+      "strong": "c0307",
+      "doubled": "c0311",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "broadcast",
+      "graph_id": 0,
+      "strong": "c0328",
+      "doubled": "c0332",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "broadcast",
+      "graph_id": 1,
+      "strong": "c0329",
+      "doubled": "c0333",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "broadcast",
+      "graph_id": 2,
+      "strong": "c0330",
+      "doubled": "c0334",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    },
+    {
+      "geometry": "broadcast",
+      "graph_id": 3,
+      "strong": "c0331",
+      "doubled": "c0335",
+      "max_error": {
+        "path": 0.0,
+        "tail": 0.0,
+        "final_Q": 0.0,
+        "psi_rescaling": 0.0
+      }
+    }
+  ],
+  "entry_replays": [
+    {
+      "entry": "w0000",
+      "original": "c0136",
+      "path_error": 0.0,
+      "terminal_storage_error": 2.9671565537903177e-08
+    },
+    {
+      "entry": "w0001",
+      "original": "c0137",
+      "path_error": 0.0,
+      "terminal_storage_error": 2.9759267272666534e-08
+    },
+    {
+      "entry": "w0002",
+      "original": "c0138",
+      "path_error": 0.0,
+      "terminal_storage_error": 2.9780473753682202e-08
+    },
+    {
+      "entry": "w0003",
+      "original": "c0139",
+      "path_error": 0.0,
+      "terminal_storage_error": 2.9714735672037307e-08
+    }
+  ],
+  "engine_sha256": "61f17b940204e24bd76d45bd29004eb8f191641993d63d8c6ef3aebdafc20f85",
+  "interpretation": "Trajectories share paired innovation indices across conditions. Counts do not imply independence across configurations."
+}

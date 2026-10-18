@@ -1,0 +1,10 @@
+{
+  "release_url": "https://github.com/leanprover/lean4/releases/download/v4.28.0/lean-4.28.0-linux.tar.zst",
+  "archive_sha256": "ceb3a3f844f7aebf63245e2b51c28d5b0ed38942c19f93cf3febd520302160bd",
+  "archive_bytes": 520948633,
+  "kernel_source_modified": false,
+  "compatibility_shim": "Only process executable path discovery; full C source preserved in reviewed_baseline/.../local_verification/proc_self_compat.c",
+  "extraction_note": "Runtime file contents extracted; tar reported unsupported archived UID ownership mappings. Dependency release extraction subsequently used TAR_OPTIONS=--no-same-owner. Ownership metadata does not change extracted Lean executable contents.",
+  "shim_source": "proc_self_compat.c",
+  "shim_source_sha256": "d52f1de321dd4062a629edfaccdd9bed115ffcea8428b0a96d8411064eee6792"
+}

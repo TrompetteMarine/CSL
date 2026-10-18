@@ -1,0 +1,344 @@
+{
+  "version": "2026-10-16",
+  "figure_numbering": {
+    "main01_concept": "Fig.1",
+    "main06_population_limits": "Fig.2",
+    "main02_two_communities": "Fig.3",
+    "main03_size_geometry": "Fig.4",
+    "main04_private_withdrawal": "Fig.5",
+    "main05_many_communities": "Fig.6",
+    "supp06_two_initialisations": "Supplementary Fig.1",
+    "supp01_graph_diagnostics": "Supplementary Fig.2",
+    "supp03_expanded_geometry": "Supplementary Fig.3",
+    "supp04_choice_degree": "Supplementary Fig.4",
+    "supp05_scaling": "Supplementary Fig.5",
+    "supp02_controls": "Supplementary Fig.6",
+    "supp07_many_detail": "Supplementary Fig.7",
+    "supp08_score_response": "Supplementary Fig.8",
+    "supp09_signal_anatomy": "Supplementary Fig.9",
+    "supp10_noise_propagation": "Supplementary Fig.10"
+  },
+  "figures": {
+    "main02_two_communities": {
+      "files": [
+        {
+          "path": "figures/source_exports/main02_two_communities_population_values.csv",
+          "description": "Whole-population outcomes used in the panels; never independent agent observations.",
+          "rows": 96
+        },
+        {
+          "path": "figures/source_exports/main02_two_communities_batch_means.csv",
+          "description": "Means of the recorded population outcomes within each seed batch.",
+          "rows": 24
+        },
+        {
+          "path": "figures/source_exports/main02_two_communities_plotted_intervals.csv",
+          "description": "Approximate two-sided 95% t Monte Carlo intervals across seed-batch means; raw endpoints untruncated.",
+          "rows": 6
+        },
+        {
+          "path": "figures/source_exports/main02_two_communities_trajectory_population_values.csv",
+          "description": "Trailing ten-trial population series, with min_periods=1.",
+          "rows": 48000
+        },
+        {
+          "path": "figures/source_exports/main02_two_communities_trajectory_batch_means.csv",
+          "description": "Seed-batch means of the smoothed population trajectories.",
+          "rows": 12000
+        },
+        {
+          "path": "figures/source_exports/main02_two_communities_trajectory_intervals.csv",
+          "description": "Actual plotted means and pointwise approximate 95% t Monte Carlo intervals.",
+          "rows": 3000
+        },
+        {
+          "path": "figures/source_exports/main02_two_communities_analytic_multipliers.csv",
+          "description": "Exact frozen-score derivatives at h=12, lambda=0.6 and score floor0.5.",
+          "rows": 200
+        },
+        {
+          "path": "figures/source_exports/main02_two_communities_annotated_multiplier.csv",
+          "description": "The separately annotated exact multiplier.",
+          "rows": 1
+        }
+      ],
+      "display_number": "Fig.3"
+    },
+    "main03_size_geometry": {
+      "files": [
+        {
+          "path": "figures/source_exports/main03_size_geometry_population_values.csv",
+          "description": "Whole-population outcomes used in the panels; never independent agent observations.",
+          "rows": 1520
+        },
+        {
+          "path": "figures/source_exports/main03_size_geometry_batch_means.csv",
+          "description": "Means of the recorded population outcomes within each seed batch.",
+          "rows": 380
+        },
+        {
+          "path": "figures/source_exports/main03_size_geometry_plotted_intervals.csv",
+          "description": "Approximate two-sided 95% t Monte Carlo intervals across seed-batch means; raw endpoints untruncated.",
+          "rows": 95
+        }
+      ],
+      "display_number": "Fig.4"
+    },
+    "main04_private_withdrawal": {
+      "files": [
+        {
+          "path": "figures/source_exports/main04_private_withdrawal_trajectory_population_values.csv",
+          "description": "Trailing ten-trial population series, with min_periods=1.",
+          "rows": 96000
+        },
+        {
+          "path": "figures/source_exports/main04_private_withdrawal_trajectory_batch_means.csv",
+          "description": "Seed-batch means of the smoothed population trajectories.",
+          "rows": 24000
+        },
+        {
+          "path": "figures/source_exports/main04_private_withdrawal_trajectory_intervals.csv",
+          "description": "Actual plotted means and pointwise approximate 95% t Monte Carlo intervals.",
+          "rows": 6000
+        },
+        {
+          "path": "figures/source_exports/main04_private_withdrawal_paired_withdrawal_populations.csv",
+          "description": "All16 complete saved entry states continued under retained or withdrawn influence; matched by graph_id and rep.",
+          "rows": 64
+        },
+        {
+          "path": "figures/source_exports/main04_private_withdrawal_withdrawal_batch_means.csv",
+          "description": "Four seed-batch means for each arm of each withdrawal contrast.",
+          "rows": 16
+        },
+        {
+          "path": "figures/source_exports/main04_private_withdrawal_withdrawal_intervals.csv",
+          "description": "Actual untruncated marginal interval whiskers; paired differences are analysed separately in statistics/paired_contrasts.csv.",
+          "rows": 4
+        }
+      ],
+      "display_number": "Fig.5"
+    },
+    "main05_many_communities": {
+      "files": [
+        {
+          "path": "figures/source_exports/main05_many_communities_population_values.csv",
+          "description": "Whole-population outcomes used in the panels; never independent agent observations.",
+          "rows": 156
+        },
+        {
+          "path": "figures/source_exports/main05_many_communities_batch_means.csv",
+          "description": "Means of the recorded population outcomes within each seed batch.",
+          "rows": 78
+        },
+        {
+          "path": "figures/source_exports/main05_many_communities_plotted_intervals.csv",
+          "description": "Approximate two-sided 95% t Monte Carlo intervals across seed-batch means; raw endpoints untruncated.",
+          "rows": 39
+        }
+      ],
+      "display_number": "Fig.6"
+    },
+    "supp01_graph_diagnostics": {
+      "files": [
+        {
+          "path": "figures/source_exports/supp01_graph_diagnostics_population_values.csv",
+          "description": "Whole-population outcomes used in the panels; never independent agent observations.",
+          "rows": 228
+        },
+        {
+          "path": "figures/source_exports/supp01_graph_diagnostics_batch_means.csv",
+          "description": "Means of the recorded population outcomes within each seed batch.",
+          "rows": 66
+        }
+      ],
+      "display_number": "Supplementary Fig.2"
+    },
+    "supp02_controls": {
+      "files": [
+        {
+          "path": "figures/source_exports/supp02_controls_population_values.csv",
+          "description": "Whole-population outcomes used in the panels; never independent agent observations.",
+          "rows": 384
+        },
+        {
+          "path": "figures/source_exports/supp02_controls_batch_means.csv",
+          "description": "Means of the recorded population outcomes within each seed batch.",
+          "rows": 96
+        },
+        {
+          "path": "figures/source_exports/supp02_controls_plotted_intervals.csv",
+          "description": "Approximate two-sided 95% t Monte Carlo intervals across seed-batch means; raw endpoints untruncated.",
+          "rows": 24
+        }
+      ],
+      "display_number": "Supplementary Fig.6"
+    },
+    "supp03_expanded_geometry": {
+      "files": [
+        {
+          "path": "figures/source_exports/supp03_expanded_geometry_population_values.csv",
+          "description": "Whole-population outcomes used in the panels; never independent agent observations.",
+          "rows": 576
+        },
+        {
+          "path": "figures/source_exports/supp03_expanded_geometry_batch_means.csv",
+          "description": "Means of the recorded population outcomes within each seed batch.",
+          "rows": 144
+        },
+        {
+          "path": "figures/source_exports/supp03_expanded_geometry_plotted_intervals.csv",
+          "description": "Approximate two-sided 95% t Monte Carlo intervals across seed-batch means; raw endpoints untruncated.",
+          "rows": 9
+        }
+      ],
+      "display_number": "Supplementary Fig.3"
+    },
+    "supp04_choice_degree": {
+      "files": [
+        {
+          "path": "figures/source_exports/supp04_choice_degree_population_values.csv",
+          "description": "Whole-population outcomes used in the panels; never independent agent observations.",
+          "rows": 512
+        },
+        {
+          "path": "figures/source_exports/supp04_choice_degree_batch_means.csv",
+          "description": "Means of the recorded population outcomes within each seed batch.",
+          "rows": 128
+        },
+        {
+          "path": "figures/source_exports/supp04_choice_degree_plotted_intervals.csv",
+          "description": "Approximate two-sided 95% t Monte Carlo intervals across seed-batch means; raw endpoints untruncated.",
+          "rows": 32
+        }
+      ],
+      "display_number": "Supplementary Fig.4"
+    },
+    "supp05_scaling": {
+      "files": [
+        {
+          "path": "figures/source_exports/supp05_scaling_population_values.csv",
+          "description": "Whole-population outcomes used in the panels; never independent agent observations.",
+          "rows": 384
+        },
+        {
+          "path": "figures/source_exports/supp05_scaling_batch_means.csv",
+          "description": "Means of the recorded population outcomes within each seed batch.",
+          "rows": 96
+        },
+        {
+          "path": "figures/source_exports/supp05_scaling_plotted_intervals.csv",
+          "description": "Approximate two-sided 95% t Monte Carlo intervals across seed-batch means; raw endpoints untruncated.",
+          "rows": 24
+        }
+      ],
+      "display_number": "Supplementary Fig.5"
+    },
+    "supp06_two_initialisations": {
+      "files": [
+        {
+          "path": "figures/source_exports/supp06_two_initialisations_population_values.csv",
+          "description": "Whole-population outcomes used in the panels; never independent agent observations.",
+          "rows": 384
+        },
+        {
+          "path": "figures/source_exports/supp06_two_initialisations_batch_means.csv",
+          "description": "Means of the recorded population outcomes within each seed batch.",
+          "rows": 96
+        },
+        {
+          "path": "figures/source_exports/supp06_two_initialisations_plotted_intervals.csv",
+          "description": "Approximate two-sided 95% t Monte Carlo intervals across seed-batch means; raw endpoints untruncated.",
+          "rows": 24
+        }
+      ],
+      "display_number": "Supplementary Fig.1"
+    },
+    "supp07_many_detail": {
+      "files": [
+        {
+          "path": "figures/source_exports/supp07_many_detail_population_bin_counts.csv",
+          "description": "Exact counts and normalised fractions for each25-bin within-population community histogram.",
+          "rows": 600
+        },
+        {
+          "path": "figures/source_exports/supp07_many_detail_batch_histograms.csv",
+          "description": "Bin heights averaged over two populations per seed batch.",
+          "rows": 300
+        },
+        {
+          "path": "figures/source_exports/supp07_many_detail_plotted_mean_histograms.csv",
+          "description": "Actual plotted bar heights, averaging the two seed-batch histograms.",
+          "rows": 150
+        }
+      ],
+      "display_number": "Supplementary Fig.7"
+    },
+    "supp08_score_response": {
+      "files": [
+        {
+          "path": "figures/source_exports/supp08_score_response_score_grid.csv",
+          "description": "Exact analytic score functions, not new simulation experiments.",
+          "rows": 1001
+        },
+        {
+          "path": "figures/source_exports/supp08_score_response_response_grid.csv",
+          "description": "Exact analytic frozen-score cue responses at h=12.",
+          "rows": 1001
+        },
+        {
+          "path": "figures/source_exports/supp08_score_response_gain_grid.csv",
+          "description": "Prescribed learning-rate functions; primary score domain starts at0.5.",
+          "rows": 200
+        }
+      ],
+      "display_number": "Supplementary Fig.8"
+    },
+    "supp10_noise_propagation": {
+      "files": [
+        {
+          "path": "figures/source_exports/supp10_noise_propagation_plotted_mean_correlations.csv",
+          "description": "Entrywise means of exact conditional correlation matrices across all16 fixed actual sender states; not correlations estimated from16 observations.",
+          "rows": 20000
+        },
+        {
+          "path": "figures/source_exports/supp10_noise_propagation_conditional_noise_population.csv",
+          "description": "Analytic conditional-noise summaries and Monte Carlo intervals across the saved entry-state ensemble; paneld uses ring_field_rms_sd and broadcast_field_sd.",
+          "rows": 16
+        },
+        {
+          "path": "figures/source_exports/supp10_noise_propagation_conditional_noise_batch.csv",
+          "description": "Analytic conditional-noise summaries and Monte Carlo intervals across the saved entry-state ensemble; paneld uses ring_field_rms_sd and broadcast_field_sd.",
+          "rows": 4
+        },
+        {
+          "path": "figures/source_exports/supp10_noise_propagation_conditional_noise_ensemble_summary.csv",
+          "description": "Analytic conditional-noise summaries and Monte Carlo intervals across the saved entry-state ensemble; paneld uses ring_field_rms_sd and broadcast_field_sd.",
+          "rows": 20
+        }
+      ],
+      "display_number": "Supplementary Fig.10"
+    },
+    "main01_concept": {
+      "files": [],
+      "type": "Analytic schematic",
+      "description": "Decision-generated credibility and exposure channels",
+      "source_tex": "figures/main01_concept.tex",
+      "display_number": "Fig.1"
+    },
+    "main06_population_limits": {
+      "files": [],
+      "type": "Analytic schematic",
+      "description": "Two distinct population-limit routes",
+      "source_tex": "figures/main06_population_limits.tex",
+      "display_number": "Fig.2"
+    },
+    "supp09_signal_anatomy": {
+      "files": [],
+      "type": "Analytic schematic",
+      "description": "Sender/receiver anatomy and immediate withdrawal",
+      "source_tex": "figures/supp09_signal_anatomy.tex",
+      "display_number": "Supplementary Fig.9"
+    }
+  }
+}

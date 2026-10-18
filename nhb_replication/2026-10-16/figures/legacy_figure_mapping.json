@@ -1,0 +1,12 @@
+{
+  "01_concept": "main01_concept",
+  "02_size_geometry": "main03_size_geometry",
+  "03_graph_diagnostics": "supp01_graph_diagnostics",
+  "04_private_public_paths": "main04_private_withdrawal",
+  "05_controls": "supp02_controls",
+  "06_geometry_lines": "main03_size_geometry",
+  "07_two_communities": "main02_two_communities",
+  "08_expanded_geometry": "supp03_expanded_geometry",
+  "09_withdrawal": "main04_private_withdrawal",
+  "10_many_communities": "main05_many_communities"
+}

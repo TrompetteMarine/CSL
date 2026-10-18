@@ -1,0 +1,26 @@
+{
+  "completed_utc": "2026-10-16T11:12:23.330184+00:00",
+  "toolchain": "Lean4.28.0",
+  "mathlib": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+  "source_contract": "unchanged",
+  "baseline_proofs": 49,
+  "new_proofs": 44,
+  "total_declarations": 117,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "build": "passed",
+  "type_audit": "passed",
+  "axiom_audit": "passed",
+  "runtime_compatibility": "readlink redirects only /proc/<getpid>/exe to /proc/self/exe; no Lean proof or kernel code changed",
+  "exclusions": [
+    "Full large-community stochastic coupling theorem",
+    "Feller invariant-law existence",
+    "Sparse local weak convergence and empirical LLN",
+    "Watts\u2013Strogatz graph-limit probability estimates",
+    "Joint sparse/large-community limit",
+    "Simulation outputs"
+  ]
+}

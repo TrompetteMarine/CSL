@@ -1,0 +1,716 @@
+{
+  "broadcast_minus_ring__optimal_fraction": {
+    "order": [
+      "Ring",
+      "Broadcast"
+    ],
+    "covariance_of_means": [
+      [
+        1.0468750000474858e-12,
+        -2.0546875000404855e-11
+      ],
+      [
+        -2.0546875000404855e-11,
+        6.642187499997851e-10
+      ]
+    ],
+    "propagated_variance": 7.063593750006422e-10
+  },
+  "broadcast_minus_ring__private_correct": {
+    "order": [
+      "Ring",
+      "Broadcast"
+    ],
+    "covariance_of_means": [
+      [
+        1.1660937500000023e-05,
+        -6.959375e-06
+      ],
+      [
+        -6.959375e-06,
+        5.553385416666668e-06
+      ]
+    ],
+    "propagated_variance": 3.113307291666669e-05
+  },
+  "broadcast_minus_ring__regret": {
+    "order": [
+      "Ring",
+      "Broadcast"
+    ],
+    "covariance_of_means": [
+      [
+        0.13700875693593761,
+        -0.00032603005468778375
+      ],
+      [
+        -0.00032603005468778375,
+        4.3398447916723035e-06
+      ]
+    ],
+    "propagated_variance": 0.13766515689010486
+  },
+  "withdrawn_minus_retained__first_step_probability": {
+    "order": [
+      "Retained",
+      "Withdrawn"
+    ],
+    "covariance_of_means": [
+      [
+        1.3086032907165535e-09,
+        5.676636636731569e-08
+      ],
+      [
+        5.676636636731569e-08,
+        2.738925519099482e-06
+      ]
+    ],
+    "propagated_variance": 2.626701389655567e-06
+  },
+  "withdrawn_minus_retained__optimal_fraction": {
+    "order": [
+      "Retained",
+      "Withdrawn"
+    ],
+    "covariance_of_means": [
+      [
+        1.1818229166662956e-09,
+        -4.250932291666297e-09
+      ],
+      [
+        -4.250932291666297e-09,
+        5.5888587239588605e-08
+      ]
+    ],
+    "propagated_variance": 6.55722747395875e-08
+  },
+  "withdrawn_minus_retained__private_correct": {
+    "order": [
+      "Retained",
+      "Withdrawn"
+    ],
+    "covariance_of_means": [
+      [
+        4.554414062499988e-06,
+        -3.2708854166666216e-06
+      ],
+      [
+        -3.2708854166666216e-06,
+        2.85177083333327e-06
+      ]
+    ],
+    "propagated_variance": 1.3947955729166501e-05
+  },
+  "expanded_n50_ws0.01_minus_ring__optimal_fraction": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        2.527607466191398e-05,
+        2.0551732810872226e-05
+      ],
+      [
+        2.0551732810872226e-05,
+        0.00022004654565722646
+      ]
+    ],
+    "propagated_variance": 0.00020421915469739596
+  },
+  "expanded_n50_ws0.01_minus_ring__private_correct": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        6.355662434895824e-07,
+        6.540618489583253e-07
+      ],
+      [
+        6.540618489583253e-07,
+        5.626190104166646e-06
+      ]
+    ],
+    "propagated_variance": 4.953632649739578e-06
+  },
+  "expanded_n50_ws0.01_minus_ring__wrong_communities": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        2.567057291666667e-05,
+        2.307454427083334e-05
+      ],
+      [
+        2.307454427083334e-05,
+        0.00022338175455729166
+      ]
+    ],
+    "propagated_variance": 0.00020290323893229164
+  },
+  "expanded_n50_ws0.01_minus_ring__regret": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        0.16138440872222504,
+        0.1247999370971244
+      ],
+      [
+        0.1247999370971244,
+        0.7037785270862882
+      ]
+    ],
+    "propagated_variance": 0.6155630616142644
+  },
+  "expanded_n50_ws0.1_minus_ring__optimal_fraction": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        2.527607466191398e-05,
+        4.283679810872448e-06
+      ],
+      [
+        4.283679810872448e-06,
+        3.886895667128911e-05
+      ]
+    ],
+    "propagated_variance": 5.557767171145819e-05
+  },
+  "expanded_n50_ws0.1_minus_ring__private_correct": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        6.355662434895824e-07,
+        4.968144531249946e-07
+      ],
+      [
+        4.968144531249946e-07,
+        4.411872395833327e-06
+      ]
+    ],
+    "propagated_variance": 4.053809733072921e-06
+  },
+  "expanded_n50_ws0.1_minus_ring__wrong_communities": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        2.567057291666667e-05,
+        4.246419270833328e-06
+      ],
+      [
+        4.246419270833328e-06,
+        4.003214518229166e-05
+      ]
+    ],
+    "propagated_variance": 5.7209879557291665e-05
+  },
+  "expanded_n50_ws0.1_minus_ring__regret": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.16138440872222504,
+        0.05893115022609373
+      ],
+      [
+        0.05893115022609373,
+        1.07967669816948
+      ]
+    ],
+    "propagated_variance": 1.1231988064395175
+  },
+  "expanded_n50_ws0.1_minus_ws0.01__optimal_fraction": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.00022004654565722646,
+        -1.4861628083919108e-05
+      ],
+      [
+        -1.4861628083919108e-05,
+        3.886895667128911e-05
+      ]
+    ],
+    "propagated_variance": 0.00028863875849635375
+  },
+  "expanded_n50_ws0.1_minus_ws0.01__private_correct": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        5.626190104166646e-06,
+        -6.081432291666594e-07
+      ],
+      [
+        -6.081432291666594e-07,
+        4.411872395833327e-06
+      ]
+    ],
+    "propagated_variance": 1.1254348958333293e-05
+  },
+  "expanded_n50_ws0.1_minus_ws0.01__wrong_communities": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.00022338175455729166,
+        -1.5802815755208336e-05
+      ],
+      [
+        -1.5802815755208336e-05,
+        4.003214518229166e-05
+      ]
+    ],
+    "propagated_variance": 0.00029501953125
+  },
+  "expanded_n50_ws0.1_minus_ws0.01__regret": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.7037785270862882,
+        -0.10346851576179679
+      ],
+      [
+        -0.10346851576179679,
+        1.07967669816948
+      ]
+    ],
+    "propagated_variance": 1.990392256779362
+  },
+  "expanded_n100_ws0.01_minus_ring__optimal_fraction": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        2.543618045703126e-05,
+        6.192851362955926e-06
+      ],
+      [
+        6.192851362955926e-06,
+        0.0006487788180885256
+      ]
+    ],
+    "propagated_variance": 0.000661829295819645
+  },
+  "expanded_n100_ws0.01_minus_ring__private_correct": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        4.887083333333354e-07,
+        7.347656250000098e-07
+      ],
+      [
+        7.347656250000098e-07,
+        1.510879931640626e-05
+      ]
+    ],
+    "propagated_variance": 1.4127976399739575e-05
+  },
+  "expanded_n100_ws0.01_minus_ring__wrong_communities": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        2.2680664062499996e-05,
+        5.948893229166665e-06
+      ],
+      [
+        5.948893229166665e-06,
+        0.0006591650390625001
+      ]
+    ],
+    "propagated_variance": 0.0006699479166666667
+  },
+  "expanded_n100_ws0.01_minus_ring__regret": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        0.16432394372255202,
+        0.09358278110690117
+      ],
+      [
+        0.09358278110690117,
+        2.483055914157495
+      ]
+    ],
+    "propagated_variance": 2.4602142956662445
+  },
+  "expanded_n100_ws0.1_minus_ring__optimal_fraction": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        2.543618045703126e-05,
+        -1.2817018546549448e-05
+      ],
+      [
+        -1.2817018546549448e-05,
+        0.00044241810278865566
+      ]
+    ],
+    "propagated_variance": 0.0004934883203387858
+  },
+  "expanded_n100_ws0.1_minus_ring__private_correct": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        4.887083333333354e-07,
+        1.417213541666618e-07
+      ],
+      [
+        1.417213541666618e-07,
+        8.033170410156261e-06
+      ]
+    ],
+    "propagated_variance": 8.238436035156273e-06
+  },
+  "expanded_n100_ws0.1_minus_ring__wrong_communities": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        2.2680664062499996e-05,
+        -9.505208333333337e-06
+      ],
+      [
+        -9.505208333333337e-06,
+        0.0004488541666666667
+      ]
+    ],
+    "propagated_variance": 0.0004905452473958333
+  },
+  "expanded_n100_ws0.1_minus_ring__regret": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.16432394372255202,
+        -0.11330888085382813
+      ],
+      [
+        -0.11330888085382813,
+        2.0963231223336716
+      ]
+    ],
+    "propagated_variance": 2.48726482776388
+  },
+  "expanded_n100_ws0.1_minus_ws0.01__optimal_fraction": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.0006487788180885256,
+        5.196730423523781e-05
+      ],
+      [
+        5.196730423523781e-05,
+        0.00044241810278865566
+      ]
+    ],
+    "propagated_variance": 0.0009872623124067056
+  },
+  "expanded_n100_ws0.1_minus_ws0.01__private_correct": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        1.510879931640626e-05,
+        -1.0138834635413565e-08
+      ],
+      [
+        -1.0138834635413565e-08,
+        8.033170410156261e-06
+      ]
+    ],
+    "propagated_variance": 2.3162247395833345e-05
+  },
+  "expanded_n100_ws0.1_minus_ws0.01__wrong_communities": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.0006591650390625001,
+        5.046874999999998e-05
+      ],
+      [
+        5.046874999999998e-05,
+        0.0004488541666666667
+      ]
+    ],
+    "propagated_variance": 0.001007081705729167
+  },
+  "expanded_n100_ws0.1_minus_ws0.01__regret": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        2.483055914157495,
+        0.2817281777804719
+      ],
+      [
+        0.2817281777804719,
+        2.0963231223336716
+      ]
+    ],
+    "propagated_variance": 4.015922680930223
+  },
+  "expanded_n200_ws0.01_minus_ring__optimal_fraction": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        3.513645833335301e-11,
+        3.4644901562499825e-08
+      ],
+      [
+        3.4644901562499825e-08,
+        0.0002779012557619141
+      ]
+    ],
+    "propagated_variance": 0.0002778320010952474
+  },
+  "expanded_n200_ws0.01_minus_ring__private_correct": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        1.1432656250000045e-06,
+        9.886119791666703e-07
+      ],
+      [
+        9.886119791666703e-07,
+        5.531223958333342e-06
+      ]
+    ],
+    "propagated_variance": 4.697265625000005e-06
+  },
+  "expanded_n200_ws0.01_minus_ring__wrong_communities": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0002847656250000001
+      ]
+    ],
+    "propagated_variance": 0.0002847656250000001
+  },
+  "expanded_n200_ws0.01_minus_ring__regret": {
+    "order": [
+      "ring",
+      "ws0.01"
+    ],
+    "covariance_of_means": [
+      [
+        0.048300975858969745,
+        0.07177162713826175
+      ],
+      [
+        0.07177162713826175,
+        1.7934132667264342
+      ]
+    ],
+    "propagated_variance": 1.6981709883088802
+  },
+  "expanded_n200_ws0.1_minus_ring__optimal_fraction": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        3.513645833335301e-11,
+        6.388289270837349e-08
+      ],
+      [
+        6.388289270837349e-08,
+        0.0008001788600447266
+      ]
+    ],
+    "propagated_variance": 0.0008000511293957682
+  },
+  "expanded_n200_ws0.1_minus_ring__private_correct": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        1.1432656250000045e-06,
+        -5.724869791666612e-07
+      ],
+      [
+        -5.724869791666612e-07,
+        1.3908455729166684e-05
+      ]
+    ],
+    "propagated_variance": 1.6196695312500012e-05
+  },
+  "expanded_n200_ws0.1_minus_ring__wrong_communities": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0008201041666666667
+      ]
+    ],
+    "propagated_variance": 0.0008201041666666667
+  },
+  "expanded_n200_ws0.1_minus_ring__regret": {
+    "order": [
+      "ring",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.048300975858969745,
+        0.09041779568934256
+      ],
+      [
+        0.09041779568934256,
+        5.525989231054562
+      ]
+    ],
+    "propagated_variance": 5.393454615534847
+  },
+  "expanded_n200_ws0.1_minus_ws0.01__optimal_fraction": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.0002779012557619141,
+        0.00013553140642897136
+      ],
+      [
+        0.00013553140642897136,
+        0.0008001788600447266
+      ]
+    ],
+    "propagated_variance": 0.000807017302948698
+  },
+  "expanded_n200_ws0.1_minus_ws0.01__private_correct": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        5.531223958333342e-06,
+        -1.0486249999999876e-06
+      ],
+      [
+        -1.0486249999999876e-06,
+        1.3908455729166684e-05
+      ]
+    ],
+    "propagated_variance": 2.15369296875e-05
+  },
+  "expanded_n200_ws0.1_minus_ws0.01__wrong_communities": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        0.0002847656250000001,
+        0.00013921875
+      ],
+      [
+        0.00013921875,
+        0.0008201041666666667
+      ]
+    ],
+    "propagated_variance": 0.0008264322916666667
+  },
+  "expanded_n200_ws0.1_minus_ws0.01__regret": {
+    "order": [
+      "ws0.01",
+      "ws0.1"
+    ],
+    "covariance_of_means": [
+      [
+        1.7934132667264342,
+        1.1261105807220844
+      ],
+      [
+        1.1261105807220844,
+        5.525989231054562
+      ]
+    ],
+    "propagated_variance": 5.067181336336827
+  }
+}

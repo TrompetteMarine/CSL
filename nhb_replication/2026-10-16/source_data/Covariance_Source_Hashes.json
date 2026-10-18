@@ -1,0 +1,26 @@
+[
+  {
+    "path": "statistics/conditional_noise_covariances.npz",
+    "sha256": "ae5c6550335c0d3351b1511fa4a4f0753c34a30703e5b7162b2df651b8adae8d"
+  },
+  {
+    "path": "statistics/propagation_batch_paths.npz",
+    "sha256": "df565233036067bd888b238b4364de481ec7a2431cf5d585bbc94b74e2a94f54"
+  },
+  {
+    "path": "statistics/main_joint_covariance.json",
+    "sha256": "65e184818fda39302f70d3a5735adf4ba721d514a69aedfeedbf743172bd02ec"
+  },
+  {
+    "path": "statistics/paired_covariances.json",
+    "sha256": "a608b6a2c43e2fa6a13b89bd16caa375596aea43ab1a984edc43f04a95748fbf"
+  },
+  {
+    "path": "statistics/propagation_checks.json",
+    "sha256": "3af0b5ce036f595c0da2b146cc645a1b54a76d71cd0ab7c905909dba71d00be5"
+  },
+  {
+    "path": "statistics/Conditional_Noise_Summary.json",
+    "sha256": "b3f0c6ff4a07ee2d3251c082066332c54d84dd94b49deea21bb8b2669114e37c"
+  }
+]
