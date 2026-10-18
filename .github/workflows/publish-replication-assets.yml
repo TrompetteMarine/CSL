@@ -1,0 +1,16 @@
+name: Publish verified replication release
+on:
+  push:
+    branches: [replication-release-20261018]
+    paths: [replication_transport_manifest.json]
+permissions:
+  contents: write
+jobs:
+  publish:
+    if: github.repository == 'TrompetteMarine/CSL' && github.ref == 'refs/heads/replication-release-20261018'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require the verified release transport
+        run: |
+          echo "Release transport has not been committed yet."
+          exit 1
