@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite this software/data version when using the replication package."
+type: software
+title: "Decision-generated credibility: networked social-learning replication code"
+authors:
+  - family-names: Bontemps
+    given-names: Gabriel
+  - family-names: Banerjee
+    given-names: Abhishek
+version: "2026.10.16"
+date-released: "2026-10-16"
+repository-code: "https://github.com/TrompetteMarine/CSL"
+url: "https://github.com/TrompetteMarine/CSL"
+abstract: >-
+  Sparse community simulation, population and seed-batch analysis,
+  covariance-aware Monte Carlo uncertainty, figure and workbook replication,
+  and pinned Lean source with explicit verification coverage.
+keywords:
+  - social learning
+  - decision-generated credibility
+  - reinforcement learning
+  - small-world networks
+  - agent-based simulation
+  - formal verification
