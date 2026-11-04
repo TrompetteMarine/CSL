@@ -1,0 +1,7 @@
+DissCore.lean:27:20: warning: unused variable `hmu0`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'T1_gradient_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T2_drift_sign_cleared' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T2b_Astar_divided' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T3_gap_decay' depends on axioms: [propext, Classical.choice, Quot.sound]

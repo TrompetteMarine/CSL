@@ -1,0 +1,3 @@
+'T4_expectation_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T5a_gated_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'T5b_geometric' depends on axioms: [propext, Classical.choice, Quot.sound]

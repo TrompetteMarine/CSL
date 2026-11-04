@@ -1,0 +1,24 @@
+{
+ "iteration": "KGi-DISS-I002",
+ "milestone": "M4_lean",
+ "toolchain": "Lean 4.28.0 official release (leanprover/lean4 v4.28.0, commit 7e01a1bf5c70), downloaded from GitHub releases, linked via elan 4.2.4; matches the CSL formal layer pin",
+ "dependencies": "NONE (core Lean only; mathlib cache host blocked this session \u2014 recorded)",
+ "file": "DissCore.lean",
+ "file_sha256": "c25ed81bdaad3cc75df960e8fadd0d06e9416111a05877f061c7a27cd9a72097",
+ "command": "lean DissCore.lean",
+ "exit_code": 0,
+ "declarations_checked": [
+  "T1_gradient_identity",
+  "T2_drift_sign_cleared",
+  "T2b_Astar_divided",
+  "T3_gap_decay",
+  "cpow"
+ ],
+ "axioms_per_target": "propext, Classical.choice, Quot.sound (all four; no sorryAx, no custom axioms)",
+ "deviations_from_frozen_targets": [
+  "statements over Rat instead of R (mathlib unavailable): covers the rational parameter space; general linear-ordered-field version remains analytic-only",
+  "T2 split into cleared form (T2) + divided form (T2b), jointly equal to the frozen T2"
+ ],
+ "scope_limits": "algebra only: no stochastic drift (expectation) statement, no network claim, no behavioural interpretation certified; the E[dL] bridge from T2 to Prop 2 remains analytic+Monte-Carlo (verify_theory.py check2)",
+ "statement_fidelity_audit": "frozen targets compared against elaborated statements by eye and by the printed types; no substitute statements, no added hypotheses beyond the frozen positivity conditions (hmu0 unused in final T2b proof, retained in statement as frozen)"
+}

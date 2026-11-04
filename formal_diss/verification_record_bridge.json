@@ -1,0 +1,18 @@
+{
+ "iteration": "KGi-DISS-I003",
+ "milestone": "M2_lean",
+ "toolchain": "Lean 4.28.0 official release (same pin as I002 and the CSL formal layer)",
+ "dependencies": "NONE (core only; over Rat as I002, deviation disclosed)",
+ "file": "DissBridge.lean",
+ "file_sha256": "b0c3f14b6363bdf12b7dfd4a5a6097252683c4b946eaeea8daa213ba5216818c",
+ "exit_code": 0,
+ "declarations_checked": [
+  "T4_expectation_bridge",
+  "T5a_gated_contraction",
+  "T5b_geometric",
+  "cpow"
+ ],
+ "axioms_per_target": "propext, Classical.choice, Quot.sound (all three; no sorryAx)",
+ "what_this_closes": "I002 open obligation: the finite-outcome expectation bridge. Chain T4 -> T2 (I002) -> T2b (I002) certifies E[dL] > 0 iff A < A* in the generic binding region. T5a/T5b certify the algebraic core of WP2-P2 (gated contraction, geometric decay, escape-time divergence as L->0).",
+ "remaining_formal_gaps": "stochastic approximation (random L, A paths), network/field claims, cusp variant, all behavioural interpretation \u2014 analytic+MC only."
+}
