@@ -10,7 +10,9 @@ one cognitive-dissonance functional.
 |---|---|---|
 | `DissCore.lean` | T1 (exact quadratic expansion of the dissonance functional), T2 (drift sign ⟺ cleared inequality), T2b (cleared inequality ⟺ A < A* under positivity), T3 (between-community gap ⟹ geometric decay (1−2ψΓ)^t) | KGi-DISS-I002 |
 | `DissBridge.lean` | T4 (branch-weighted E[ΔL] > 0 ⟺ cleared inequality, region R1), T5a (gated contraction Q′−μ = (1−αL)(Q−μ)), T5b (n-step geometric form) | KGi-DISS-I003 |
-| `verification_record_core.json`, `verification_record_bridge.json` | compile logs, axiom closures, file hashes at freeze time | |
+| `DissAggregation.lean` | T6 (freeze at zero legitimacy), T7 (gain ratio), T8 (aggregation identity: mean update = product of means + covariance), T9/T9b/T9c (dispersion; strict witness against mean sufficiency), T10 (two-step response), T11 (aggregate residual ≥ representative agent's at every horizon), T12 (two-type identification), T13 (reference monotonicity of aspiration and legitimacy, needs φ⁺ ≤ τ), T14 (product bound), T15 (two-type association) | KGi-DISS-I039 |
+| `DissAggregationAudit.lean` | statement-fidelity audit for the above (appended, not imported) | KGi-DISS-I039 |
+| `verification_record_core.json`, `verification_record_bridge.json`, `verification_record_aggregation.json` | compile logs, axiom closures, file hashes at freeze time | |
 | `DissCore.sha256`, `DissBridge.sha256` | content hashes of the frozen sources | |
 | `expected_output_core.txt`, `expected_output_bridge.txt` | expected `#print axioms` output | |
 
@@ -31,6 +33,8 @@ Official Lean 4 release v4.28.0, **core library only** (no mathlib, no lake proj
 ```
 lean DissCore.lean
 lean DissBridge.lean
+lean DissAggregation.lean
+cat DissAggregation.lean DissAggregationAudit.lean > x.lean && lean x.lean
 ```
 
 Each file ends with `#print axioms` for every theorem; the expected axiom closure of every
